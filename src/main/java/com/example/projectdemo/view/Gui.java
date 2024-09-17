@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class Gui extends Application {
+public class Gui extends Application implements IGui{
     private Controller controller;
 
     @Override
@@ -17,7 +17,7 @@ public class Gui extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Gui.class.getResource("/com/example/projectdemo/Scene1.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         stage.setTitle("Car Rental");
         stage.setScene(scene);

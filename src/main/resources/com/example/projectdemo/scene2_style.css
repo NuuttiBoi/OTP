@@ -1,0 +1,57 @@
+/* Apply styles to the root AnchorPane */
+.anchor-pane {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Style the VBox containing car details */
+.vbox {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+}
+
+/* Style for the car image */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+/* Style for car model text */
+.text-car-model {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-fill: #333333;
+    -fx-text-alignment: center;
+}
+
+/* Style for car details text */
+.text-car-details {
+    -fx-font-size: 18px;
+    -fx-fill: #666666;
+    -fx-text-alignment: center;
+}
+
+/* Style for buttons */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 3);
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #388e3c;
+}

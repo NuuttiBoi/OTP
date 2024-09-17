@@ -4,29 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/Scene2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/IGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Scene1.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Scene2.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/style.css" afterDir="false" />
+    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/RentCarFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/RentCar.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/golf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/niceCar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/scene2_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/Scene2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Scene2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/IGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/IGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Scene1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Scene1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Scene2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Scene2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="Interface" />
         <option value="CSS File" />
       </list>
     </option>
@@ -62,36 +55,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CarDAO.executor": "Run",
-    "Application.Gui.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nuutt/IdeaProjects/OTP1",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "xpath.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CarDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Gui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.dao.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Maven.ProjectDemo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nuutt/IdeaProjects/ProjectDemo/src/main/java/com/example/projectdemo/controller&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;xpath.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\java\com\example\projectdemo\controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\resources\com\example\projectdemo" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.projectdemo" />
     </key>
@@ -123,9 +124,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="dao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.projectdemo.model.dao" />
+      <module name="ProjectDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.projectdemo.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Gui" />
+        <item itemvalue="Application.dao" />
         <item itemvalue="Application.CarDAO" />
       </list>
     </recent_temporary>
@@ -140,11 +155,29 @@
       <updated>1726051393725</updated>
       <workItem from="1726051395034" duration="2552000" />
       <workItem from="1726308938176" duration="8331000" />
-      <workItem from="1726319820819" duration="1619000" />
+      <workItem from="1726319820819" duration="1944000" />
+      <workItem from="1726419657304" duration="3370000" />
+      <workItem from="1726480766213" duration="3213000" />
+      <workItem from="1726493060824" duration="3420000" />
+      <workItem from="1726506033040" duration="1612000" />
+      <workItem from="1726524901249" duration="3254000" />
+      <workItem from="1726556935580" duration="3207000" />
     </task>
+    <task id="LOCAL−00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1726321539048</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1726321539048</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>

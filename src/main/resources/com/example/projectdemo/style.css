@@ -1,3 +1,94 @@
 .list-view{
     -fx-font-size: 20px;
 }
+
+.root {
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5f5f5;
+}
+
+/* VBox styles */
+.vbox {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+/* Label styles */
+.label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* TextField styles */
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+/* Button styles */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+/* ListView styles */
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+/* Specific adjustments for search field */
+#searchField {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #cccccc;
+}
+
+/* Specific adjustments for welcome text */
+#welcomeText {
+    -fx-text-fill: #666666;
+    -fx-font-size: 18px;
+}
+
+/* ListView styles */
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-pref-height: 300px; /* Adjust as needed */
+    -fx-padding: 10px; /* Padding inside ListView */
+}
+
+/* Style for items in ListView */
+.list-view .cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #eeeeee;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-background-insets: 0, 0, 0, 0;
+}
+
+.list-view .cell:filled:hover {
+    -fx-background-color: #f0f0f0;
+}
