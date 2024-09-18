@@ -16,6 +16,8 @@ public class Car {
     public String getModel(){
         return this.model;
     }
+    public int getYear(){return this.year;}
+
     @Override
     public String toString() {
         return make + " " + model + " (" + year + ")";
