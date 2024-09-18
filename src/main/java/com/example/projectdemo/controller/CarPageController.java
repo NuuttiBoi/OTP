@@ -1,28 +1,22 @@
 package com.example.projectdemo.controller;
 
 import com.example.projectdemo.model.Car;
-import com.example.projectdemo.model.CarDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import javafx.fxml.FXML;
+
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class Scene2 {
+public class CarPageController {
 
     @FXML
     public Text modelText;
