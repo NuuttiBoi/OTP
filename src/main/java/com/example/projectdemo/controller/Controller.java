@@ -73,7 +73,6 @@ public class Controller {
     // Method to open a new window with item details
     private void openNewWindow(Car selectedCar) throws IOException {
         // Create a new stage (window)
-        // Create a new stage (window)
         Stage newWindow = new Stage();
         newWindow.setTitle("Car Details");
 
@@ -107,16 +106,28 @@ public class Controller {
 
     public void onSearchButtonClick() {
         String searchText = searchField.getText().toLowerCase();
-        // Filter the list based on the search text
+
+        // Clear the ListView before displaying new search results
         carList.getItems().clear();
-        Set<Car> filteredSet = new HashSet<>(); // Using a Set to avoid duplicates
+
+        // If the search text is empty, display the full list
+        if (searchText.isEmpty()) {
+            carList.getItems().addAll(list);
+            return;  // Exit the method
+        }
+
+        HashSet<Car> filteredList = new HashSet<>();
         for (Car car : list) {
-            if (car.getMake().toLowerCase().contains(searchText) || car.getModel().toLowerCase().contains(searchText)) {
-                filteredSet.add(car);
+            if ((car.getMake().toLowerCase().contains(searchText) || car.getModel().toLowerCase().contains(searchText))) {
+                filteredList.add(car);
+                System.out.println(car.getId());
+                System.out.println(list);
+                System.out.println("car added");
             }
         }
+
         // Update the ListView to display only the filtered cars
-        carList.getItems().addAll(filteredSet);
+        carList.getItems().addAll(filteredList);
     }
 
 

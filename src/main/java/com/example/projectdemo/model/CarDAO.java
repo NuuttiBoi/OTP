@@ -38,7 +38,7 @@ public class CarDAO  {
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
-                Car car = new Car(rs.getString("Make"),rs.getString("Model"),
+                Car car = new Car(rs.getString("CarID"),rs.getString("Make"),rs.getString("Model"),
                         rs.getInt("Year"));
                 System.out.println("Car year: " + rs.getInt("Year"));
                 System.out.println("Car maker: " + rs.getString("Make"));
