@@ -7,6 +7,7 @@ import java.util.List;
 public class LocationDAO {
     private String name;
     private List<Location> locationList = new ArrayList<>();
+    private List<Car> carList = new ArrayList<>();
 
     public LocationDAO(String name) {
         this.name = name;
@@ -21,10 +22,10 @@ public class LocationDAO {
             Statement stmt = conn.createStatement();
             String query = "SELECT * FROM rental_locations";
             ResultSet rs = stmt.executeQuery(query);
-
             while (rs.next()){
-                Location location = new Location(rs.getString("LocationName"),
-                        rs.getString("Address"));
+                Location location = new Location(rs.getString("LocationID"),
+                        rs.getString("LocationName"),
+                        rs.getString("Address"), carList);
                 locationList.add(location);
             }
         } catch (SQLException e) {

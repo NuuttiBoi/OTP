@@ -3,13 +3,14 @@ package com.example.projectdemo.model;
 public class Car {
     private String make, model;
     private int year;
-    private String id;
+    private String id, location;
     private boolean isAvailable;
-    public Car(String id,String make, String model, int year){
+    public Car(String id,String make, String model, int year, String location){
         this.make = make;
         this.model = model;
         this.year = year;
         this.id = id;
+        this.location = location;
     }
 
     public String getMake(){

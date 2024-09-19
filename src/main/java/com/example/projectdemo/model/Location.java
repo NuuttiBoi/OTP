@@ -1,11 +1,17 @@
 package com.example.projectdemo.model;
 
-public class Location {
-    private String name, address;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Location(String name, String address){
+public class Location {
+    private String name, address, id;
+    private List<Car> carList = new ArrayList<>();
+
+    public Location(String id, String name, String address, List<Car> carList){
+        this.id = id;
         this.name = name;
         this.address = address;
+        this.carList = carList;
     }
 
     public String getName(){
