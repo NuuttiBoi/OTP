@@ -22,7 +22,7 @@ public class CarPageController {
     public Text modelText;
     @FXML
     public Text carDetailsText;
-    public ListView locationsList;
+    public ListView carLocationList;
     @FXML
     private ImageView carPic;  // Make sure this fx:id matches the FXML
     @FXML

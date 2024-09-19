@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="Some refactors">
+    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="search filter">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LocationDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/CarPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/CarPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Start.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +24,8 @@
       <list>
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -155,7 +157,7 @@
       <workItem from="1726556935580" duration="4313000" />
       <workItem from="1726578788157" duration="14000" />
       <workItem from="1726663191451" duration="4907000" />
-      <workItem from="1726749910258" duration="3205000" />
+      <workItem from="1726749910258" duration="4504000" />
     </task>
     <task id="LOCAL−00001" summary="init">
       <option name="closed" value="true" />
@@ -185,7 +187,14 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1726690159068</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="search filter">
+      <option name="closed" value="true" />
+      <created>1726753229274</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1726753229274</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +205,7 @@
     <MESSAGE value="updates" />
     <MESSAGE value="aloitettua aloitusnäyttöä, kommentteja" />
     <MESSAGE value="Some refactors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some refactors" />
+    <MESSAGE value="search filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="search filter" />
   </component>
 </project>

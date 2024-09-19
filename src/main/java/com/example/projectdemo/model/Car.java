@@ -26,12 +26,13 @@ public class Car {
         return make + " " + model + " (" + year + ")";
     }
 
+
     // varmistaa ettei HashSettiin tule duplikaatteja
     @Override
     public boolean equals(Object obj) {
         return !super.equals(obj);
     }
-
+    @Override
     public int hashCode(){
         return getId().hashCode();
     }

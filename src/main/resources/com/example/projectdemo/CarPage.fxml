@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="scene2_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.CarPageController">
    <children>
+      <ListView fx:id="carLocationList" layoutX="400.0" prefHeight="200.0" prefWidth="200.0" />
       <VBox layoutX="11.0" layoutY="38.0" maxWidth="251.0" prefHeight="316.0" prefWidth="251.0">
          <children>
-            <ListView fx:id="locationsList" prefHeight="76.0" prefWidth="37.0" />
             <ImageView fx:id="carPic" fitHeight="183.0" fitWidth="316.0" pickOnBounds="true" preserveRatio="true" />
             <Text fx:id="modelText" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Model" wrappingWidth="510.93670654296875">
                <font>

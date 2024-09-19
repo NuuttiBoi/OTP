@@ -4,12 +4,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.HomeController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text layoutX="236.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To Car Rental " textAlignment="CENTER" />
       <Text layoutX="213.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select Your Shop Location" />
-      <ListView fx:id="listLocation" layoutX="200.0" layoutY="145.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="locationList" layoutX="200.0" layoutY="145.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

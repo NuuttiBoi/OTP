@@ -13,8 +13,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HomeController {
-    public ListView listLocation;
+    public ListView locationList;
 
+    public void setLocations(){
+
+    }
 
     // Käyttäjä valitsee täällä sijainnin, jonka perusteella tulisi avata ikkuna,
     // jossa näkyy kyseisessä sijainnissa saatavilla olevat autot.
