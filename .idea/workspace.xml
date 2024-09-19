@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="location, locationdao classes added">
+    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="Aloitussivua edistetty">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" afterDir="false" />
     </list>
@@ -152,7 +153,8 @@
       <workItem from="1726556935580" duration="4313000" />
       <workItem from="1726578788157" duration="14000" />
       <workItem from="1726663191451" duration="4907000" />
-      <workItem from="1726749910258" duration="4946000" />
+      <workItem from="1726749910258" duration="4980000" />
+      <workItem from="1726772942060" duration="2767000" />
     </task>
     <task id="LOCAL−00001" summary="init">
       <option name="closed" value="true" />
@@ -196,7 +198,14 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1726754462511</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="Aloitussivua edistetty">
+      <option name="closed" value="true" />
+      <created>1726754896158</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1726754896158</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +218,7 @@
     <MESSAGE value="Some refactors" />
     <MESSAGE value="search filter" />
     <MESSAGE value="location, locationdao classes added" />
-    <option name="LAST_COMMIT_MESSAGE" value="location, locationdao classes added" />
+    <MESSAGE value="Aloitussivua edistetty" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aloitussivua edistetty" />
   </component>
 </project>

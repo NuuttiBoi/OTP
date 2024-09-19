@@ -44,6 +44,10 @@ public class Controller {
 
     }
 
+    public void setCars(List<Car> carsList){
+        carList.getItems().addAll(carsList);
+    }
+
     public void initialize(){
         try{
             list = car.getList();
