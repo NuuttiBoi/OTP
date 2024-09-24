@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="410.0" prefWidth="549.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <Accordion layoutX="206.0" layoutY="148.0" />
+            <ImageView fx:id="pic" fitHeight="410.0" fitWidth="663.0" layoutX="-20.0">
+               <image>
+                  <Image url="@../../../../../../../../Downloads/mercedes.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="loginbox" layoutX="193.0" layoutY="198.0" prefHeight="183.0" prefWidth="248.0" style="-fx-background-color: #616161;">
+               <children>
+                  <Label fx:id="login" layoutX="81.0" layoutY="14.0" text="Login" textFill="#fcf9f9">
+                     <font>
+                        <Font name="Tahoma Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="greenline" layoutX="82.0" layoutY="43.0" prefHeight="7.0" prefWidth="67.0" style="-fx-background-color: #76ff03;" />
+                  <PasswordField fx:id="password" layoutX="51.0" layoutY="117.0" promptText="Password">
+                     <font>
+                        <Font name="Kannada MN" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField fx:id="username" layoutX="51.0" layoutY="70.0" promptText="Username">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="loginbutton" accessibleText="nn" depthTest="DISABLE" layoutX="31.0" layoutY="152.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #76ff03; -fx-background-radius: 90;" text="Login" textFill="#0d0000" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Tahoma Bold" size="36.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="30.0" fitWidth="22.0" layoutX="16.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="usericon" fitHeight="26.0" fitWidth="31.0" layoutX="12.0" layoutY="70.0">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/user1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="passicon" fitHeight="42.0" fitWidth="31.0" layoutX="12.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" style="-fx-smooth: 90;">
+                     <image>
+                        <Image url="@passicon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
