@@ -10,6 +10,7 @@ import java.lang.reflect.Field;
 public class Login {
     @FXML
     private TextField username;
+    private TextField password;
 
 
 public void setUsername(String userMame){
