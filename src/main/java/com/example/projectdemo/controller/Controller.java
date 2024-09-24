@@ -27,6 +27,19 @@ public class Controller {
     @FXML
     private ImageView carPic;
 
+
+    public void loginPage() throws IOException {
+        FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(loginLoader.load()));
+        // Set the title for the second scene
+        stage.setTitle("Scene 2");
+
+        stage.show();
+    }
+
+
     public void onHelloButtonClick() {
         try {
             // Load the FXML file for the second scene

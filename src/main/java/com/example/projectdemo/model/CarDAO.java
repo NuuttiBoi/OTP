@@ -28,9 +28,9 @@ public class CarDAO  {
     public static void main(String[] args) {
     }
     public List<Car> getList(){
-        String url = "jdbc:mysql://localhost:3306/cardb";
+        String url = "jdbc:mysql://localhost:3307/cardb";
         String user = "root";
-        String password = "cee5tuyo";
+        String password = "12345";
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             Statement stmt = conn.createStatement();
