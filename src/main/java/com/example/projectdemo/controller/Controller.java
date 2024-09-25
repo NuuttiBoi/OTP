@@ -43,7 +43,7 @@ public class Controller {
     public void onHelloButtonClick() {
         try {
             // Load the FXML file for the second scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CarPage.fxml"));
             // Create a new stage for the second scene
             Stage stage = new Stage();
             stage.setScene(new Scene(loader.load()));
@@ -55,6 +55,10 @@ public class Controller {
             e.printStackTrace();
         }
 
+    }
+
+    public void setCars(List<Car> carsList){
+        carList.getItems().addAll(carsList);
     }
 
     public void initialize(){
@@ -86,15 +90,14 @@ public class Controller {
     // Method to open a new window with item details
     private void openNewWindow(Car selectedCar) throws IOException {
         // Create a new stage (window)
-        // Create a new stage (window)
         Stage newWindow = new Stage();
         newWindow.setTitle("Car Details");
 
         // Load the FXML file
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/Scene2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/CarPage.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
 
-        Scene2 controller = fxmlLoader.getController();  // Make sure to import your controller class
+        CarPageController controller = fxmlLoader.getController();  // Make sure to import your controller class
 
 
         // Load the image and pass it to the controller
@@ -120,16 +123,28 @@ public class Controller {
 
     public void onSearchButtonClick() {
         String searchText = searchField.getText().toLowerCase();
-        // Filter the list based on the search text
+
+        // Clear the ListView before displaying new search results
         carList.getItems().clear();
-        Set<Car> filteredSet = new HashSet<>(); // Using a Set to avoid duplicates
+
+        // If the search text is empty, display the full list
+        if (searchText.isEmpty()) {
+            carList.getItems().addAll(list);
+            return;  // Exit the method
+        }
+
+        HashSet<Car> filteredList = new HashSet<>();
         for (Car car : list) {
-            if (car.getMake().toLowerCase().contains(searchText) || car.getModel().toLowerCase().contains(searchText)) {
-                filteredSet.add(car);
+            if ((car.getMake().toLowerCase().contains(searchText) || car.getModel().toLowerCase().contains(searchText))) {
+                filteredList.add(car);
+                System.out.println(car.getId());
+                System.out.println(list);
+                System.out.println("car added");
             }
         }
+
         // Update the ListView to display only the filtered cars
-        carList.getItems().addAll(filteredSet);
+        carList.getItems().addAll(filteredList);
     }
 
 
