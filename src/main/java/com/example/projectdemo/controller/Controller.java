@@ -40,10 +40,11 @@ public class Controller {
     @FXML
     private Circle neljasPallo;
     @FXML
+    private Circle viidesPallo;
+    @FXML
     private Hyperlink seeAllLink;
     @FXML
     private ScrollBar scrollbar;
-
     @FXML
     private HBox pallot;
 
@@ -85,12 +86,19 @@ public class Controller {
             System.out.println(carList);
             System.out.println(car.getList());
 
+            // Set up the scrollbar
+           // scrollbar.setMin(0);
+           // scrollbar.setMax(300); // Adjust this value based on the height of the HBox
+            //scrollbar.setVisibleAmount(100);
+            //scrollbar.setBlockIncrement(10);
+
             //Circles
             // Set images inside circles
             Image toyotaLogo = new Image(getClass().getResource("/com/example/projectdemo/toyota_logo.png").toExternalForm());
             Image vwLogo = new Image(getClass().getResource("/com/example/projectdemo/vw_logo.png").toExternalForm());
             Image nissanLogo = new Image(getClass().getResource("/com/example/projectdemo/nissan_logo.png").toExternalForm());
             Image fordLogo = new Image(getClass().getResource("/com/example/projectdemo/ford_logo.png").toExternalForm());
+            Image hondaLogo = new Image(getClass().getResource("/com/example/projectdemo/honda_logo.png").toExternalForm());
 
 
             // Fill the circles with the respective car logos
@@ -98,16 +106,13 @@ public class Controller {
             tokaPallo.setFill(new ImagePattern(vwLogo));
             kolmasPallo.setFill(new ImagePattern(nissanLogo));
             neljasPallo.setFill(new ImagePattern(fordLogo));
+            viidesPallo.setFill(new ImagePattern(hondaLogo));
 
-            // Set scrollbar values based on the width of the HBox and VBox
-            scrollbar.setMin(0);
-            System.out.println("HBox width: " + pallot.getWidth());  // Debugging
-            System.out.println("HBox preferred width: " + pallot.getPrefWidth());  // Debugging
-            scrollbar.setMax(pallot.getPrefWidth() - 300);
-
-            // Add a listener to the ScrollBar to update the HBox's layoutX property
-            scrollbar.valueProperty().addListener((observable, oldValue, newValue) -> {
-                pallot.setLayoutX(-newValue.doubleValue());  // Move HBox left/right based on scrollbar
+            // Set up a listener for the scrollbar's value property
+            scrollbar.valueProperty().addListener((obs, oldVal, newVal) -> {
+                // Calculate the new Y position based on the scrollbar's value
+                System.out.println("Scrollbar Value Changed: " + newVal);
+                pallot.setLayoutY(-newVal.doubleValue()); // Move the HBox in the opposite direction of the scrollbar
             });
 
 
@@ -148,6 +153,10 @@ public class Controller {
 
         neljasPallo.setOnMouseClicked(event -> {
             filterCarsByModel("Ford");
+        });
+
+        viidesPallo.setOnMouseClicked(event -> {
+            filterCarsByModel("Honda");
         });
     }
 

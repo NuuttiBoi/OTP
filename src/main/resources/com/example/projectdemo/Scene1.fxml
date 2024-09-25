@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -13,9 +13,9 @@
 <?import javafx.scene.text.Text?>
 
 <VBox alignment="CENTER" minHeight="600" prefHeight="550.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.Controller">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
    <Label text="Search For Cars To Rent" />
    <TextField fx:id="searchField" prefHeight="90.0" prefWidth="326.0" promptText="Type search" />
    <HBox alignment="CENTER" prefHeight="12.0" prefWidth="300.0">
@@ -30,44 +30,23 @@
       <VBox.margin>
          <Insets />
       </VBox.margin>
-   </HBox> 
-   <HBox fx:id="pallot" accessibleRole="SCROLL_BAR" maxWidth="800.0" prefHeight="27.0" prefWidth="300.0">
-      <children>
-         <Circle fx:id="ekaPallo" fill="#f8fafc26" radius="20.0" stroke="#949292" strokeType="INSIDE">
-            <HBox.margin>
-               <Insets left="5.0" right="5.0" />
-            </HBox.margin>
-         </Circle>
-         <Circle fx:id="tokaPallo" fill="#f1f6f826" radius="20.0" stroke="#949292" strokeType="INSIDE">
-            <HBox.margin>
-               <Insets left="5.0" right="5.0" />
-            </HBox.margin>
-         </Circle>
-         <Circle fx:id="kolmasPallo" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE">
-            <HBox.margin>
-               <Insets left="5.0" right="5.0" />
-            </HBox.margin>
-         </Circle>
-         <Circle fx:id="neljasPallo" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE">
-            <HBox.margin>
-               <Insets left="5.0" right="5.0" />
-            </HBox.margin>
-         </Circle>
-         <Circle fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE">
-            <HBox.margin>
-               <Insets left="5.0" right="5.0" />
-            </HBox.margin>
-         </Circle>
-         <Circle fill="#1f93ff05" layoutX="31.0" layoutY="26.0" radius="20.0" stroke="BLACK" strokeType="INSIDE">
-            <HBox.margin>
-               <Insets left="5.0" right="5.0" />
-            </HBox.margin>
-         </Circle>
-      </children>
    </HBox>
-   <ScrollBar fx:id="scrollbar" />
-    <ListView fx:id="carList" prefHeight="257.0" prefWidth="300.0" />
-    <Label fx:id="welcomeText" />
-    <Button onAction="#onSearchButtonClick" text="Search" />
+
+   <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+      <HBox fx:id="pallot" spacing="10.0">
+         <children>
+            <Circle fx:id="ekaPallo" fill="#f8fafc26" radius="20.0" stroke="#949292" strokeType="INSIDE" />
+            <Circle fx:id="tokaPallo" fill="#f1f6f826" radius="20.0" stroke="#949292" strokeType="INSIDE" />
+            <Circle fx:id="kolmasPallo" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="neljasPallo" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
+            <Circle fx:id="viidesPallo" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+      </HBox>
+   </ScrollPane>
+
+   <ListView fx:id="carList" prefHeight="257.0" prefWidth="300.0" />
+   <Label fx:id="welcomeText" />
+   <Button onAction="#onSearchButtonClick" text="Search" />
    <HBox prefHeight="100.0" prefWidth="200.0" />
 </VBox>
