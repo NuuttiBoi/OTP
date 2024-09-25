@@ -7,7 +7,6 @@ package com.example.projectdemo.controller;
 import com.example.projectdemo.model.Car;
 import com.example.projectdemo.model.Location;
 import com.example.projectdemo.model.LocationDAO;
-import com.example.projectdemo.view.Gui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -47,7 +46,7 @@ public class HomeController {
     private void openScene1(Location selectedLocation) throws IOException{
         Stage scene1 = new Stage();
         scene1.setTitle("scene1");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/Scene1.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Scene1.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
         Controller controller = fxmlLoader.getController();  // Make sure to import your controller class
 

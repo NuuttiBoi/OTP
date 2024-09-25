@@ -57,7 +57,7 @@
                   </ImageView>
                   <ImageView fx:id="passicon" fitHeight="42.0" fitWidth="31.0" layoutX="12.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" style="-fx-smooth: 90;">
                      <image>
-                        <Image url="@passicon.png" />
+                        <Image url="@../passicon.png" />
                      </image>
                   </ImageView>
                </children>

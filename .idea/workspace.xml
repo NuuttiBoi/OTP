@@ -4,9 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="Filtterit korjaus">
+    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="Autot tulee esille">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/CarPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/CarPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/RentCar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/RentCar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Scene1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Scene1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Start.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/ford_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/ford_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/golf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carPhotos/golf.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/honda_logo.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/honda_logo.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/nissan_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/nissan_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/toyota_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/toyota_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/vw_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/vw_logo.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +41,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "faranim"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/NuuttiBoi/OTP.git",
+    "accountId": "14895b64-3a84-4996-9e66-ef4083f72cd0"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -79,6 +105,9 @@
       <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\java\com\example\projectdemo\controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carPhotos" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos" />
       <recent name="$PROJECT_DIR$/src/main/resources/com/example/projectdemo" />
       <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\resources\com\example\projectdemo" />
     </key>
@@ -134,6 +163,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -155,6 +192,7 @@
       <workItem from="1726663191451" duration="4907000" />
       <workItem from="1726749910258" duration="4980000" />
       <workItem from="1726772942060" duration="4239000" />
+      <workItem from="1727280703169" duration="3141000" />
     </task>
     <task id="LOCAL−00001" summary="init">
       <option name="closed" value="true" />
@@ -228,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727278652677</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Autot tulee esille">
+      <option name="closed" value="true" />
+      <created>1727279455903</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1727279455903</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +290,7 @@
     <MESSAGE value="Aloitussivua edistetty" />
     <MESSAGE value="Auto logot ja filtterit" />
     <MESSAGE value="Filtterit korjaus" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filtterit korjaus" />
+    <MESSAGE value="Autot tulee esille" />
+    <option name="LAST_COMMIT_MESSAGE" value="Autot tulee esille" />
   </component>
 </project>

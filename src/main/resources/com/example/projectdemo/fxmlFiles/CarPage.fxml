@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="scene2_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.CarPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="../scene2_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.CarPageController">
    <children>
       <ListView fx:id="carLocationList" layoutX="400.0" prefHeight="200.0" prefWidth="200.0" />
       <VBox layoutX="11.0" layoutY="38.0" maxWidth="251.0" prefHeight="316.0" prefWidth="251.0">

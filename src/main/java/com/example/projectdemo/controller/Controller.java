@@ -94,10 +94,10 @@ public class Controller {
 
             //Circles
             // Set images inside circles
-            Image toyotaLogo = new Image(getClass().getResource("/com/example/projectdemo/toyota_logo.png").toExternalForm());
-            Image vwLogo = new Image(getClass().getResource("/com/example/projectdemo/vw_logo.png").toExternalForm());
-            Image nissanLogo = new Image(getClass().getResource("/com/example/projectdemo/nissan_logo.png").toExternalForm());
-            Image fordLogo = new Image(getClass().getResource("/com/example/projectdemo/ford_logo.png").toExternalForm());
+            Image toyotaLogo = new Image(getClass().getResource("/com/example/projectdemo/carLogos/toyota_logo.png").toExternalForm());
+            Image vwLogo = new Image(getClass().getResource("/com/example/projectdemo/carLogos/vw_logo.png").toExternalForm());
+            Image nissanLogo = new Image(getClass().getResource("/com/example/projectdemo/carLogos/nissan_logo.png").toExternalForm());
+            Image fordLogo = new Image(getClass().getResource("/com/example/projectdemo/carLogos/ford_logo.png").toExternalForm());
             Image hondaLogo = new Image(getClass().getResource("/com/example/projectdemo/honda_logo.png").toExternalForm());
 
 
@@ -186,7 +186,7 @@ public class Controller {
         newWindow.setTitle("Car Details");
 
         // Load the FXML file
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/CarPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/CarPage.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
 
         CarPageController controller = fxmlLoader.getController();  // Make sure to import your controller class
@@ -195,9 +195,9 @@ public class Controller {
         // Load the image and pass it to the controller
         Image image;
         if(Objects.equals(selectedCar.getMake(),"Toyota")){
-            image = new Image(getClass().getResource("/com/example/projectdemo/corolla.png").toString());
+            image = new Image(getClass().getResource("/com/example/projectdemo/carPhotos/golf.jpg").toString());
         } else {
-            image = new Image(getClass().getResource("/com/example/projectdemo/golf.jpg").toString());
+            image = new Image(getClass().getResource("/com/example/projectdemo/carPhotos/golf.jpg").toString());
         }
         controller.setCarDetails(image, selectedCar);
 

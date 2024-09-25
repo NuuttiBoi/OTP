@@ -46,7 +46,7 @@ public class CarPageController {
     @FXML
     private void handleRentCarClick() throws IOException {
         // Load the FXML file for the form
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/RentCar.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/RentCar.fxml"));
         Parent formLayout = fxmlLoader.load();
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
