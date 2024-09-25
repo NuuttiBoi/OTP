@@ -1,40 +1,42 @@
 package com.example.projectdemo.model;
 
 public class Car {
-    private String make, model;
+    private String id, make, model, licensePlate;
     private int year;
-    private String id, location;
     private boolean isAvailable;
-    public Car(String id,String make, String model, int year, String location){
+    private double price;
+
+    public Car(String id, String make, String model, int year, String licensePlate, boolean isAvailable, double price) {
+        this.id = id;
         this.make = make;
         this.model = model;
         this.year = year;
-        this.id = id;
-        this.location = location;
+        this.licensePlate = licensePlate;
+        this.isAvailable = isAvailable;
+        this.price = price;
     }
 
-    public String getMake(){
-        return this.make;
-    }
-    public String getModel(){
-        return this.model;
-    }
-    public int getYear(){return this.year;}
-    public String getId(){return this.id;}
+    // Getters for all fields
+    public String getMake() { return make; }
+    public String getModel() { return model; }
+    public int getYear() { return year; }
+    public String getId() { return id; }
+    public String getLicensePlate() { return licensePlate; }
+    public boolean isAvailable() { return isAvailable; }
+    public double getPrice() { return price; }
 
     @Override
     public String toString() {
         return make + " " + model + " (" + year + ")";
     }
 
-
-    // varmistaa ettei HashSettiin tule duplikaatteja
     @Override
     public boolean equals(Object obj) {
         return !super.equals(obj);
     }
+
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return getId().hashCode();
     }
 }

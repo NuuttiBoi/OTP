@@ -27,10 +27,10 @@ public class CarDAO  {
     }
     public static void main(String[] args) {
     }
-    public List<Car> getList(){
-        String url = "jdbc:mysql://localhost:3307/cardb";
+    public List<Car> getList() {
+        String url = "jdbc:mysql://localhost:3306/cardb"; // Ensure correct port
         String user = "root";
-        String password = "12345";
+        String password = "nimohanna";
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             Statement stmt = conn.createStatement();
@@ -38,28 +38,36 @@ public class CarDAO  {
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
-                Car car = new Car(rs.getString("CarID"),rs.getString("Make"),rs.getString("Model"),
-                        rs.getInt("Year"), rs.getString("LocationID"));
+                Car car = new Car(
+                        rs.getString("CarID"),
+                        rs.getString("Make"),
+                        rs.getString("Model"),
+                        rs.getInt("Year"),
+                        rs.getString("LicensePlate"), // Add this if you modify the Car class
+                        rs.getInt("Availability") == 1, // Assuming you change to boolean
+                        rs.getDouble("Price") // Assuming you add this to the Car class
+                );
                 System.out.println("Car year: " + rs.getInt("Year"));
                 System.out.println("Car maker: " + rs.getString("Make"));
                 System.out.println("Car model: " + rs.getString("Model"));
                 carList.add(car);
-                // Continue retrieving other fields...
                 System.out.println();
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        } return carList;
+        }
+        return carList;
     }
+
 
 
 
 
     // Autot pitäisi hakea siis sijainnin mukaan, tässä aloitettu siihen uutta metodai
     public List<Car> getCarsByLocation(String locationID) {
-        String url = "jdbc:mysql://localhost:3306/cardb";
+        String url = "jdbc:mysql://localhost:3306/cardb"; // Ensure correct port
         String user = "root";
-        String password = "cee5tuyo";
+        String password = "nimohanna"; // Ensure correct password
         List<Car> carsByLocation = new ArrayList<>();
 
         String query = "SELECT * FROM vehicles WHERE LocationID = ?";
@@ -72,8 +80,15 @@ public class CarDAO  {
 
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Car car = new Car(rs.getString("CarID"), rs.getString("Make"), rs.getString("Model"),
-                        rs.getInt("Year"), rs.getString("LocationID"));
+                Car car = new Car(
+                        rs.getString("CarID"),
+                        rs.getString("Make"),
+                        rs.getString("Model"),
+                        rs.getInt("Year"),
+                        rs.getString("LicensePlate"), // Add this if you modify the Car class
+                        rs.getInt("Availability") == 1, // Assuming you change to boolean
+                        rs.getDouble("Price") // Assuming you add this to the Car class
+                );
                 carsByLocation.add(car);
             }
         } catch (SQLException e) {

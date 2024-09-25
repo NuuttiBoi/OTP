@@ -16,11 +16,11 @@ public class LocationDAO {
     public List<Location> getLocationList() {
         String url = "jdbc:mysql://localhost:3306/cardb";
         String user = "root";
-        String password = "cee5tuyo";
+        String password = "nimohanna";
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             Statement stmt = conn.createStatement();
-            String query = "SELECT * FROM rental_locations";
+            String query = "SELECT * FROM rentallocation";
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()){
                 Location location = new Location(rs.getString("LocationID"),

@@ -19,7 +19,7 @@ public class RentCarFormController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Rental confirmed");
         alert.showAndWait();
-        /*
+
         String name = nameField.getText();
         String email = emailField.getText();
         String address = addressField.getText();
@@ -33,6 +33,6 @@ public class RentCarFormController {
             System.out.println("Address: " + address);
             // Process the submitted information here (e.g., save to database)
         }
-         */
+
     }
 }

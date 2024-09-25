@@ -63,7 +63,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.32</version> <!-- Use the latest version -->
         </dependency>
-
     </dependencies>
 
     <build>
@@ -93,6 +92,12 @@
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
+                            <systemProperties>
+                                <systemProperty>
+                                    <key>apple.awt.applicationSupportsSecureRestorableState</key>
+                                    <value>false</value>
+                                 </systemProperty>
+                            </systemProperties>
                         </configuration>
                     </execution>
                 </executions>

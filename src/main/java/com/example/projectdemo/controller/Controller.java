@@ -9,6 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.ScrollBar;
+import javafx.scene.layout.HBox;
+import javafx.scene.shape.Circle;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
@@ -26,6 +31,21 @@ public class Controller {
     private Label welcomeText;
     @FXML
     private ImageView carPic;
+    @FXML
+    private Circle ekaPallo;
+    @FXML
+    private Circle tokaPallo;
+    @FXML
+    private Circle kolmasPallo;
+    @FXML
+    private Circle neljasPallo;
+    @FXML
+    private Hyperlink seeAllLink;
+    @FXML
+    private ScrollBar scrollbar;
+
+    @FXML
+    private HBox pallot;
 
 
     public void loginPage() throws IOException {
@@ -43,7 +63,7 @@ public class Controller {
     public void onHelloButtonClick() {
         try {
             // Load the FXML file for the second scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CarPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
             // Create a new stage for the second scene
             Stage stage = new Stage();
             stage.setScene(new Scene(loader.load()));
@@ -57,10 +77,6 @@ public class Controller {
 
     }
 
-    public void setCars(List<Car> carsList){
-        carList.getItems().addAll(carsList);
-    }
-
     public void initialize(){
         try{
             list = car.getList();
@@ -68,9 +84,42 @@ public class Controller {
             carList.getItems().addAll(list);
             System.out.println(carList);
             System.out.println(car.getList());
+
+            //Circles
+            // Set images inside circles
+            Image toyotaLogo = new Image(getClass().getResource("/com/example/projectdemo/toyota_logo.png").toExternalForm());
+            Image vwLogo = new Image(getClass().getResource("/com/example/projectdemo/vw_logo.png").toExternalForm());
+            Image nissanLogo = new Image(getClass().getResource("/com/example/projectdemo/nissan_logo.png").toExternalForm());
+            Image fordLogo = new Image(getClass().getResource("/com/example/projectdemo/ford_logo.png").toExternalForm());
+
+
+            // Fill the circles with the respective car logos
+            ekaPallo.setFill(new ImagePattern(toyotaLogo));
+            tokaPallo.setFill(new ImagePattern(vwLogo));
+            kolmasPallo.setFill(new ImagePattern(nissanLogo));
+            neljasPallo.setFill(new ImagePattern(fordLogo));
+
+            // Set scrollbar values based on the width of the HBox and VBox
+            scrollbar.setMin(0);
+            System.out.println("HBox width: " + pallot.getWidth());  // Debugging
+            System.out.println("HBox preferred width: " + pallot.getPrefWidth());  // Debugging
+            scrollbar.setMax(pallot.getPrefWidth() - 300);
+
+            // Add a listener to the ScrollBar to update the HBox's layoutX property
+            scrollbar.valueProperty().addListener((observable, oldValue, newValue) -> {
+                pallot.setLayoutX(-newValue.doubleValue());  // Move HBox left/right based on scrollbar
+            });
+
+
+
         } catch (Exception e){
             e.printStackTrace();
         }
+
+        seeAllLink.setOnAction(event -> {
+            carList.getItems().clear();
+            carList.getItems().addAll(list); // Show all cars
+        });
 
         // Set event listener for mouse clicks on list items
         carList.setOnMouseClicked(event -> {
@@ -84,17 +133,51 @@ public class Controller {
                 }
             }
         });
+        // Event handling for circle clicks
+        ekaPallo.setOnMouseClicked(event -> {
+            filterCarsByModel("Toyota");
+        });
+
+        tokaPallo.setOnMouseClicked(event -> {
+            filterCarsByModel("Volkswagen");
+        });
+
+        kolmasPallo.setOnMouseClicked(event -> {
+            filterCarsByModel("Nissan");
+        });
+
+        neljasPallo.setOnMouseClicked(event -> {
+            filterCarsByModel("Ford");
+        });
+    }
+
+    // Method to filter cars based on the model (brand)
+    private void filterCarsByModel(String model) {
+        // Clear the current items in the ListView
+        carList.getItems().clear();
+
+        // Filter the cars by the given model (case-insensitive)
+        List<Car> filteredCars = new ArrayList<>();
+        for (Car car : list) {
+            if (car.getMake().equalsIgnoreCase(model)) {
+                filteredCars.add(car);
+            }
+        }
+
+        // Add the filtered cars to the ListView
+        carList.getItems().addAll(filteredCars);
     }
 
 
     // Method to open a new window with item details
     private void openNewWindow(Car selectedCar) throws IOException {
         // Create a new stage (window)
+        // Create a new stage (window)
         Stage newWindow = new Stage();
         newWindow.setTitle("Car Details");
 
         // Load the FXML file
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/CarPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/Scene2.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
 
         CarPageController controller = fxmlLoader.getController();  // Make sure to import your controller class
@@ -123,28 +206,16 @@ public class Controller {
 
     public void onSearchButtonClick() {
         String searchText = searchField.getText().toLowerCase();
-
-        // Clear the ListView before displaying new search results
+        // Filter the list based on the search text
         carList.getItems().clear();
-
-        // If the search text is empty, display the full list
-        if (searchText.isEmpty()) {
-            carList.getItems().addAll(list);
-            return;  // Exit the method
-        }
-
-        HashSet<Car> filteredList = new HashSet<>();
+        Set<Car> filteredSet = new HashSet<>(); // Using a Set to avoid duplicates
         for (Car car : list) {
-            if ((car.getMake().toLowerCase().contains(searchText) || car.getModel().toLowerCase().contains(searchText))) {
-                filteredList.add(car);
-                System.out.println(car.getId());
-                System.out.println(list);
-                System.out.println("car added");
+            if (car.getMake().toLowerCase().contains(searchText) || car.getModel().toLowerCase().contains(searchText)) {
+                filteredSet.add(car);
             }
         }
-
         // Update the ListView to display only the filtered cars
-        carList.getItems().addAll(filteredList);
+        carList.getItems().addAll(filteredSet);
     }
 
 

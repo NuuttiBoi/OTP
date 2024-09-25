@@ -16,8 +16,8 @@ public class Gui extends Application implements IGui{
     }
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Gui.class.getResource("/com/example/projectdemo/Start.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        FXMLLoader fxmlLoader = new FXMLLoader(Gui.class.getResource("/com/example/projectdemo/Scene1.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 300, 600);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         stage.setTitle("Car Rental");
         stage.setScene(scene);

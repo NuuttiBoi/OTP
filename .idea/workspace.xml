@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="LOGNIN">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" afterDir="false" />
-=======
     <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="Aloitussivua edistetty">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LocationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LocationDAO.java" afterDir="false" />
->>>>>>> e87e364b71d0dfb035c5f589c223d849036164da
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +22,6 @@
         <option value="Interface" />
         <option value="CSS File" />
         <option value="FxmlFile" />
-<<<<<<< HEAD
-        <option value="CSS File" />
-=======
->>>>>>> e87e364b71d0dfb035c5f589c223d849036164da
         <option value="Class" />
       </list>
     </option>
@@ -39,18 +29,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;nahalasif1&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/NuuttiBoi/OTP.git&quot;,
-    &quot;accountId&quot;: &quot;b2187991-87aa-4924-867b-271678d8373a&quot;
-  }
-}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -67,38 +45,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CarDAO.executor": "Run",
-    "Application.Gui.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.LoginController.executor": "Run",
-    "Application.dao.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Maven.ProjectDemo [clean].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/nahalasif/Desktop/OTP/src/main/resources/com/example/projectdemo",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "xpath.settings",
-    "vue.rearranger.settings.migration": "true"
-=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.CarDAO.executor&quot;: &quot;Run&quot;,
@@ -128,22 +74,16 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;xpath.settings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
->>>>>>> e87e364b71d0dfb035c5f589c223d849036164da
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.projectdemo.controller" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/com/example/projectdemo" />
       <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\java\com\example\projectdemo\controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\resources\com\example\projectdemo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.projectdemo.model" />
       <recent name="com.example.projectdemo" />
     </key>
   </component>
@@ -174,19 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.projectdemo.controller.LoginController" />
-      <module name="ProjectDemo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.projectdemo.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="dao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.projectdemo.model.dao" />
       <module name="ProjectDemo" />
@@ -203,19 +130,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Gui" />
-        <item itemvalue="Application.LoginController" />
         <item itemvalue="Application.dao" />
         <item itemvalue="Application.CarDAO" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -233,19 +151,11 @@
       <workItem from="1726493060824" duration="3420000" />
       <workItem from="1726506033040" duration="1612000" />
       <workItem from="1726524901249" duration="3254000" />
-<<<<<<< HEAD
-      <workItem from="1726556935580" duration="3207000" />
-      <workItem from="1726564803462" duration="8349000" />
-      <workItem from="1727076667596" duration="1008000" />
-      <workItem from="1727079047254" duration="2007000" />
-      <workItem from="1727088040387" duration="12565000" />
-=======
       <workItem from="1726556935580" duration="4313000" />
       <workItem from="1726578788157" duration="14000" />
       <workItem from="1726663191451" duration="4907000" />
       <workItem from="1726749910258" duration="4980000" />
       <workItem from="1726772942060" duration="4239000" />
->>>>>>> e87e364b71d0dfb035c5f589c223d849036164da
     </task>
     <task id="LOCAL−00001" summary="init">
       <option name="closed" value="true" />
@@ -254,25 +164,6 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1726321539048</updated>
     </task>
-<<<<<<< HEAD
-    <task id="LOCAL-00002" summary="init">
-      <option name="closed" value="true" />
-      <created>1727185999905</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1727185999905</updated>
-    </task>
-    <task id="LOCAL-00003" summary="LOGNIN">
-      <option name="closed" value="true" />
-      <created>1727186430134</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1727186430134</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
-=======
     <task id="LOCAL−00002" summary="updates">
       <option name="closed" value="true" />
       <created>1726560431933</created>
@@ -323,7 +214,6 @@
       <updated>1726777352323</updated>
     </task>
     <option name="localTasksCounter" value="9" />
->>>>>>> e87e364b71d0dfb035c5f589c223d849036164da
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,10 +221,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-<<<<<<< HEAD
-    <MESSAGE value="LOGNIN" />
-    <option name="LAST_COMMIT_MESSAGE" value="LOGNIN" />
-=======
     <MESSAGE value="updates" />
     <MESSAGE value="aloitettua aloitusnäyttöä, kommentteja" />
     <MESSAGE value="Some refactors" />
@@ -342,6 +228,5 @@
     <MESSAGE value="location, locationdao classes added" />
     <MESSAGE value="Aloitussivua edistetty" />
     <option name="LAST_COMMIT_MESSAGE" value="Aloitussivua edistetty" />
->>>>>>> e87e364b71d0dfb035c5f589c223d849036164da
   </component>
 </project>
