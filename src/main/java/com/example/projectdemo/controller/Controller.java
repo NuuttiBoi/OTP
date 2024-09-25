@@ -64,7 +64,7 @@ public class Controller {
     public void onHelloButtonClick() {
         try {
             // Load the FXML file for the second scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CarPage.fxml"));
             // Create a new stage for the second scene
             Stage stage = new Stage();
             stage.setScene(new Scene(loader.load()));
@@ -186,7 +186,7 @@ public class Controller {
         newWindow.setTitle("Car Details");
 
         // Load the FXML file
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/Scene2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/CarPage.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
 
         CarPageController controller = fxmlLoader.getController();  // Make sure to import your controller class
