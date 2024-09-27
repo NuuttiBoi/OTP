@@ -61,26 +61,12 @@ public class Controller {
     }
 
 
-    public void onHelloButtonClick() {
-        try {
-            // Load the FXML file for the second scene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CarPage.fxml"));
-            // Create a new stage for the second scene
-            Stage stage = new Stage();
-            stage.setScene(new Scene(loader.load()));
-            // Set the title for the second scene
-            stage.setTitle("Scene 2");
-            // Show the second scene
-            stage.show();
-        } catch (Exception e){
-            e.printStackTrace();
-        }
 
-    }
-
-    public void initialize(){
+    public void initialize(String locationID){
         try{
-            list = car.getList();
+            //list = car.getList();
+            // hakee autot tietystä sijainnista
+            list = car.getCarsByLocation(locationID);
             carList.getItems().clear();
             carList.getItems().addAll(list);
             System.out.println(carList);

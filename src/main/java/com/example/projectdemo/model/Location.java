@@ -20,6 +20,7 @@ public class Location {
     public String getAddress(){
         return this.address;
     }
+    public String getId(){return this.id;}
     @Override public String toString(){
         return name + " " + address;
     }

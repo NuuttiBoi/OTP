@@ -5,8 +5,8 @@ public class Car {
     private int year;
     private boolean isAvailable;
     private double price;
-
-    public Car(String id, String make, String model, int year, String licensePlate, boolean isAvailable, double price) {
+    private String location;
+    public Car(String id, String make, String model, int year, String licensePlate, boolean isAvailable, double price, String location) {
         this.id = id;
         this.make = make;
         this.model = model;
@@ -14,6 +14,7 @@ public class Car {
         this.licensePlate = licensePlate;
         this.isAvailable = isAvailable;
         this.price = price;
+        this.location = location;
     }
 
     // Getters for all fields

@@ -49,6 +49,7 @@ public class HomeController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Scene1.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
         Controller controller = fxmlLoader.getController();  // Make sure to import your controller class
+        controller.initialize(selectedLocation.getId());
 
         // Create the scene and set it to the stage
         Scene scene = new Scene(layout, 600, 500);

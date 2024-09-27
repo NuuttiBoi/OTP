@@ -30,7 +30,7 @@ public class CarDAO  {
     public List<Car> getList() {
         String url = "jdbc:mysql://localhost:3306/cardb"; // Ensure correct port
         String user = "root";
-        String password = "nimohanna";
+        String password = "cee5tuyo";
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             Statement stmt = conn.createStatement();
@@ -45,7 +45,8 @@ public class CarDAO  {
                         rs.getInt("Year"),
                         rs.getString("LicensePlate"), // Add this if you modify the Car class
                         rs.getInt("Availability") == 1, // Assuming you change to boolean
-                        rs.getDouble("Price") // Assuming you add this to the Car class
+                        rs.getDouble("Price") ,// Assuming you add this to the Car class
+                        rs.getString("LocationID")
                 );
                 System.out.println("Car year: " + rs.getInt("Year"));
                 System.out.println("Car maker: " + rs.getString("Make"));
@@ -67,7 +68,7 @@ public class CarDAO  {
     public List<Car> getCarsByLocation(String locationID) {
         String url = "jdbc:mysql://localhost:3306/cardb"; // Ensure correct port
         String user = "root";
-        String password = "nimohanna"; // Ensure correct password
+        String password = "cee5tuyo"; // Ensure correct password
         List<Car> carsByLocation = new ArrayList<>();
 
         String query = "SELECT * FROM vehicles WHERE LocationID = ?";
@@ -87,7 +88,8 @@ public class CarDAO  {
                         rs.getInt("Year"),
                         rs.getString("LicensePlate"), // Add this if you modify the Car class
                         rs.getInt("Availability") == 1, // Assuming you change to boolean
-                        rs.getDouble("Price") // Assuming you add this to the Car class
+                        rs.getDouble("Price"), // Assuming you add this to the Car class
+                        rs.getString("LocationID")
                 );
                 carsByLocation.add(car);
             }

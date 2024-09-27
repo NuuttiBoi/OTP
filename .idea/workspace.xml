@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="Autot tulee esille">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LocationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LocationDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/CarPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/CarPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/RentCar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/RentCar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Scene1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Scene1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/Start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Start.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/ford_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/ford_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/golf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carPhotos/golf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/honda_logo.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/honda_logo.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/nissan_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/nissan_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/toyota_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/toyota_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/vw_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/carLogos/vw_logo.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,18 +34,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "faranim"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;faranim&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/NuuttiBoi/OTP.git",
-    "accountId": "14895b64-3a84-4996-9e66-ef4083f72cd0"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NuuttiBoi/OTP.git&quot;,
+    &quot;accountId&quot;: &quot;14895b64-3a84-4996-9e66-ef4083f72cd0&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
