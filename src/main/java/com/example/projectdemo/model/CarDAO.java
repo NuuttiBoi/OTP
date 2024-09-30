@@ -28,11 +28,9 @@ public class CarDAO  {
     public static void main(String[] args) {
     }
     public List<Car> getList() {
-        String url = "jdbc:mysql://localhost:3306/cardb"; // Ensure correct port
-        String user = "root";
-        String password = "cee5tuyo";
-
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+        ConnectDb connectDb = new ConnectDb();
+        Connection conn = connectDb.connect();
+        try  {
             Statement stmt = conn.createStatement();
             String query = "SELECT * FROM vehicles";
             ResultSet rs = stmt.executeQuery(query);
@@ -64,19 +62,18 @@ public class CarDAO  {
 
 
 
-    // Autot pitäisi hakea siis sijainnin mukaan, tässä aloitettu siihen uutta metodai
+    // Autot haetaan käyttäjän valitseman sijainnin perusteella
     public List<Car> getCarsByLocation(String locationID) {
-        String url = "jdbc:mysql://localhost:3306/cardb"; // Ensure correct port
-        String user = "root";
-        String password = "cee5tuyo"; // Ensure correct password
         List<Car> carsByLocation = new ArrayList<>();
-
         String query = "SELECT * FROM vehicles WHERE LocationID = ?";
 
-        try (Connection conn = DriverManager.getConnection(url, user, password);
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+        ConnectDb connectDb = new ConnectDb();
+        Connection conn = connectDb.connect();
 
-            // Set the LocationID in the query
+        try{
+             PreparedStatement stmt = conn.prepareStatement(query);
+
+            // asettaa locationID:n queryy toiseksi parametriksi
             stmt.setString(1, locationID);
 
             ResultSet rs = stmt.executeQuery();

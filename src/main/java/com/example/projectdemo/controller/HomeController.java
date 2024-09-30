@@ -10,6 +10,7 @@ import com.example.projectdemo.model.LocationDAO;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -20,6 +21,7 @@ import java.util.List;
 
 public class HomeController {
     public ListView<Location> locationList;
+    public Button signInButton;
     private List<Location> locations = new ArrayList<>();
     private LocationDAO locationDAO = new LocationDAO("locationDao");
     private List<Car> carList = new ArrayList<Car>();
@@ -28,7 +30,6 @@ public class HomeController {
     public void initialize(){
         locations = locationDAO.getLocationList();
         locationList.getItems().addAll(locations);
-
         // Set event listener for mouse clicks on list items
         locationList.setOnMouseClicked(event -> {
             Location selectedLocation = locationList.getSelectionModel().getSelectedItem();
@@ -59,6 +60,15 @@ public class HomeController {
         // Set the new window as a modal window
         scene1.initModality(Modality.APPLICATION_MODAL);
         scene1.showAndWait();  // Show the window and wait for it to be closed
+    }
+
+    public void onSignInButtonClicked() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/login.fxml"));
+        Parent layout = fxmlLoader.load();  // Load the FXML layout
+        Scene scene = new Scene(layout,600,600);
+        Stage login = new Stage();
+        login.setScene(scene);
+        signInButton.setOnMouseClicked(event -> login.showAndWait());
     }
 
     // Käyttäjä valitsee täällä sijainnin, jonka perusteella tulisi avata ikkuna,

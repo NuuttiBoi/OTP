@@ -2,6 +2,7 @@ package com.example.projectdemo.controller;
 
 import com.example.projectdemo.model.Car;
 import com.example.projectdemo.model.CarDAO;
+import com.example.projectdemo.model.ConnectDb;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -150,7 +151,6 @@ public class Controller {
     private void filterCarsByModel(String model) {
         // Clear the current items in the ListView
         carList.getItems().clear();
-
         // Filter the cars by the given model (case-insensitive)
         List<Car> filteredCars = new ArrayList<>();
         for (Car car : list) {
