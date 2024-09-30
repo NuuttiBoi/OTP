@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.*;
 import java.util.*;
 
 public class Controller {
@@ -134,6 +135,8 @@ public class Controller {
                     openNewWindow(selectedCar);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
                 }
             }
         });
@@ -179,7 +182,7 @@ public class Controller {
 
 
     // Method to open a new window with item details
-    private void openNewWindow(Car selectedCar) throws IOException {
+    private void openNewWindow(Car selectedCar) throws IOException, SQLException {
         // Create a new stage (window)
         // Create a new stage (window)
         Stage newWindow = new Stage();
@@ -193,12 +196,25 @@ public class Controller {
 
 
         // Load the image and pass it to the controller
-        Image image;
-        if(Objects.equals(selectedCar.getMake(),"Toyota")){
-            image = new Image(getClass().getResource("/com/example/projectdemo/carPhotos/golf.jpg").toString());
-        } else {
-            image = new Image(getClass().getResource("/com/example/projectdemo/carPhotos/golf.jpg").toString());
+        Image image = null;
+
+        ConnectDb connectDb = new ConnectDb();
+        Connection conn = connectDb.connect();
+
+        String query = "SELECT image FROM vehicles WHERE CarID = ?";
+
+        try{
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, selectedCar.getId());
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                image = new Image(resultSet.getString("image"));
+            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
+
+
         controller.setCarDetails(image, selectedCar);
 
 
