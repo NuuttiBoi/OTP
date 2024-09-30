@@ -24,25 +24,23 @@ public class CarPageController {
     public Text carDetailsText;
     public ListView carLocationList;
     @FXML
-    private ImageView carPic;  // Make sure this fx:id matches the FXML
+    private ImageView carPic;
     @FXML
-    private Label carLabel;  // Assuming there's a Label for the selected car
+    private Label carLabel;
     @FXML
     private Button backButton;
     private boolean isSignedIn = true;
-    // Method to set the car details dynamically
+
     public void setCarDetails(Image carImage, Car selectedCar) {
-        carPic.setImage(carImage);  // Set the car image in the ImageView
+        carPic.setImage(carImage);
         modelText.setText(selectedCar.getMake() + " " +  selectedCar.getModel());
         carDetailsText.setText(selectedCar.getModel() + " " + selectedCar.getYear());
     }
     public void onClick(){
-        // Get the current stage (window) and close it
         Stage stage = (Stage) carPic.getScene().getWindow();
         stage.close();
     }
 
-    // This method will be called when "Rent Car" button is clicked
     @FXML
     private void handleRentCarClick() throws IOException {
         // Load the FXML file for the form

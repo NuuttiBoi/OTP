@@ -21,6 +21,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
 public class Controller {
@@ -61,6 +62,14 @@ public class Controller {
         stage.show();
     }
 
+    private Image loadImage(String filename) throws IOException {
+        try (InputStream is = getClass().getResourceAsStream(filename)) {
+            if (is == null) {
+                throw new IOException("InputStream is invalid for filename " + filename);
+            }
+            return new Image(is);
+        }
+    }
 
 
     public void initialize(String locationID){
@@ -81,11 +90,11 @@ public class Controller {
 
             //Circles
             // Set images inside circles
-            Image toyotaLogo = new Image(getClass().getResource("/com/example/projectdemo/carLogos/toyota_logo.png").toExternalForm());
-            Image vwLogo = new Image(getClass().getResource("/com/example/projectdemo/carLogos/vw_logo.png").toExternalForm());
-            Image nissanLogo = new Image(getClass().getResource("/com/example/projectdemo/carLogos/nissan_logo.png").toExternalForm());
-            Image fordLogo = new Image(getClass().getResource("/com/example/projectdemo/carLogos/ford_logo.png").toExternalForm());
-            Image hondaLogo = new Image(getClass().getResource("/com/example/projectdemo/honda_logo.png").toExternalForm());
+            Image toyotaLogo = loadImage("/com/example/projectdemo/carLogos/toyota_logo.png");
+            Image nissanLogo = loadImage("/com/example/projectdemo/carLogos/nissan_logo.png");
+            Image fordLogo = loadImage("/com/example/projectdemo/carLogos/ford_logo.png");
+            Image hondaLogo = loadImage("/com/example/projectdemo/carLogos/honda_logo.png");
+            Image vwLogo = loadImage("/com/example/projectdemo/carLogos/vw_logo.png");
 
 
             // Fill the circles with the respective car logos
@@ -94,6 +103,8 @@ public class Controller {
             kolmasPallo.setFill(new ImagePattern(nissanLogo));
             neljasPallo.setFill(new ImagePattern(fordLogo));
             viidesPallo.setFill(new ImagePattern(hondaLogo));
+
+
 
             // Set up a listener for the scrollbar's value property
             scrollbar.valueProperty().addListener((obs, oldVal, newVal) -> {
@@ -108,9 +119,10 @@ public class Controller {
             e.printStackTrace();
         }
 
+        // näyttää kaikki autot
         seeAllLink.setOnAction(event -> {
             carList.getItems().clear();
-            carList.getItems().addAll(list); // Show all cars
+            carList.getItems().addAll(list);
         });
 
         // Set event listener for mouse clicks on list items
@@ -146,6 +158,8 @@ public class Controller {
             filterCarsByModel("Honda");
         });
     }
+
+
 
     // Method to filter cars based on the model (brand)
     private void filterCarsByModel(String model) {

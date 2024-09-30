@@ -35,12 +35,11 @@
    <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
       <HBox fx:id="pallot" spacing="10.0">
          <children>
-            <Circle fx:id="ekaPallo" fill="#f8fafc26" radius="20.0" stroke="#949292" strokeType="INSIDE" />
+            <Circle fx:id="ekaPallo"  radius="20.0" stroke="#949292" strokeType="INSIDE" />
             <Circle fx:id="tokaPallo" fill="#f1f6f826" radius="20.0" stroke="#949292" strokeType="INSIDE" />
             <Circle fx:id="kolmasPallo" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="neljasPallo" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
             <Circle fx:id="viidesPallo" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </HBox>
    </ScrollPane>
