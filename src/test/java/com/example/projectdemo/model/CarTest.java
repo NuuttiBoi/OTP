@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -44,11 +45,11 @@ class CarTest {
     @Test
     public void testSetRented() throws SQLException {
         LocalDateTime futureDate = LocalDateTime.now().plusDays(1);
-        car.setRented(futureDate);
+        car.setRented(LocalDate.from(futureDate));
         assertFalse(car.isAvailable());
 
         // Simulating the time has passed
-        car.setRented(LocalDateTime.now());
+        car.setRented(LocalDate.from(LocalDateTime.now()));
         assertTrue(car.isAvailable());
     }
 

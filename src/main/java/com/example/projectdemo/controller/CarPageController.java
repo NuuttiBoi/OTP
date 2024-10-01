@@ -64,7 +64,7 @@ public class CarPageController {
             alert.setContentText("You have to sign in/register in order to rent a car");
             alert.showAndWait();
         }
-        car.setRented(returnDate.atStartOfDay());
+        car.setRented(LocalDate.from(returnDate.atStartOfDay()));
 
         /*
         // Create a new stage (window) for the form

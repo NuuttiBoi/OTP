@@ -111,11 +111,13 @@ public class Controller {
 
 
             // Set up a listener for the scrollbar's value property
-            scrollbar.valueProperty().addListener((obs, oldVal, newVal) -> {
+            /*scrollbar.valueProperty().addListener((obs, oldVal, newVal) -> {
                 // Calculate the new Y position based on the scrollbar's value
                 System.out.println("Scrollbar Value Changed: " + newVal);
                 pallot.setLayoutY(-newVal.doubleValue()); // Move the HBox in the opposite direction of the scrollbar
             });
+
+             */
 
 
 
@@ -238,6 +240,11 @@ public class Controller {
         }
         // Update the ListView to display only the filtered cars
         carList.getItems().addAll(filteredSet);
+    }
+    public void onBackButtonClick(){
+        // Close the current window (stage)
+        Stage stage = (Stage) carList.getScene().getWindow();
+        stage.close();
     }
 
 

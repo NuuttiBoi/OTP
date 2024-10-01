@@ -120,6 +120,24 @@ public class CarDAO  {
         statement.close();
         conn.close();
     }
+    public void setAvailabilityYes(String carId) throws SQLException {
+        System.out.println(carId);
+        String query = "UPDATE vehicles SET Availability = ? WHERE CarID = ?";
+
+        ConnectDb connectDb = new ConnectDb();
+        Connection conn = connectDb.connect();
+
+        PreparedStatement statement = conn.prepareStatement(query);
+        statement.setInt(1,1);
+        statement.setString(2,carId);
+        int rowsUpdated = statement.executeUpdate();
+
+        if (rowsUpdated > 0) {
+            System.out.println("An existing vehicle's availability was updated successfully.");
+        }
+        statement.close();
+        conn.close();
+    }
 
 
 }

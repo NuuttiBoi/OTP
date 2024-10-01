@@ -12,6 +12,7 @@ public class Car {
     private double price;
     String location;
     private LocalDateTime currentDate = LocalDateTime.now();
+    private LocalDate rentalEndDate;
     private CarDAO car = new CarDAO("yhteys");
 
     public Car(String id, String make, String model, int year, String licensePlate, boolean isAvailable, double price,
@@ -30,15 +31,23 @@ public class Car {
     public void setAvailable(boolean selection){
         isAvailable = selection;
     }
-    public void setRented(LocalDateTime date) throws SQLException {
-        while (currentDate.isBefore(date)){
+    public void setRented(LocalDate date) throws SQLException {
+        this.rentalEndDate = date;
+        if (currentDate.isBefore(date.atStartOfDay())){
             isAvailable = false;
             car.setAvailability(id);
         }
-        isAvailable = true;
+    }
+    public void checkAvailability() throws SQLException {
+        // Automatically make the car available if the rental period has ended
+        if (rentalEndDate != null && LocalDateTime.now().isAfter(rentalEndDate.atStartOfDay())) {
+            isAvailable = true; // Mark as available
+            rentalEndDate = null; // Clear the rental end date
+            car.setAvailabilityYes(id); // Update the availability in the database
+        }
     }
 
-    // Getters for all fields
+
     public String getMake() { return make; }
     public String getModel() { return model; }
     public int getYear() { return year; }
