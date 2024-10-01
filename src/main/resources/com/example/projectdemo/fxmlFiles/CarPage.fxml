@@ -20,6 +20,7 @@
                </font>
             </Text>
             <Text fx:id="carDetailsText" strokeType="OUTSIDE" strokeWidth="0.0" text="Car Details" wrappingWidth="512.5367431640625" />
+            <Text fx:id="priceText" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" wrappingWidth="118.13671112060547" />
          </children>
       </VBox>
       <Button fx:id="button1" layoutX="267.0" layoutY="354.0" mnemonicParsing="false" onAction="#handleRentCarClick" text="Rent Car" />

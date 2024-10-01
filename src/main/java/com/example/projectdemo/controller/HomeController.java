@@ -66,7 +66,7 @@ public class HomeController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Scene1.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
         Controller controller = fxmlLoader.getController();  // Make sure to import your controller class
-        controller.initialize(selectedLocation.getId(), returnDate);
+        controller.initialize(selectedLocation.getId(), startDate, returnDate);
 
         // Create the scene and set it to the stage
         Scene scene = new Scene(layout, 600, 500);
@@ -98,6 +98,7 @@ public class HomeController {
     public LocalDate getReturnDate(){
         return this.returnDate;
     }
+    public LocalDate getStartDate(){ return this.startDate; }
 
     // Käyttäjä valitsee täällä sijainnin, jonka perusteella tulisi avata ikkuna,
     // jossa näkyy kyseisessä sijainnissa saatavilla olevat autot.

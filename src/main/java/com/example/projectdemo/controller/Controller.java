@@ -32,6 +32,7 @@ public class Controller {
     private CarDAO car = new CarDAO("Auto");
     List<Car> list = new ArrayList<>();
     private LocalDate returnDate;
+    private LocalDate startDate;
     @FXML
     private Label welcomeText;
     @FXML
@@ -75,7 +76,8 @@ public class Controller {
     }
 
 
-    public void initialize(String locationID, LocalDate returnDate){
+    public void initialize(String locationID, LocalDate startDate, LocalDate returnDate){
+        this.startDate = startDate;
         this.returnDate = returnDate;
         try{
             //list = car.getList();
@@ -214,7 +216,7 @@ public class Controller {
         }
 
 
-        controller.setCarDetails(image, selectedCar, returnDate);
+        controller.setCarDetails(image, selectedCar, startDate, returnDate);
 
 
         // Create the scene and set it to the stage

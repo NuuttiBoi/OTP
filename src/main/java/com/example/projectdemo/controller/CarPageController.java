@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -26,6 +27,8 @@ public class CarPageController {
     public Text carDetailsText;
     public ListView carLocationList;
     @FXML
+    public Text priceText;
+    @FXML
     ImageView carPic;
     @FXML
     private Label carLabel;
@@ -34,13 +37,22 @@ public class CarPageController {
     boolean isSignedIn = true;
     Car car;
     private LocalDate returnDate;
+    private LocalDate startDate;
 
-    public void setCarDetails(Image carImage, Car selectedCar, LocalDate returnDate) {
+    public void setCarDetails(Image carImage, Car selectedCar, LocalDate startDate, LocalDate returnDate) {
         this.returnDate = returnDate;
+        this.startDate = startDate;
         this.car = selectedCar;
         carPic.setImage(carImage);
         modelText.setText(selectedCar.getMake() + " " +  selectedCar.getModel());
         carDetailsText.setText("Year: " + selectedCar.getYear() + " \n Kilometers driven: " + selectedCar.getKm_driven());
+
+        long differenceInDays = ChronoUnit.DAYS.between(startDate, returnDate);
+        int totalDifference = (int) differenceInDays;
+        double totalPrice = selectedCar.getPrice() * totalDifference;
+        System.out.println("Difference in days: " + totalDifference);
+
+        priceText.setText("Price for " + totalDifference + " days: " + totalPrice + " euro");
     }
     public void onClick(){
         Stage stage = (Stage) carPic.getScene().getWindow();
