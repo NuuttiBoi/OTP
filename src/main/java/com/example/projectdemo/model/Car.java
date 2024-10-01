@@ -57,7 +57,7 @@ public class Car {
     public boolean isAvailable() { return isAvailable; }
     public double getPrice() { return price; }
     public boolean getIsAvailable(){return isAvailable; }
-
+    public String getLocation(){return location; }
     @Override
     public String toString() {
         return make + " " + model + " (" + year + ")";

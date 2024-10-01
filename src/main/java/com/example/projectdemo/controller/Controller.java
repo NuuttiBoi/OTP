@@ -7,11 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.ScrollBar;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.ImagePattern;
@@ -31,8 +27,8 @@ public class Controller {
     public TextField searchField;
     private CarDAO car = new CarDAO("Auto");
     List<Car> list = new ArrayList<>();
-    private LocalDate returnDate;
-    private LocalDate startDate;
+    private LocalDate returnDate = null;
+    private LocalDate startDate = null;
     @FXML
     private Label welcomeText;
     @FXML
@@ -113,13 +109,13 @@ public class Controller {
 
 
             // Set up a listener for the scrollbar's value property
-            /*scrollbar.valueProperty().addListener((obs, oldVal, newVal) -> {
+            scrollbar.valueProperty().addListener((obs, oldVal, newVal) -> {
                 // Calculate the new Y position based on the scrollbar's value
                 System.out.println("Scrollbar Value Changed: " + newVal);
                 pallot.setLayoutY(-newVal.doubleValue()); // Move the HBox in the opposite direction of the scrollbar
             });
 
-             */
+
 
 
 
@@ -194,6 +190,7 @@ public class Controller {
         newWindow.setTitle("Car Details");
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/CarPage.fxml"));
+
         Parent layout = fxmlLoader.load();
 
         CarPageController controller = fxmlLoader.getController();
@@ -217,14 +214,9 @@ public class Controller {
 
 
         controller.setCarDetails(image, selectedCar, startDate, returnDate);
-
-
-        // Create the scene and set it to the stage
-        Scene scene = new Scene(layout, 600, 500);
-        scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/scene2_style.css").toExternalForm());
+        Scene scene = new Scene(layout, 600, 600);
+        scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         newWindow.setScene(scene);
-
-        // Set the new window as a modal window
         newWindow.initModality(Modality.APPLICATION_MODAL);
         newWindow.showAndWait();  // Show the window and wait for it to be closed
     }

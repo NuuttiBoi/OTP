@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
@@ -34,6 +35,8 @@ public class HomeController {
     public DatePicker returnDatePicker;
     @FXML
     public ImageView logo;
+    @FXML
+    public ImageView tokyo;
     private LocalDate startDate;
     private LocalDate returnDate;
     private List<Location> locations = new ArrayList<>();
@@ -43,21 +46,47 @@ public class HomeController {
 
     public void initialize(){
         locations = locationDAO.getLocationList();
+
+        locationList.setCellFactory(lv -> new javafx.scene.control.ListCell<Location>() {
+            @Override
+            protected void updateItem(Location location, boolean empty) {
+                super.updateItem(location, empty);
+                if (empty || location == null) {
+                    setText(null);
+                } else {
+                    setText(location.getName());
+                }
+            }
+        });
+
         locationList.getItems().addAll(locations);
-        // Set event listener for mouse clicks on list items
+
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         locationList.setOnMouseClicked(event -> {
             Location selectedLocation = locationList.getSelectionModel().getSelectedItem();
             if (selectedLocation != null) {
-                // Call a method to open a new window when an item is clicked
-                try {
-                    openScene1(selectedLocation, returnDate);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                if (startDate == null || returnDate == null){
+                    alert.setContentText("Please select the dates");
+                    alert.showAndWait();
+                } else if(returnDate.isBefore(startDate)){
+                    alert.setContentText("Return date can't be before start date");
+                    alert.showAndWait();
                 }
+                else{
+                    try {
+                        openScene1(selectedLocation, returnDate);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+
             }
         });
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
+
+     
     }
 
     private void openScene1(Location selectedLocation, LocalDate returnDate) throws IOException{
@@ -68,14 +97,12 @@ public class HomeController {
         Controller controller = fxmlLoader.getController();  // Make sure to import your controller class
         controller.initialize(selectedLocation.getId(), startDate, returnDate);
 
-        // Create the scene and set it to the stage
-        Scene scene = new Scene(layout, 600, 500);
-        scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/scene2_style.css").toExternalForm());
+        Scene scene = new Scene(layout, 600, 600);
+        scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         scene1.setScene(scene);
 
-        // Set the new window as a modal window
         scene1.initModality(Modality.APPLICATION_MODAL);
-        scene1.showAndWait();  // Show the window and wait for it to be closed
+        scene1.showAndWait();
     }
 
     public void onSignInButtonClicked() throws IOException {

@@ -48,9 +48,11 @@ class CarPageControllerTest {
     @Test
     public void testSetCarDetails() {
         LocalDate returnDate = LocalDate.now().plusDays(7);
+        LocalDate startDate = LocalDate.now().plusDays(0);
+
         Image carImage = new Image("path/to/image.png"); // Use a valid image path
 
-        controller.setCarDetails(carImage, car, returnDate);
+        controller.setCarDetails(carImage, car, startDate, returnDate);
 
         verify(carPic).setImage(carImage);
         verify(modelText).setText("Toyota Camry");

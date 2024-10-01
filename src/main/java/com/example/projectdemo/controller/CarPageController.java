@@ -34,7 +34,7 @@ public class CarPageController {
     private Label carLabel;
     @FXML
     private Button backButton;
-    boolean isSignedIn = true;
+    boolean isSignedIn = false;
     Car car;
     private LocalDate returnDate;
     private LocalDate startDate;
@@ -45,14 +45,15 @@ public class CarPageController {
         this.car = selectedCar;
         carPic.setImage(carImage);
         modelText.setText(selectedCar.getMake() + " " +  selectedCar.getModel());
-        carDetailsText.setText("Year: " + selectedCar.getYear() + " \n Kilometers driven: " + selectedCar.getKm_driven());
+        carDetailsText.setText("Year: " + selectedCar.getYear() + " \nKilometers driven: " + selectedCar.getKm_driven() +
+        "\nLocation: " + car.getLocation());
 
         long differenceInDays = ChronoUnit.DAYS.between(startDate, returnDate);
         int totalDifference = (int) differenceInDays;
         double totalPrice = selectedCar.getPrice() * totalDifference;
         System.out.println("Difference in days: " + totalDifference);
 
-        priceText.setText("Price for " + totalDifference + " days: " + totalPrice + " euro");
+        priceText.setText("Price for " + totalDifference + " days:\n" + totalPrice + " €");
     }
     public void onClick(){
         Stage stage = (Stage) carPic.getScene().getWindow();

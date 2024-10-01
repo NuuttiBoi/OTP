@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="testejä aloitettu">
+    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="laskee vuokrauksen hinnan">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/projectdemo/model/LocationDAOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/view/Gui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/CarPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/CarPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Scene1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Scene1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Start.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/projectdemo/controller/CarPageControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/projectdemo/controller/CarPageControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,44 +67,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CarDAO.executor": "Run",
-    "Application.Gui.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.TestConnection.executor": "Run",
-    "Application.dao.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "JUnit.CarPageControllerTest.executor": "Run",
-    "JUnit.CarPageControllerTest.testHandleRentCarClick_NotSignedIn.executor": "Run",
-    "JUnit.CarTest.executor": "Run",
-    "JUnit.ControllerTest.executor": "Run",
-    "Maven.ProjectDemo [clean].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nuutt/IdeaProjects/ProjectDemo/src/main/resources/com/example/projectdemo",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "xpath.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CarDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Gui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestConnection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.dao.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.CarPageControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarPageControllerTest.testHandleRentCarClick_NotSignedIn.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LocationDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ProjectDemo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nuutt/IdeaProjects/ProjectDemo/src/main/resources/com/example/projectdemo&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;xpath.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\resources\com\example\projectdemo" />
@@ -120,7 +129,7 @@
       <recent name="com.example.projectdemo" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Gui">
     <configuration name="Gui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.projectdemo.view.Gui" />
       <module name="ProjectDemo" />
@@ -130,21 +139,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CarPageControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjectDemo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.projectdemo.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.projectdemo.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.example.projectdemo.controller.CarPageControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -195,13 +189,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LocationDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjectDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.projectdemo.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.projectdemo.model" />
+      <option name="MAIN_CLASS_NAME" value="com.example.projectdemo.model.LocationDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CarTest" />
         <item itemvalue="Application.Gui" />
+        <item itemvalue="JUnit.LocationDAOTest" />
+        <item itemvalue="JUnit.CarTest" />
         <item itemvalue="JUnit.ControllerTest" />
         <item itemvalue="JUnit.CarPageControllerTest.testHandleRentCarClick_NotSignedIn" />
-        <item itemvalue="JUnit.CarPageControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +244,11 @@
       <workItem from="1726772942060" duration="4239000" />
       <workItem from="1727280703169" duration="3141000" />
       <workItem from="1727691545745" duration="8696000" />
-      <workItem from="1727710969667" duration="18512000" />
+      <workItem from="1727710969667" duration="19178000" />
+      <workItem from="1727762813192" duration="7813000" />
+      <workItem from="1727770790757" duration="17000" />
+      <workItem from="1727782354686" duration="1656000" />
+      <workItem from="1727798710920" duration="47000" />
     </task>
     <task id="LOCAL−00001" summary="init">
       <option name="closed" value="true" />
@@ -359,7 +372,14 @@
       <option name="presentableId" value="LOCAL−00017" />
       <updated>1727746131459</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL−00018" summary="laskee vuokrauksen hinnan">
+      <option name="closed" value="true" />
+      <created>1727747032359</created>
+      <option name="number" value="LOCAL−00018" />
+      <option name="presentableId" value="LOCAL−00018" />
+      <updated>1727747032359</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +401,7 @@
     <MESSAGE value="Autojen logot näkyvät nyt palloissa, ei toiminut itellä ainakaan aikasemmin" />
     <MESSAGE value="hakee nyt autojen kuvat tietokannasta eikä paikallisesti" />
     <MESSAGE value="testejä aloitettu" />
-    <option name="LAST_COMMIT_MESSAGE" value="testejä aloitettu" />
+    <MESSAGE value="laskee vuokrauksen hinnan" />
+    <option name="LAST_COMMIT_MESSAGE" value="laskee vuokrauksen hinnan" />
   </component>
 </project>

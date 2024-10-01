@@ -32,8 +32,8 @@
       </VBox.margin>
    </HBox>
 
-   <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
-      <HBox fx:id="pallot" spacing="10.0">
+   <ScrollPane fx:id="scrollPane" prefHeight="230.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+      <HBox fx:id="pallot" prefHeight="51.0" prefWidth="242.0" spacing="10.0">
          <children>
             <Circle fx:id="ekaPallo" radius="20.0" stroke="#949292" strokeType="INSIDE" />
             <Circle fx:id="tokaPallo" fill="#f1f6f826" radius="20.0" stroke="#949292" strokeType="INSIDE" />
@@ -44,7 +44,7 @@
       </HBox>
    </ScrollPane>
 
-   <ListView fx:id="carList" prefHeight="257.0" prefWidth="300.0" />
+   <ListView id="carList" fx:id="carList" prefHeight="257.0" prefWidth="300.0" />
    <Label fx:id="welcomeText" />
    <Button onAction="#onSearchButtonClick" text="Search" />
    <Button id="backButton" onAction="#onBackButtonClick" text="Back" />
