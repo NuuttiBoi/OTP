@@ -106,7 +106,7 @@ public class HomeController {
     }
 
     public void onSignInButtonClicked() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/LoginController.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
         Scene scene = new Scene(layout,600,600);
         Stage login = new Stage();
