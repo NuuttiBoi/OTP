@@ -34,7 +34,7 @@
 
 /* Button styles */
 .button {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #3399ff;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
@@ -44,16 +44,9 @@
 }
 
 .button:hover {
-    -fx-background-color: #45a049;
+    -fx-background-color: #3399ff;
 }
 
-/* ListView styles */
-.list-view {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 5px;
-    -fx-padding: 5px;
-}
 
 /* Specific adjustments for search field */
 #searchField {
@@ -61,34 +54,120 @@
     -fx-border-color: #cccccc;
 }
 
-/* Specific adjustments for welcome text */
-#welcomeText {
-    -fx-text-fill: #666666;
-    -fx-font-size: 18px;
-}
 
-/* ListView styles */
+/* Style the ListView container */
 .list-view {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #cccccc;
-    -fx-border-radius: 5px;
-    -fx-padding: 5px;
-    -fx-pref-height: 300px; /* Adjust as needed */
-    -fx-padding: 10px; /* Padding inside ListView */
+    -fx-background-color: #ffffff; /* Background color of the ListView */
+    -fx-border-color: #cccccc; /* Border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-border-radius: 5px; /* Rounded corners */
 }
 
-/* Style for items in ListView */
-.list-view .cell {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #eeeeee;
-    -fx-border-width: 1px;
-    -fx-border-radius: 5px;
-    -fx-padding: 10px;
-    -fx-font-size: 14px;
-    -fx-text-fill: #333333;
-    -fx-background-insets: 0, 0, 0, 0;
+/* Style the list items */
+.list-view .list-view-item {
+    -fx-background-color: transparent; /* Default background */
+    -fx-text-fill: #333; /* Default text color */
+    -fx-padding: 10px; /* Padding for list items */
+    -fx-font-size: 14px; /* Font size */
 }
 
-.list-view .cell:filled:hover {
-    -fx-background-color: #f0f0f0;
+/* Style list items on hover */
+.list-view .list-view-item:hover {
+    -fx-background-color: #f0f0f0; /* Background color on hover */
+    -fx-text-fill: #1A73E8; /* Change text color on hover */
 }
+
+/* Style selected list items */
+.list-view .list-view-item:selected {
+    -fx-background-color: #FF4081; /* Selected item background */
+    -fx-text-fill: white; /* Text color for selected item */
+}
+
+/* Style the scroll bar */
+.list-view .scroll-bar:vertical {
+    -fx-background-color: transparent; /* Background for vertical scrollbar */
+    -fx-pref-width: 8px; /* Width of the vertical scrollbar */
+}
+
+.list-view .scroll-bar:horizontal {
+    -fx-background-color: transparent; /* Background for horizontal scrollbar */
+    -fx-pref-height: 8px; /* Height of the horizontal scrollbar */
+}
+
+/* Style scrollbar thumb */
+.list-view .scroll-bar .thumb {
+    -fx-background-color: #1A73E8; /* Color of the scrollbar thumb */
+    -fx-background-radius: 5px; /* Rounded corners for thumb */
+}
+
+/* Style scrollbar track */
+.list-view .scroll-bar .track {
+    -fx-background-color: #e0e0e0; /* Background color for scrollbar track */
+    -fx-background-radius: 5px; /* Rounded corners for track */
+}
+
+/* Optional: Style for the selected item in focus */
+.list-view .list-view-item:focused {
+    -fx-border-color: #FF4081; /* Highlight border for focused item */
+    -fx-border-width: 2px; /* Border width for focused item */
+}
+
+#topPane{
+    -fx-background-color: #21283d;
+}
+
+
+
+/* Style the DatePicker text field */
+.date-picker .text-field {
+    -fx-background-color: #f0f0f0; /* Background color for the input */
+    -fx-text-fill: #333; /* Text color */
+    -fx-border-color: #1A73E8; /* Border color */
+    -fx-border-radius: 5px; /* Rounded borders */
+    -fx-background-radius: 5px; /* Rounded background */
+    -fx-padding: 5 10 5 10; /* Padding inside the field */
+    -fx-font-size: 14px; /* Font size */
+}
+
+/* Style the DatePicker when hovered */
+.date-picker .text-field:hover {
+    -fx-background-color: #e5e5e5; /* Lighter background on hover */
+    -fx-border-color: #FF4081; /* Change border color on hover */
+}
+
+/* Style the DatePicker when focused */
+.date-picker:focused .text-field {
+    -fx-border-color: #FF4081; /* Highlight border when focused */
+    -fx-background-color: #ffffff; /* Lighter background when focused */
+}
+
+/* Style the popup calendar */
+.date-picker-popup {
+    -fx-background-color: white; /* Background of the popup */
+    -fx-border-color: #1A73E8; /* Border color around the popup */
+    -fx-border-radius: 10px; /* Rounded borders */
+}
+
+/* Style the calendar cells (dates) */
+.date-picker .day-cell {
+    -fx-background-color: transparent; /* Transparent background */
+    -fx-text-fill: #333; /* Text color */
+}
+
+.date-picker .day-cell:hover {
+    -fx-background-color: #1A73E8; /* Background color on hover */
+    -fx-text-fill: white; /* Text color on hover */
+}
+
+.date-picker .day-cell:selected {
+    -fx-background-color: #FF4081; /* Selected date background */
+    -fx-text-fill: white; /* Text color for selected date */
+}
+
+
+/* Style the arrows in the DatePicker */
+.date-picker .arrow {
+    -fx-background-color: #1A73E8; /* Background color for arrows */
+    -fx-border-radius: 3px; /* Rounded borders for arrows */
+}
+

@@ -6,20 +6,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.scene.image.Image;
 
-public class Gui extends Application implements IGui{
-    private Controller controller;
+public class Gui extends Application{
 
-    @Override
-    public void init(){
-        controller = new Controller();
-    }
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Gui.class.getResource("/com/example/projectdemo/fxmlFiles/Start.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 600);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         stage.setTitle("Car Rental");
+        stage.getIcons().add(new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm()));
         stage.setScene(scene);
         stage.show();
     }

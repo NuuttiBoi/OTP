@@ -10,6 +10,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDate;
 
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -24,17 +26,21 @@ public class CarPageController {
     public Text carDetailsText;
     public ListView carLocationList;
     @FXML
-    private ImageView carPic;
+    ImageView carPic;
     @FXML
     private Label carLabel;
     @FXML
     private Button backButton;
-    private boolean isSignedIn = true;
+    boolean isSignedIn = true;
+    Car car;
+    private LocalDate returnDate;
 
-    public void setCarDetails(Image carImage, Car selectedCar) {
+    public void setCarDetails(Image carImage, Car selectedCar, LocalDate returnDate) {
+        this.returnDate = returnDate;
+        this.car = selectedCar;
         carPic.setImage(carImage);
         modelText.setText(selectedCar.getMake() + " " +  selectedCar.getModel());
-        carDetailsText.setText(selectedCar.getModel() + " " + selectedCar.getYear());
+        carDetailsText.setText("Year: " + selectedCar.getYear() + " \n Kilometers driven: " + selectedCar.getKm_driven());
     }
     public void onClick(){
         Stage stage = (Stage) carPic.getScene().getWindow();
@@ -42,7 +48,7 @@ public class CarPageController {
     }
 
     @FXML
-    private void handleRentCarClick() throws IOException {
+    void handleRentCarClick() throws IOException, SQLException {
         // Load the FXML file for the form
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/RentCar.fxml"));
         Parent formLayout = fxmlLoader.load();
@@ -58,6 +64,7 @@ public class CarPageController {
             alert.setContentText("You have to sign in/register in order to rent a car");
             alert.showAndWait();
         }
+        car.setRented(returnDate.atStartOfDay());
 
         /*
         // Create a new stage (window) for the form

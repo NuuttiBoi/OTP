@@ -44,7 +44,8 @@ public class CarDAO  {
                         rs.getString("LicensePlate"), // Add this if you modify the Car class
                         rs.getInt("Availability") == 1, // Assuming you change to boolean
                         rs.getDouble("Price") ,// Assuming you add this to the Car class
-                        rs.getString("LocationID")
+                        rs.getString("LocationID"),
+                        rs.getInt("km_driven")
                 );
                 System.out.println("Car year: " + rs.getInt("Year"));
                 System.out.println("Car maker: " + rs.getString("Make"));
@@ -83,18 +84,41 @@ public class CarDAO  {
                         rs.getString("Make"),
                         rs.getString("Model"),
                         rs.getInt("Year"),
-                        rs.getString("LicensePlate"), // Add this if you modify the Car class
-                        rs.getInt("Availability") == 1, // Assuming you change to boolean
-                        rs.getDouble("Price"), // Assuming you add this to the Car class
-                        rs.getString("LocationID")
+                        rs.getString("LicensePlate"),
+                        rs.getBoolean("Availability"),
+                        rs.getDouble("Price"),
+                        rs.getString("LocationID"),
+                        rs.getInt("km_driven")
                 );
-                carsByLocation.add(car);
+                // Auto näytetään vain jos se on saatavilla
+                boolean isAvailable = rs.getBoolean("Availability");
+                if(isAvailable){
+                    carsByLocation.add(car);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return carsByLocation;
+    }
+    public void setAvailability(String carId) throws SQLException {
+        System.out.println(carId);
+        String query = "UPDATE vehicles SET Availability = ? WHERE CarID = ?";
+
+        ConnectDb connectDb = new ConnectDb();
+        Connection conn = connectDb.connect();
+
+        PreparedStatement statement = conn.prepareStatement(query);
+        statement.setInt(1,0);
+        statement.setString(2,carId);
+        int rowsUpdated = statement.executeUpdate();
+
+        if (rowsUpdated > 0) {
+            System.out.println("An existing vehicle's availability was updated successfully.");
+        }
+        statement.close();
+        conn.close();
     }
 
 

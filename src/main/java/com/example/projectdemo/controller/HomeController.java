@@ -7,21 +7,35 @@ package com.example.projectdemo.controller;
 import com.example.projectdemo.model.Car;
 import com.example.projectdemo.model.Location;
 import com.example.projectdemo.model.LocationDAO;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeController {
     public ListView<Location> locationList;
     public Button signInButton;
+    @FXML
+    public DatePicker startDatePicker;
+    @FXML
+    public DatePicker returnDatePicker;
+    @FXML
+    public ImageView logo;
+    private LocalDate startDate;
+    private LocalDate returnDate;
     private List<Location> locations = new ArrayList<>();
     private LocationDAO locationDAO = new LocationDAO("locationDao");
     private List<Car> carList = new ArrayList<Car>();
@@ -36,21 +50,23 @@ public class HomeController {
             if (selectedLocation != null) {
                 // Call a method to open a new window when an item is clicked
                 try {
-                    openScene1(selectedLocation);
+                    openScene1(selectedLocation, returnDate);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
         });
+        Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
+        logo.setImage(carLogo);
     }
 
-    private void openScene1(Location selectedLocation) throws IOException{
+    private void openScene1(Location selectedLocation, LocalDate returnDate) throws IOException{
         Stage scene1 = new Stage();
         scene1.setTitle("scene1");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Scene1.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
         Controller controller = fxmlLoader.getController();  // Make sure to import your controller class
-        controller.initialize(selectedLocation.getId());
+        controller.initialize(selectedLocation.getId(), returnDate);
 
         // Create the scene and set it to the stage
         Scene scene = new Scene(layout, 600, 500);
@@ -69,6 +85,18 @@ public class HomeController {
         Stage login = new Stage();
         login.setScene(scene);
         signInButton.setOnMouseClicked(event -> login.showAndWait());
+    }
+
+    public void handleStartDate(){
+        startDate = startDatePicker.getValue();
+        System.out.println(startDatePicker.getValue());
+    }
+    public void handleReturnDate(){
+        returnDate = returnDatePicker.getValue();
+        System.out.println(returnDatePicker.getValue());
+    }
+    public LocalDate getReturnDate(){
+        return this.returnDate;
     }
 
     // Käyttäjä valitsee täällä sijainnin, jonka perusteella tulisi avata ikkuna,

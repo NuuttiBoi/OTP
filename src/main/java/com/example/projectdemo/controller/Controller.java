@@ -23,13 +23,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.*;
 
 public class Controller {
     public ListView<Car> carList;
     public TextField searchField;
     private CarDAO car = new CarDAO("Auto");
-    private List<Car> list = new ArrayList<>();
+    List<Car> list = new ArrayList<>();
+    private LocalDate returnDate;
     @FXML
     private Label welcomeText;
     @FXML
@@ -73,7 +75,8 @@ public class Controller {
     }
 
 
-    public void initialize(String locationID){
+    public void initialize(String locationID, LocalDate returnDate){
+        this.returnDate = returnDate;
         try{
             //list = car.getList();
             // hakee autot tietystä sijainnista
@@ -165,7 +168,7 @@ public class Controller {
 
 
     // Method to filter cars based on the model (brand)
-    private void filterCarsByModel(String model) {
+    public void filterCarsByModel(String model) {
         // Clear the current items in the ListView
         carList.getItems().clear();
         // Filter the cars by the given model (case-insensitive)
@@ -181,23 +184,17 @@ public class Controller {
     }
 
 
-    // Method to open a new window with item details
+    // Avaa auton vuokrausikkunan
     private void openNewWindow(Car selectedCar) throws IOException, SQLException {
-        // Create a new stage (window)
-        // Create a new stage (window)
         Stage newWindow = new Stage();
         newWindow.setTitle("Car Details");
 
-        // Load the FXML file
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/CarPage.fxml"));
-        Parent layout = fxmlLoader.load();  // Load the FXML layout
+        Parent layout = fxmlLoader.load();
 
-        CarPageController controller = fxmlLoader.getController();  // Make sure to import your controller class
+        CarPageController controller = fxmlLoader.getController();
 
-
-        // Load the image and pass it to the controller
         Image image = null;
-
         ConnectDb connectDb = new ConnectDb();
         Connection conn = connectDb.connect();
 
@@ -215,7 +212,7 @@ public class Controller {
         }
 
 
-        controller.setCarDetails(image, selectedCar);
+        controller.setCarDetails(image, selectedCar, returnDate);
 
 
         // Create the scene and set it to the stage

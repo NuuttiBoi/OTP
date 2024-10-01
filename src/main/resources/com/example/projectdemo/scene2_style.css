@@ -39,17 +39,17 @@
 
 /* Style for buttons */
 .button {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #3399ff;
     -fx-text-fill: white;
-    -fx-font-size: 16px;
-    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
     -fx-border-radius: 5px;
+    -fx-padding: 10px 20px;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 3);
 }
 
 .button:hover {
-    -fx-background-color: #45a049;
+    -fx-background-color: #3399ff;
 }
 
 .button:pressed {

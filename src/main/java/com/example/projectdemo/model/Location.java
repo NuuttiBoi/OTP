@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Location {
     private String name, address, id;
-    private List<Car> carList = new ArrayList<>();
+    List<Car> carList = new ArrayList<>();
 
     public Location(String id, String name, String address, List<Car> carList){
         this.id = id;
