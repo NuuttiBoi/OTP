@@ -17,6 +17,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -37,16 +38,21 @@ public class HomeController {
     public ImageView logo;
     @FXML
     public ImageView tokyo;
+    @FXML
+    public Text signedInText;
     private LocalDate startDate;
     private LocalDate returnDate;
+    private boolean isSignedIn = false;
     private List<Location> locations = new ArrayList<>();
     private LocationDAO locationDAO = new LocationDAO("locationDao");
     private List<Car> carList = new ArrayList<Car>();
     private Controller controller = new Controller();
 
     public void initialize(){
+        if (isSignedIn){
+            signedInText.setText("You are signed in.");
+        }
         locations = locationDAO.getLocationList();
-
         locationList.setCellFactory(lv -> new javafx.scene.control.ListCell<Location>() {
             @Override
             protected void updateItem(Location location, boolean empty) {
@@ -112,6 +118,10 @@ public class HomeController {
         Stage login = new Stage();
         login.setScene(scene);
         signInButton.setOnMouseClicked(event -> login.showAndWait());
+        if (isSignedIn){
+            signedInText.setText("You are signed in.");
+        }
+        initialize();
     }
 
     public void handleStartDate(){
@@ -121,6 +131,10 @@ public class HomeController {
     public void handleReturnDate(){
         returnDate = returnDatePicker.getValue();
         System.out.println(returnDatePicker.getValue());
+    }
+    public void setSignedIn(){
+        isSignedIn = true;
+        signInButton.setVisible(false);
     }
     public LocalDate getReturnDate(){
         return this.returnDate;

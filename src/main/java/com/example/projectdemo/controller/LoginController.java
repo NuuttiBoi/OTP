@@ -31,6 +31,7 @@ public class LoginController {
     private Button submitButton;
     @FXML
     private Button registerButton;
+    private HomeController homeController = new HomeController();
 
     @FXML
     public void login(ActionEvent event) throws SQLException {
@@ -60,7 +61,10 @@ public class LoginController {
         if (!flag) {
             infoBox("Please enter correct Email and Password", null, "Failed");
         } else {
-            infoBox("Login Successful!", null, "Failed");
+            infoBox("Login Successful!", null, "Success");
+            homeController.setSignedIn();
+            Stage stage = (Stage) submitButton.getScene().getWindow();
+            stage.close();
         }
     }
 

@@ -26,12 +26,13 @@
       </Pane>
       <Pane id="topPane" layoutY="14.0" opacity="0.74" prefHeight="90.0" prefWidth="498.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button fx:id="signInButton" layoutX="431.0" layoutY="33.0" mnemonicParsing="false" onAction="#onSignInButtonClicked" text="Sign In" />
+            <Button id="signInButton" fx:id="signInButton" layoutX="431.0" layoutY="33.0" mnemonicParsing="false" onAction="#onSignInButtonClicked" text="Sign In" />
             <ImageView id="logo" fx:id="logo" fitHeight="90.0" fitWidth="101.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
                <viewport>
                   <Rectangle2D />
                </viewport>
             </ImageView>
+            <Text id="signedInText" fx:id="signedInText" layoutX="382.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" />
          </children>
          <opaqueInsets>
             <Insets />
