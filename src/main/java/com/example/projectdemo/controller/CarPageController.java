@@ -1,6 +1,7 @@
 package com.example.projectdemo.controller;
 
 import com.example.projectdemo.model.Car;
+import com.example.projectdemo.model.RentalDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -38,6 +39,7 @@ public class CarPageController {
     Car car;
     private LocalDate returnDate;
     private LocalDate startDate;
+    private HomeController homeController = new HomeController();
 
     public void setCarDetails(Image carImage, Car selectedCar, LocalDate startDate, LocalDate returnDate) {
         this.returnDate = returnDate;
@@ -62,6 +64,7 @@ public class CarPageController {
 
     @FXML
     void handleRentCarClick() throws IOException, SQLException {
+        isSignedIn = homeController.isSignedIn();
         // Load the FXML file for the form
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/RentCar.fxml"));
         Parent formLayout = fxmlLoader.load();
@@ -71,6 +74,8 @@ public class CarPageController {
         // niin hänet viedään kirjautumisruutuun.
         // Jos on kirjautunut sisään niin auton pystyy vuokraamaan.
         if(isSignedIn){
+            RentalDAO rentalDAO = new RentalDAO();
+            // tähän logiikka, joka lisää uuden vuokrauksen ja linkittää sen aktiiviseen käyttäjään
             alert.setContentText("You are signed in");
             alert.showAndWait();
         } else {

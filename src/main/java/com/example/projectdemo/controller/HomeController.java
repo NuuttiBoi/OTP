@@ -136,6 +136,9 @@ public class HomeController {
         isSignedIn = true;
         signInButton.setVisible(false);
     }
+    public boolean isSignedIn(){
+        return isSignedIn;
+    }
     public LocalDate getReturnDate(){
         return this.returnDate;
     }
