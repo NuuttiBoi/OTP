@@ -23,6 +23,54 @@ The target audience for the Car Rental App includes:
 
 By understanding and catering to these diverse user groups, the Car Rental App aims to provide a valuable service that enhances mobility and convenience.
 
+## Miksi projekti on hyödyllinen
+
+Car Rental App on hyödyllinen projekti useista syistä:
+## Miksi projekti on hyödyllinen
+
+Car Rental App tarjoaa monia etuja:
+
+1. **Käyttäjäystävällisyys**: Intuitiivinen käyttöliittymä tekee autovuokrauksesta helppoa ja nopeaa.
+
+2. **Ajansäästö**: Verkkovaraus vähentää odotusaikoja verrattuna perinteisiin autovuokraamoihin.
+
+3. **Saavutettavuus**: Käyttäjät voivat varata autoja missä ja milloin tahansa, mikä lisää joustavuutta.
+
+4. **Reaaliaikainen saatavuus**: Autotiedot ovat aina ajantasaisia, mikä parantaa asiakastyytyväisyyttä.
+
+5. **Ympäristöystävällisyys**: Autovuokraus vähentää yksityisautoilua, mikä edistää kestävää liikennettä.
+
+Tämä projekti parantaa sekä käyttäjäkokemusta että liiketoimintamahdollisuuksia.
+## Toiminnallisuudet
+
+Car Rental App sisältää seuraavat päätoiminnot:
+
+1. **Käyttäjätilit**: Rekisteröityminen ja kirjautuminen.
+2. **Autohaku**: Saatavilla olevien autojen selailu ja hakeminen.
+3. **Varaukset**: Autojen varaaminen haluttuna ajankohtana.
+4. **Vuokraushistoria**: Käyttäjien aikaisempien vuokrausten tarkastelu.
+5. **Hallinta**: Mahdollisuus hallita autojen saatavuutta ja vuokrauksia.
+
+Nämä toiminnot tekevät sovelluksesta tehokkaan ja käyttäjäystävällisen.
+
+
+## Käyttöohjeet
+
+1. **Rekisteröidy/Kirjaudu**: Luo uusi käyttäjätili tai kirjaudu sisään olemassa olevalla tunnuksella.
+
+2. **Selaa autoja**: Katso saatavilla olevat autot ja käytä hakutoimintoa löytääksesi sopivan auton.
+
+3. **Varaa auto**: Valitse haluamasi auto ja tee varaus valitsemallesi ajanjaksolle.
+
+4. **Tarkista vuokraukset**: Näe vuokraushistoriasi ja hallitse tulevia varauksia.
+
+5. **Hallinnointi** (vain ylläpitäjät): Lisää, poista tai muokkaa autoja sekä hallinnoi varauksia.
+
+Seuraa näitä vaiheita käyttöösi vuokrataksesi autoja helposti sovelluksen kautta.
+
+
+
+
   
 
 
