@@ -41,4 +41,33 @@ public class UserDAO {
             }
         }
     }
+    // Method to retrieve a User by userID from the database
+    public User getUserByID(int userID) {
+        User user = null;
+        String sql = "SELECT * FROM user WHERE userID = ?";
+        ConnectDb connectDb = new ConnectDb();
+        try (Connection conn = connectDb.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, userID);  // Set userID parameter
+
+            ResultSet rs = pstmt.executeQuery();
+
+            // Process the result set
+            if (rs.next()) {
+                // Map the result set to a User object
+                user = new User();
+                user.setUserID(rs.getInt("userID"));
+                user.setEmail(rs.getString("email"));
+                user.setRole(rs.getString("role"));
+                user.setType(rs.getString("type"));
+                user.setRentalID(rs.getString("RentalID"));  // Assuming RentalID is in the table
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return user;
+    }
 }
