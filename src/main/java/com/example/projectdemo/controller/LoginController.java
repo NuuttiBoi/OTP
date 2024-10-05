@@ -3,6 +3,7 @@ package com.example.projectdemo.controller;
 import com.example.projectdemo.model.UserDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,9 +14,13 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.PasswordField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-
+import javafx.scene.layout.Pane;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -36,6 +41,9 @@ public class LoginController {
     @FXML
     private Button registerButton;
 
+    @FXML
+    private Pane mainPane;
+
     private HomeController homeController = new HomeController();
 
     @FXML
@@ -43,10 +51,12 @@ public class LoginController {
         // Load the car logo image
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
+
+        mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
     @FXML
-    public void login(ActionEvent event) throws SQLException {
+    public void login(ActionEvent event) throws SQLException, IOException {
         Window owner = submitButton.getScene().getWindow();
 
         System.out.println(emailIdField.getText());
@@ -72,12 +82,24 @@ public class LoginController {
         if (!flag) {
             infoBox("Please enter correct Email and Password", null, "Failed");
         } else {
+            // Show the success message and wait for user acknowledgment
             infoBox("Login Successful!", null, "Success");
-            homeController.setSignedIn();
-            Stage stage = (Stage) submitButton.getScene().getWindow();
-            stage.close();
+
+            // Close the current login stage
+            Stage currentStage = (Stage) submitButton.getScene().getWindow();
+            currentStage.close();
+
+            // Load the Start.fxml page
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Start.fxml"));
+            Parent layout = fxmlLoader.load();  // Load the FXML layout
+            Scene scene = new Scene(layout, 300, 600);
+            Stage startStage = new Stage();
+            startStage.setScene(scene);
+            startStage.setTitle("Start Page");
+            startStage.show();  // Show the start page
         }
     }
+
 
     public static void infoBox(String infoMessage, String headerText, String title) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -97,11 +119,19 @@ public class LoginController {
     }
 
     public void handleRegisterButtonClick(ActionEvent actionEvent) throws IOException {
+        // Get the current stage (the one with the login page)
+        Stage currentStage = (Stage) registerButton.getScene().getWindow();
+
+        // Close the current stage
+        currentStage.close();
+
+        // Load the registration page
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/registrationController.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
         Scene scene = new Scene(layout, 300, 600);
         Stage register = new Stage();
         register.setScene(scene);
-        registerButton.setOnMouseClicked(event -> register.showAndWait());
+        register.setTitle("Registration Page");
+        register.show();  // Show the registration page
     }
 }

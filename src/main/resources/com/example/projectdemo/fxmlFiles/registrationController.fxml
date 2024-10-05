@@ -1,53 +1,47 @@
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.PasswordField?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
-<GridPane fx:controller="com.example.projectdemo.controller.RegistrationController"
-          xmlns:fx="http://javafx.com/fxml" alignment="center"
-          hgap="10" vgap="10">
-    <padding>
-        <Insets top="40" right="40" bottom="40" left="40"/>
-    </padding>
-    <columnConstraints>
-        <ColumnConstraints minWidth="100" prefWidth="100"
-                           maxWidth="Infinity" halignment="RIGHT"></ColumnConstraints>
-        <ColumnConstraints minWidth="200" prefWidth="200"
-                           maxWidth="Infinity" hgrow="ALWAYS"></ColumnConstraints>
-    </columnConstraints>
-    <Label text="Registration Form (FXML)" GridPane.columnIndex="0"
-           GridPane.rowIndex="0" GridPane.columnSpan="2"
-           GridPane.rowSpan="1" GridPane.halignment="CENTER" >
-        <font>
-            <Font name="Arial" size="24" ></Font>
-        </font>
-        <GridPane.margin>
-            <Insets top="20" right="0" bottom="20" left="0"></Insets>
-        </GridPane.margin>
-    </Label>
-    <Label text="Full Name : " GridPane.columnIndex="0"
-           GridPane.rowIndex="1" ></Label>
-    <TextField fx:id="fullNameField" prefHeight="40"
-               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-    <Label text="Email ID : " GridPane.columnIndex="0"
-           GridPane.rowIndex="2" ></Label>
-    <TextField fx:id="emailIdField" prefHeight="40"
-               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <Label text="Password : " GridPane.columnIndex="0"
-           GridPane.rowIndex="3" ></Label>
-    <PasswordField fx:id="passwordField" prefHeight="40"
-                   GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-    <Button fx:id="submitButton" text="Submit"
-            prefWidth="100" prefHeight="40" defaultButton="true"
-            GridPane.columnIndex="0" GridPane.rowIndex="4"
-            GridPane.columnSpan="2" GridPane.rowSpan="1"
-            GridPane.halignment="CENTER"
-            onAction="#register">
-        <GridPane.margin>
-            <Insets top="20" right="0" bottom="20" left="0"></Insets>
-        </GridPane.margin>
-    </Button>
-</GridPane>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.RegistrationController">
+   <children>
+       <Label layoutX="66.0" layoutY="83.0" text="Registration Form">
+           <font>
+               <Font name="Arial" size="24.0" />
+           </font>
+       </Label>
+       <TextField fx:id="fullNameField" layoutX="120.0" layoutY="154.0" prefHeight="40" />
+       <Label layoutX="26.0" layoutY="242.0" text="Email ID : " />
+       <Label layoutX="21.0" layoutY="317.0" text="Password : " />
+       <TextField fx:id="emailIdField" layoutX="120.0" layoutY="230.0" prefHeight="40" />
+       <Label layoutX="21.0" layoutY="165.0" text="Full Name : " />
+       <PasswordField fx:id="passwordField" layoutX="120.0" layoutY="297.0" prefHeight="40" />
+       <Button fx:id="submitButton" defaultButton="true" layoutX="100.0" layoutY="431.0" onAction="#register" prefHeight="40" prefWidth="100" text="Submit" />
+      <Pane id="topPane" fx:id="mainPane" opacity="0.74" prefHeight="60.0" prefWidth="322.0">
+         <children>
+            <Text id="signedInText" layoutX="94.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="43.0" />
+            <ImageView id="logo" fx:id="logo" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" right="21.0" top="2.0" />
+         </padding>
+      </Pane>
+   </children>
+</AnchorPane>

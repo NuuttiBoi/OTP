@@ -9,6 +9,7 @@ import com.example.projectdemo.model.Location;
 import com.example.projectdemo.model.LocationDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -17,10 +18,14 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+import javafx.scene.layout.Pane;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -36,6 +41,8 @@ public class HomeController {
     public DatePicker returnDatePicker;
     @FXML
     public ImageView logo;
+    @FXML
+    private Pane mainPane;
     @FXML
     public ImageView tokyo;
     @FXML
@@ -64,6 +71,8 @@ public class HomeController {
                 }
             }
         });
+
+        mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
 
         locationList.getItems().addAll(locations);
 

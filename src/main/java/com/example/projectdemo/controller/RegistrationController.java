@@ -6,11 +6,23 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Window;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.geometry.Insets;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 public class RegistrationController {
+
+    @FXML
+    public ImageView logo;
+
     @FXML
     private TextField fullNameField;
 
@@ -24,12 +36,26 @@ public class RegistrationController {
     private Button submitButton;
 
     @FXML
+    private Pane mainPane;
+
+    @FXML
+    public void initialize() {
+        // Load the car logo image
+        Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
+        logo.setImage(carLogo);
+
+        // Set the background color of the main pane to blue
+        mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
+    }
+
+    @FXML
     public void register(ActionEvent event) throws SQLException {
         Window owner = submitButton.getScene().getWindow();
 
         System.out.println(fullNameField.getText());
         System.out.println(emailIdField.getText());
         System.out.println(passwordField.getText());
+
         if (fullNameField.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
                     "Please enter your name");
@@ -66,5 +92,4 @@ public class RegistrationController {
         alert.initOwner(owner);
         alert.show();
     }
-
 }

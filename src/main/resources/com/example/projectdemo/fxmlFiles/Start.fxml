@@ -23,7 +23,7 @@
                   <Text layoutX="31.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select Dates.." />
                </children>
             </Pane>
-            <Pane id="topPane" opacity="0.74" prefHeight="60.0" prefWidth="319.0">
+            <Pane id="topPane" fx:id="mainPane" opacity="0.74" prefHeight="60.0" prefWidth="319.0">
                <children>
                   <Text id="signedInText" fx:id="signedInText" layoutX="94.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="43.0" />
                   <ImageView id="logo" fx:id="logo" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
