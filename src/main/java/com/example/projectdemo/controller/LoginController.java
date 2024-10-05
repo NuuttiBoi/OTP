@@ -1,4 +1,3 @@
-//
 package com.example.projectdemo.controller;
 
 import com.example.projectdemo.model.UserDAO;
@@ -8,10 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
-import java.sql.SQLException;
-
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -19,23 +16,37 @@ import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class LoginController {
 
     @FXML
     private TextField emailIdField;
 
     @FXML
+    public ImageView logo;
+
+    @FXML
     private PasswordField passwordField;
 
     @FXML
     private Button submitButton;
+
     @FXML
     private Button registerButton;
+
     private HomeController homeController = new HomeController();
 
     @FXML
-    public void login(ActionEvent event) throws SQLException {
+    public void initialize() {
+        // Load the car logo image
+        Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
+        logo.setImage(carLogo);
+    }
 
+    @FXML
+    public void login(ActionEvent event) throws SQLException {
         Window owner = submitButton.getScene().getWindow();
 
         System.out.println(emailIdField.getText());
@@ -88,7 +99,7 @@ public class LoginController {
     public void handleRegisterButtonClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/registrationController.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
-        Scene scene = new Scene(layout,600,600);
+        Scene scene = new Scene(layout, 300, 600);
         Stage register = new Stage();
         register.setScene(scene);
         registerButton.setOnMouseClicked(event -> register.showAndWait());

@@ -103,7 +103,7 @@ public class HomeController {
         Controller controller = fxmlLoader.getController();  // Make sure to import your controller class
         controller.initialize(selectedLocation.getId(), startDate, returnDate);
 
-        Scene scene = new Scene(layout, 600, 600);
+        Scene scene = new Scene(layout, 300, 600);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         scene1.setScene(scene);
 
@@ -112,17 +112,26 @@ public class HomeController {
     }
 
     public void onSignInButtonClicked() throws IOException {
+        // Get the current stage (the one with the home page)
+        Stage currentStage = (Stage) signInButton.getScene().getWindow();
+
+        // Close the current stage
+        currentStage.close();
+
+        // Load the login page
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/LoginController.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
-        Scene scene = new Scene(layout,600,600);
-        Stage login = new Stage();
-        login.setScene(scene);
-        signInButton.setOnMouseClicked(event -> login.showAndWait());
-        if (isSignedIn){
-            signedInText.setText("You are signed in.");
-        }
-        initialize();
+
+        // Create a new stage for the login page
+        Stage loginStage = new Stage();
+        Scene scene = new Scene(layout, 300, 600);
+        loginStage.setScene(scene);
+        loginStage.setTitle("Login Page");
+
+        // Show the login page
+        loginStage.show();
     }
+
 
     public void handleStartDate(){
         startDate = startDatePicker.getValue();

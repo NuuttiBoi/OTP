@@ -62,6 +62,7 @@ public class Controller {
         stage.show();
     }
 
+
     private Image loadImage(String filename) throws IOException {
         try (InputStream is = getClass().getResourceAsStream(filename)) {
             if (is == null) {
@@ -214,7 +215,7 @@ public class Controller {
 
 
         controller.setCarDetails(image, selectedCar, startDate, returnDate);
-        Scene scene = new Scene(layout, 600, 600);
+        Scene scene = new Scene(layout, 300, 600);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         newWindow.setScene(scene);
         newWindow.initModality(Modality.APPLICATION_MODAL);
