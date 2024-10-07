@@ -79,6 +79,16 @@ public class PaymentController implements javafx.fxml.Initializable {
             if (!newValue.matches("[a-zA-Z ]*")) {
                 cardName.setText(oldValue);
             }
+
+        });
+        // Limit card number input to a maximum of 16 digits and format with spaces
+        cardNumber.textProperty().addListener((observable, oldValue, newValue) -> {
+            String formatted = newValue.replaceAll("[^\\d]", "");
+            if (formatted.length() > 16) {
+                formatted = formatted.substring(0, 16);
+            }
+            formatted = formatted.replaceAll("(.{4})", "$1 ").trim();
+            cardNumber.setText(formatted);
         });
 
 /// Set up the card number input with formatting
@@ -124,18 +134,43 @@ public class PaymentController implements javafx.fxml.Initializable {
 
     @FXML
     public void handlePayment(ActionEvent event) {
+        String cardNameValue = cardName.getText();
+        String cardNumberValue = cardNumber.getText().replace(" ", ""); // Remove spaces for validation
+        String cvvValue = cvvField.getText();
         int selectedYear = yearSpinner.getValue();
+
+        // Check if any field is empty
+        if (cardNameValue.isEmpty() || cardNumberValue.isEmpty() || cvvValue.isEmpty()) {
+            showAlert("Incomplete Information", "Please fill in all the required fields.");
+            return;
+        }
+
+        // Validate card name (must contain at least one space)
+        if (!cardNameValue.contains(" ")) {
+            showAlert("Invalid Name", "Please enter your full name (first and last name).");
+            return;
+        }
+
+        // Validate card number (must be 16 digits)
+        if (cardNumberValue.length() != 16) {
+            showAlert("Invalid Card Information", "Please enter a valid 16-digit card number.");
+            return;
+        }
+
+        // Validate CVV (must be 3 digits)
+        if (cvvValue.length() != 3) {
+            showAlert("Invalid Card Information", "Please enter a 3-digit CVV.");
+            return;
+        }
 
         // Validate the selected year
         if (selectedYear < 24) {
-            // Show an error alert if the card is expired
             showAlert("Invalid Card", "The card has expired. Please use a valid card.");
             return;
         }
 
-        // Proceed with further payment logic if the card is valid
-        // Add your payment processing code here
     }
+
 
     @FXML
     public void handleBackToCarPage(ActionEvent event) {
