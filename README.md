@@ -1,4 +1,4 @@
-# Whipe Rent
+# Whip Rent
 
 ## Team Members
 - Nuutti Turunen
