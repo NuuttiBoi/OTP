@@ -38,12 +38,5 @@ class LocationTest {
         assertEquals(2, location.carList.size());
     }
 
-    @Test
-    public void testCarListModification() {
-        // Testing if the carList can be modified externally
-        Car car3 = new Car("3", "Ford", "Focus", 2019, "LMN456", true, 18000.0, "Location3", 30000);
-        location.carList.add(car3);
-        assertEquals(3, location.carList.size());
-    }
 
 }

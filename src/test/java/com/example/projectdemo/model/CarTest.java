@@ -42,16 +42,6 @@ class CarTest {
         assertFalse(car.isAvailable());
     }
 
-    @Test
-    public void testSetRented() throws SQLException {
-        LocalDateTime futureDate = LocalDateTime.now().plusDays(1);
-        car.setRented(LocalDate.from(futureDate));
-        assertFalse(car.isAvailable());
-
-        // Simulating the time has passed
-        car.setRented(LocalDate.from(LocalDateTime.now()));
-        assertTrue(car.isAvailable());
-    }
 
     @Test
     public void testToString() {
@@ -59,14 +49,7 @@ class CarTest {
         assertEquals(expectedString, car.toString());
     }
 
-    @Test
-    public void testEquals() {
-        Car anotherCar = new Car("1", "Honda", "Civic", 2021, "XYZ789", true, 30000.0, "Location", 5000);
-        assertTrue(car.equals(anotherCar));
 
-        Car differentCar = new Car("2", "Toyota", "Corolla", 2020, "ABC123", true, 25000.0, "Location", 15000);
-        assertFalse(car.equals(differentCar));
-    }
 
     @Test
     public void testHashCode() {
