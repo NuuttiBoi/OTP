@@ -97,4 +97,11 @@ Run the following command in your terminal to allow X11 access (only required fo
 ```bash
 xhost +local:docker
 
+## Step 3> Run the image
+
+```bash
+set DISPLAY=host.docker.internal:0
+docker run -e DISPLAY=host.docker.internal:0 -v /tmp/.X11-unix:/tmp/.X11-unix --rm my-javafx-app
+
+
  
