@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class UserDAO {
     private static final String SELECT_QUERY = "SELECT * FROM registration WHERE email_id = ? and password = ?";
+    private static boolean isLoggedIn = false; // Track login state
 
     public boolean validate(String emailId, String password) throws SQLException {
-
         ConnectDb connectDb = new ConnectDb();
         Connection connection = connectDb.connect();
 
@@ -21,13 +21,24 @@ public class UserDAO {
 
         ResultSet resultSet = preparedStatement.executeQuery();
         if (resultSet.next()) {
+            isLoggedIn = true; // Set login state to true if validation is successful
             return true;
         }
         return false;
     }
 
+    // Getter for login state
+    public static boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
+    // Method to reset the login state (for logout)
+    public static void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
+    }
+
     public static void printSQLException(SQLException ex) {
-        for (Throwable e: ex) {
+        for (Throwable e : ex) {
             if (e instanceof SQLException) {
                 e.printStackTrace(System.err);
                 System.err.println("SQLState: " + ((SQLException) e).getSQLState());
@@ -41,6 +52,7 @@ public class UserDAO {
             }
         }
     }
+
     // Method to retrieve a User by userID from the database
     public User getUserByID(int userID) {
         User user = null;
