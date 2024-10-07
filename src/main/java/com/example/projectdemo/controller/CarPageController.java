@@ -4,6 +4,7 @@ import com.example.projectdemo.model.Car;
 import com.example.projectdemo.model.RentalDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,8 +16,15 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
+
 
 public class CarPageController {
 
@@ -33,11 +41,24 @@ public class CarPageController {
     private Label carLabel;
     @FXML
     private Button backButton;
+    @FXML
+    private Pane mainPane;
+    @FXML
+    public ImageView logo;
     boolean isSignedIn = false;
     Car car;
     private LocalDate returnDate;
     private LocalDate startDate;
     private HomeController homeController = new HomeController();
+
+    @FXML
+    public void initialize() {
+        // Load the car logo image
+        Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
+        logo.setImage(carLogo);
+
+        mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
+    }
 
     public void setCarDetails(Image carImage, Car selectedCar, LocalDate startDate, LocalDate returnDate) {
         this.returnDate = returnDate;

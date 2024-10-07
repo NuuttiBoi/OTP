@@ -51,5 +51,10 @@
             <Insets left="20.0" right="21.0" top="2.0" />
          </padding>
       </Pane>
+      <Text fill="#dad1d1" layoutX="116.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WhipRent" wrappingWidth="60.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

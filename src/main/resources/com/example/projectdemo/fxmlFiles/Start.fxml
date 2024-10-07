@@ -9,8 +9,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <VBox minHeight="600.0" prefHeight="500.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.HomeController">
    <children>
@@ -31,7 +31,7 @@
                         <Rectangle2D />
                      </viewport>
                   </ImageView>
-                  <Button  id="signInButton"  fx:id="signInButton" layoutX="196.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSignInButtonClicked" prefHeight="26.0" prefWidth="91.0" text="Sign In" />
+                  <Button id="signInButton" fx:id="signInButton" layoutX="196.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSignInButtonClicked" prefHeight="26.0" prefWidth="91.0" text="Sign In" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -44,6 +44,11 @@
             <DatePicker id="endDate" fx:id="returnDatePicker" layoutX="162.0" layoutY="162.0" onAction="#handleReturnDate" prefHeight="0.0" prefWidth="107.0" />
             <Text layoutX="72.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" />
             <Text layoutX="208.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End" />
+            <Text fill="#dad1d1" layoutX="116.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WhipRent" wrappingWidth="60.0">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Text>
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

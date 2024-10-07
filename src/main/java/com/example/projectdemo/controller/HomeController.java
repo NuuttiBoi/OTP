@@ -28,7 +28,6 @@ import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,10 +52,9 @@ public class HomeController {
     private List<Location> locations = new ArrayList<>();
     private LocationDAO locationDAO = new LocationDAO("locationDao");
     private List<Car> carList = new ArrayList<Car>();
-    private Controller controller = new Controller();
 
-    public void initialize(){
-        if (isSignedIn){
+    public void initialize() {
+        if (isSignedIn) {
             signedInText.setText("You are signed in.");
         }
         locations = locationDAO.getLocationList();
@@ -73,38 +71,39 @@ public class HomeController {
         });
 
         mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
-
         locationList.getItems().addAll(locations);
-
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         locationList.setOnMouseClicked(event -> {
             Location selectedLocation = locationList.getSelectionModel().getSelectedItem();
             if (selectedLocation != null) {
-                if (startDate == null || returnDate == null){
-                    alert.setContentText("Please select the dates");
+                if (!isSignedIn) {
+                    alert.setContentText("Please log in to continue.");
                     alert.showAndWait();
-                } else if(returnDate.isBefore(startDate)){
-                    alert.setContentText("Return date can't be before start date");
-                    alert.showAndWait();
+                    return; // Prevent proceeding if not signed in
                 }
-                else{
+
+                if (startDate == null || returnDate == null) {
+                    alert.setContentText("Please select the dates.");
+                    alert.showAndWait();
+                } else if (returnDate.isBefore(startDate)) {
+                    alert.setContentText("Return date can't be before start date.");
+                    alert.showAndWait();
+                } else {
                     try {
                         openScene1(selectedLocation, returnDate);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 }
-
             }
         });
+
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
-
-     
     }
 
-    private void openScene1(Location selectedLocation, LocalDate returnDate) throws IOException{
+    private void openScene1(Location selectedLocation, LocalDate returnDate) throws IOException {
         Stage scene1 = new Stage();
         scene1.setTitle("scene1");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Scene1.fxml"));
@@ -141,30 +140,35 @@ public class HomeController {
         loginStage.show();
     }
 
-
-    public void handleStartDate(){
+    public void handleStartDate() {
         startDate = startDatePicker.getValue();
         System.out.println(startDatePicker.getValue());
     }
-    public void handleReturnDate(){
+
+    public void handleReturnDate() {
         returnDate = returnDatePicker.getValue();
         System.out.println(returnDatePicker.getValue());
     }
-    public void setSignedIn(){
+
+    public void setSignedIn() {
         isSignedIn = true;
         signInButton.setVisible(false);
+        signedInText.setText("You are signed in."); // Update the text to reflect the sign-in status
     }
-    public boolean isSignedIn(){
+
+    public boolean isSignedIn() {
         return isSignedIn;
     }
-    public LocalDate getReturnDate(){
+
+    public LocalDate getReturnDate() {
         return this.returnDate;
     }
-    public LocalDate getStartDate(){ return this.startDate; }
+
+    public LocalDate getStartDate() {
+        return this.startDate;
+    }
 
     // Käyttäjä valitsee täällä sijainnin, jonka perusteella tulisi avata ikkuna,
     // jossa näkyy kyseisessä sijainnissa saatavilla olevat autot.
     // pitäisi ehkä tehdä oma table joka yhdistää rentallocationit vehiclesiin
-
-
 }
