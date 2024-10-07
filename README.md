@@ -1,4 +1,4 @@
-# whipe Rental
+# WhipRent
 
 ## Jäsenet
 * Nuutti Turunen 

@@ -1,4 +1,5 @@
 package com.example.projectdemo.controller;
+import com.example.projectdemo.model.Car;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +24,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import java.time.LocalDate;
 
 
 public class PaymentController implements javafx.fxml.Initializable {
@@ -44,6 +47,11 @@ public class PaymentController implements javafx.fxml.Initializable {
 
     @FXML
     private TextField cvvField;
+
+    private Image carImage;
+    private Car selectedCar;
+    private LocalDate startDate; //
+    private LocalDate returnDate;
 
 
     @FXML
@@ -97,9 +105,14 @@ public class PaymentController implements javafx.fxml.Initializable {
             Stage currentStage = (Stage) mainPane.getScene().getWindow();
             currentStage.close();
 
-            // Load Scene1.fxml
+            // Load CarPage.fxml
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/CarPage.fxml"));
             Parent layout = fxmlLoader.load();  // Load the FXML layout
+
+            // Get the controller for CarPage and set the car details
+            CarPageController carPageController = fxmlLoader.getController();
+            carPageController.setCarDetails(carImage, selectedCar, startDate, returnDate); // Pass selected car and its details
+
             Scene scene = new Scene(layout);
             Stage carPageStage = new Stage();
             carPageStage.setScene(scene);
@@ -109,6 +122,7 @@ public class PaymentController implements javafx.fxml.Initializable {
             e.printStackTrace();
         }
     }
+
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

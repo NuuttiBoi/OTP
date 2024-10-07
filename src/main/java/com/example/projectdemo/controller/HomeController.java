@@ -3,7 +3,7 @@ package com.example.projectdemo.controller;
 // Kontrolleri aloituissivulle
 // täällä pitäisi valita mistä sijainnista käyttäjä haluaa vuokrata auton
 // + sisäänkirjautuminen / rekisteröinti
-
+import com.example.projectdemo.model.UserDAO;
 import com.example.projectdemo.model.Car;
 import com.example.projectdemo.model.Location;
 import com.example.projectdemo.model.LocationDAO;
@@ -77,12 +77,13 @@ public class HomeController {
         locationList.setOnMouseClicked(event -> {
             Location selectedLocation = locationList.getSelectionModel().getSelectedItem();
             if (selectedLocation != null) {
-                if (!isSignedIn) {
+                if (!UserDAO.isLoggedIn()) { // Check if the user is signed in
                     alert.setContentText("Please log in to continue.");
                     alert.showAndWait();
-                    return; // Prevent proceeding if not signed in
+                    return; // Exit the method if not signed in
                 }
 
+                // The rest of your existing code...
                 if (startDate == null || returnDate == null) {
                     alert.setContentText("Please select the dates.");
                     alert.showAndWait();
@@ -98,6 +99,7 @@ public class HomeController {
                 }
             }
         });
+
 
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
