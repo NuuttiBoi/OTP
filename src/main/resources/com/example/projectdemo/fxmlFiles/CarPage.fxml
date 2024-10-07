@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" stylesheets="../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.CarPageController">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" stylesheets="../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.CarPageController">
    <children>
       <ListView fx:id="carLocationList" layoutX="400.0" layoutY="22.0" prefHeight="200.0" prefWidth="200.0" />
 
@@ -30,7 +30,7 @@
          </children>
       </AnchorPane>
 
-      <Button fx:id="button1" layoutX="269.0" layoutY="531.0" mnemonicParsing="false" onAction="#handleRentCarClick" text="Rent Car" />
+      <Button fx:id="rentCarButton" layoutX="269.0" layoutY="531.0" mnemonicParsing="false" onAction="#handleRentCarClick" text="Rent Car" />
       <Button fx:id="backButton" layoutX="30.0" layoutY="531.0" mnemonicParsing="false" onAction="#onClick" text="Back" />
       <Text layoutX="449.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Map Placeholder" />
    </children>

@@ -19,14 +19,14 @@
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Text>
-      <Button fx:id="paymentbutton" layoutX="121.0" layoutY="456.0" mnemonicParsing="false" text="Pay" />
+      <Button fx:id="paymentbutton" layoutX="110.0" layoutY="476.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" text="Pay" />
       <Pane layoutX="12.0" layoutY="164.0" prefHeight="318.0" prefWidth="294.0">
          <children>
             <TextField layoutX="57.0" layoutY="44.0" />
             <TextField layoutX="57.0" layoutY="117.0" />
-            <TextField layoutX="109.0" layoutY="251.0" prefHeight="26.0" prefWidth="44.0" />
-            <Spinner accessibleText="2" layoutX="35.0" layoutY="184.0" prefHeight="26.0" prefWidth="89.0" />
-            <Spinner accessibleText="1" layoutX="142.0" layoutY="184.0" prefHeight="26.0" prefWidth="89.0" />
+            <TextField fx:id="cvvField" layoutX="109.0" layoutY="251.0" prefHeight="26.0" prefWidth="44.0" />
+            <Spinner fx:id="monthSpinner" accessibleText="2" layoutX="35.0" layoutY="184.0" prefHeight="26.0" prefWidth="89.0" />
+            <Spinner fx:id="yearSpinner" accessibleText="1" layoutX="142.0" layoutY="184.0" prefHeight="26.0" prefWidth="89.0" />
             <Text layoutX="95.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calhoder name" />
             <Text layoutX="100.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number" />
             <Text layoutX="131.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/" wrappingWidth="10.630859375" />
@@ -42,11 +42,7 @@
                   <Rectangle2D />
                </viewport>
             </ImageView>
-            <Hyperlink fx:id="backToCarPageLink" layoutX="245.0" layoutY="21.0" text="Back to Cars">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Hyperlink>
+            <Hyperlink fx:id="backToCarPageLink" layoutX="214.0" layoutY="21.0" onAction="#handleBackToCarPage" text="Back to Car" />
          </children>
          <opaqueInsets>
             <Insets />
