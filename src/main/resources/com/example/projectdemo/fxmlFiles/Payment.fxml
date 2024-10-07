@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.PaymentController">
+   <children>
+      <Text layoutX="112.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" wrappingWidth="76.22314453125">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Text>
+      <Button fx:id="paymentbutton" layoutX="114.0" layoutY="421.0" mnemonicParsing="false" text="Pay" />
+      <Pane layoutX="5.0" layoutY="116.0" prefHeight="318.0" prefWidth="294.0">
+         <children>
+            <TextField layoutX="57.0" layoutY="44.0" />
+            <TextField layoutX="57.0" layoutY="117.0" />
+            <TextField layoutX="109.0" layoutY="251.0" prefHeight="26.0" prefWidth="44.0" />
+            <Spinner accessibleText="2" layoutX="35.0" layoutY="184.0" prefHeight="26.0" prefWidth="89.0" />
+            <Spinner accessibleText="1" layoutX="142.0" layoutY="184.0" prefHeight="26.0" prefWidth="89.0" />
+            <Text layoutX="95.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calhoder name" />
+            <Text layoutX="100.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number" />
+            <Text layoutX="131.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/" wrappingWidth="10.630859375" />
+            <Text layoutX="95.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiration Date" />
+            <Text layoutX="118.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVV" />
+         </children>
+      </Pane>
+      <Hyperlink fx:id="backToCarPageLink" layoutX="14.0" layoutY="20.0" text="Back to Cars">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>
