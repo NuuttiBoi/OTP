@@ -5,9 +5,8 @@ import com.example.projectdemo.model.RentalDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
@@ -15,7 +14,6 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -62,10 +60,20 @@ public class CarPageController {
         stage.close();
     }
 
+    public void onSignInButtonClicked() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/LoginController.fxml"));
+        Parent layout = fxmlLoader.load();
+        Stage loginStage = new Stage();
+        Scene scene = new Scene(layout, 300, 600);
+        loginStage.setScene(scene);
+        loginStage.setTitle("Login Page");
+        loginStage.show();
+    }
+
+
     @FXML
     void handleRentCarClick() throws IOException, SQLException {
         isSignedIn = homeController.isSignedIn();
-        // Load the FXML file for the form
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/RentCar.fxml"));
         Parent formLayout = fxmlLoader.load();
 
@@ -80,25 +88,24 @@ public class CarPageController {
             alert.showAndWait();
         } else {
             alert.setContentText("You have to sign in/register in order to rent a car");
+            ButtonType signInButton = new ButtonType("Sign In");
+            ButtonType exitButton = new ButtonType("Exit");
+            alert.getButtonTypes().setAll(signInButton, exitButton);
+            alert.setOnCloseRequest(e -> {
+                ButtonType result = alert.getResult();
+                if (result != null && result == signInButton) {
+                    try {
+                        onSignInButtonClicked();
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                } else {
+                    System.out.println("Quit!");
+                }
+            });
             alert.showAndWait();
         }
         car.setRented(LocalDate.from(returnDate.atStartOfDay()));
-
-        /*
-        // Create a new stage (window) for the form
-        Stage formWindow = new Stage();
-        formWindow.setTitle("Rent Car");
-
-        // Set the form scene
-        Scene formScene = new Scene(formLayout, 400, 300);
-        formWindow.setScene(formScene);
-
-        // Set the new window as a modal window
-        formWindow.initModality(Modality.APPLICATION_MODAL);
-
-        // Show the window and wait until it's closed before returning to the previous window
-        formWindow.showAndWait();
-         */
     }
 }
 
