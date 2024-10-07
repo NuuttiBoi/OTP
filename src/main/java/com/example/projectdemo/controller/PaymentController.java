@@ -48,6 +48,12 @@ public class PaymentController implements javafx.fxml.Initializable {
     @FXML
     private TextField cvvField;
 
+    @FXML
+    private TextField cardNumber;
+
+    @FXML
+    private TextField cardName;
+
     private Image carImage;
     private Car selectedCar;
     private LocalDate startDate; //
@@ -67,6 +73,39 @@ public class PaymentController implements javafx.fxml.Initializable {
         }
         SpinnerValueFactory<Integer> yearFactory = new SpinnerValueFactory.ListSpinnerValueFactory<>(years);
         yearSpinner.setValueFactory(yearFactory);
+
+        // Limit card name input to letters only
+        cardName.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("[a-zA-Z ]*")) {
+                cardName.setText(oldValue);
+            }
+        });
+
+/// Set up the card number input with formatting
+        cardNumber.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Remove all non-digit characters
+            String digitsOnly = newValue.replaceAll("\\D", "");
+
+            // Limit to a maximum of 16 digits
+            if (digitsOnly.length() > 16) {
+                digitsOnly = digitsOnly.substring(0, 16);
+            }
+
+            // Format with spaces
+            StringBuilder formatted = new StringBuilder();
+            for (int i = 0; i < digitsOnly.length(); i++) {
+                if (i > 0 && i % 4 == 0) {
+                    formatted.append(" "); // Add a space every 4 digits
+                }
+                formatted.append(digitsOnly.charAt(i));
+            }
+
+            // Set the new formatted value
+            cardNumber.setText(formatted.toString());
+
+            // Move the cursor to the end of the text
+            cardNumber.positionCaret(cardNumber.getText().length());
+        });
 
         // Load the car logo image
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
