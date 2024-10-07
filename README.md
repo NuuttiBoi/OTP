@@ -102,7 +102,7 @@ xhost +local:docker
 
 ```bash
 set DISPLAY=host.docker.internal:0
-docker run -e DISPLAY=host.docker.internal:0 -v /tmp/.X11-unix:/tmp/.X11-unix --rm my-javafx-app
+docker run -e DISPLAY=host.docker.internal:0 -v /tmp/.X11-unix:/tmp/.X11-unix --rm nuuttiboi/project
 
 
  
