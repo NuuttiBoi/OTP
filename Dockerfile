@@ -11,7 +11,7 @@ COPY pom.xml /app/
 COPY . /app/
 
 # Package the application using Maven
-RUN mvn package
+RUN mvn clean package
 
 # Run the main class from the built JAR
-CMD ["java", "-jar", "target/Test.jar"]
+CMD ["java", "-jar", "target/ProjectDemo-1.0-SNAPSHOT-shaded.jar"]
