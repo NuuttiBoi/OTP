@@ -23,12 +23,10 @@ The target audience for the Car Rental App includes:
 
 By understanding and catering to these diverse user groups, the Car Rental App aims to provide a valuable service that enhances mobility and convenience.
 
+
 ## Miksi projekti on hyödyllinen
 
-Car Rental App on hyödyllinen projekti useista syistä:
-## Miksi projekti on hyödyllinen
-
-Car Rental App tarjoaa monia etuja:
+Autovuokraamo sovellus tarjoaa monia etuja:
 
 1. **Käyttäjäystävällisyys**: Intuitiivinen käyttöliittymä tekee autovuokrauksesta helppoa ja nopeaa.
 
