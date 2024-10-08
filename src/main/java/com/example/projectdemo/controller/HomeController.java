@@ -77,11 +77,11 @@ public class HomeController {
         locationList.setOnMouseClicked(event -> {
             Location selectedLocation = locationList.getSelectionModel().getSelectedItem();
             if (selectedLocation != null) {
-                if (!UserDAO.isLoggedIn()) { // Check if the user is signed in
-                    alert.setContentText("Please log in to continue.");
-                    alert.showAndWait();
-                    return; // Exit the method if not signed in
-                }
+//                if (!UserDAO.isLoggedIn()) { // Check if the user is signed in
+//                    alert.setContentText("Please log in to continue.");
+//                    alert.showAndWait();
+//                    return; // Exit the method if not signed in
+//                }
 
                 // The rest of your existing code...
                 if (startDate == null || returnDate == null) {

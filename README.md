@@ -52,4 +52,57 @@ WhipRent includes the following functionalities:
 5. **Admin Functions**: Admins can update car listings, oversee bookings, and manage users.
 
 Follow these steps to easily rent cars using the WhipRent app.
+
+
+# Running JavaFX Application in Docker
+
+## Prerequisites
+
+Before running your JavaFX application in Docker with GUI support, ensure you have the following installed:
+
+- **Docker**: Make sure you have Docker installed on your machine.
+- **X Server**: You need to have an X server running:
+  - For **Windows**, use [VcXsrv](https://sourceforge.net/projects/vcxsrv/).
+  - For **macOS**, use [XQuartz](https://www.xquartz.org/).
+
+## Step 1: Start the X Server
+
+### For Windows (Using VcXsrv)
+
+1. **Download and Install VcXsrv**:
+   - Download from [VcXsrv's official site](https://sourceforge.net/projects/vcxsrv/).
+   - Run the installer and complete the installation.
+
+2. **Launch VcXsrv**:
+   - Start **XLaunch** from the Start Menu.
+   - Choose **Multiple windows** and click **Next**.
+   - Keep the default display number (usually `0`) and click **Next**.
+   - Uncheck **"Enable access control"** and click **Finish**.
+
+### For macOS (Using XQuartz)
+
+1. **Download and Install XQuartz**:
+   - Download from [XQuartz's website](https://www.xquartz.org/).
+   - Run the installer and follow the instructions.
+
+2. **Launch XQuartz**:
+   - Open XQuartz from your Applications folder.
+   - Go to **XQuartz menu** > **Preferences** > **Security** tab.
+   - Check **"Allow connections from network clients"**.
+
+## Step 2: Allow X11 Access
+
+Run the following command in your terminal to allow X11 access (only required for Linux):
+
+```bash
+xhost +local:docker
+````
+
+## Step 3> Run the image
+
+```bash
+set DISPLAY=host.docker.internal:0
+docker run -e DISPLAY=host.docker.internal:0 -v /tmp/.X11-unix:/tmp/.X11-unix --rm nuuttiboi/project
+
+
  
