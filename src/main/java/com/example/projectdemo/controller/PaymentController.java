@@ -54,6 +54,12 @@ public class PaymentController implements javafx.fxml.Initializable {
     @FXML
     private TextField cardName;
 
+    @FXML
+    private Button submitButton;
+
+    @FXML
+    private Button paymenButton;
+
     private Image carImage;
     private Car selectedCar;
     private LocalDate startDate; //
@@ -169,17 +175,21 @@ public class PaymentController implements javafx.fxml.Initializable {
             return;
         }
 
+        // If all validations pass, proceed to payment confirmation
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/OrderConfirmation.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) paymenButton.getScene().getWindow(); // Get the current stage
+            stage.setScene(new Scene(root)); // Set the scene to OrderConfirmation.fxml
+            stage.show(); // Display the confirmation page
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
 
     @FXML
     public void handleBackToCarPage(ActionEvent event) {
         try {
-            // Close the current stage
-            Stage currentStage = (Stage) mainPane.getScene().getWindow();
-            currentStage.close();
-
-            // Load CarPage.fxml
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/CarPage.fxml"));
             Parent layout = fxmlLoader.load();  // Load the FXML layout
 
@@ -187,15 +197,15 @@ public class PaymentController implements javafx.fxml.Initializable {
             CarPageController carPageController = fxmlLoader.getController();
             carPageController.setCarDetails(carImage, selectedCar, startDate, returnDate); // Pass selected car and its details
 
-            Scene scene = new Scene(layout);
-            Stage carPageStage = new Stage();
-            carPageStage.setScene(scene);
+            Stage carPageStage = (Stage) mainPane.getScene().getWindow();
+            carPageStage.setScene(new Scene(layout));
             carPageStage.setTitle("Car Page");
             carPageStage.show();  // Show the car page
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
 
     private void showAlert(String title, String message) {

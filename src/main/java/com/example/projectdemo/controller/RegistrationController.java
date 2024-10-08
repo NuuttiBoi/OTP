@@ -17,6 +17,11 @@ import javafx.scene.layout.CornerRadii;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 public class RegistrationController {
 
@@ -49,7 +54,8 @@ public class RegistrationController {
     }
 
     @FXML
-    public void register(ActionEvent event) throws SQLException {
+    public void register(ActionEvent event) throws SQLException, IOException {
+
         Window owner = submitButton.getScene().getWindow();
 
         System.out.println(fullNameField.getText());
@@ -82,6 +88,20 @@ public class RegistrationController {
 
         showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
                 "Welcome " + fullNameField.getText());
+
+        // Close the current login stage
+        Stage currentStage = (Stage) submitButton.getScene().getWindow();
+        currentStage.close();
+
+        // Load the Start.fxml page
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Start.fxml"));
+        Parent layout = fxmlLoader.load();  // Load the FXML layout
+        Scene scene = new Scene(layout, 300, 600);
+        Stage startStage = new Stage();
+        startStage.setScene(scene);
+        startStage.setTitle("Start Page");
+        startStage.show();  // Show the start page
+
     }
 
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
