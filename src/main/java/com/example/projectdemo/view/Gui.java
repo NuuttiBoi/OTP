@@ -12,7 +12,7 @@ public class Gui extends Application{
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Gui.class.getResource("/com/example/projectdemo/fxmlFiles/Payment1.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Gui.class.getResource("/com/example/projectdemo/fxmlFiles/Welcome.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 300, 600);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         stage.setTitle("Car Rental");
@@ -20,7 +20,6 @@ public class Gui extends Application{
         stage.setScene(scene);
         stage.show();
     }
-
 
     public static void main(String[] args) {
         launch();
