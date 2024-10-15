@@ -6,17 +6,15 @@ public class User {
     private String email;
     private String role;
     private String type;
-    private String rentalID;
+    private String rentalID, password;
 
-    public User(int userID, String email, String role, String type, String rentalID) {
+
+    public User(int userID, String email, String type) {
         this.userID = userID;
         this.email = email;
-        this.role = role;
         this.type = type;
-        this.rentalID = rentalID;
     }
 
-    // Default constructor
     public User() {
     }
 
@@ -35,6 +33,10 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public String getRole() {

@@ -9,28 +9,35 @@ public class UserDAO {
     private static final String SELECT_QUERY = "SELECT * FROM registration WHERE email_id = ? and password = ?";
     private static boolean isLoggedIn = false; // Track login state
 
-    public boolean validate(String emailId, String password) throws SQLException {
+    public User validate(String emailId, String password) throws SQLException {
         ConnectDb connectDb = new ConnectDb();
         Connection connection = connectDb.connect();
 
-        PreparedStatement preparedStatement = connection.prepareStatement(SELECT_QUERY);
-        preparedStatement.setString(1, emailId);
-        preparedStatement.setString(2, password);
+        // Single query to both validate and retrieve user details
+        String sql = "SELECT * FROM registration WHERE email_id = ? AND password = ?";
+        User user = null;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, emailId);
+            preparedStatement.setString(2, password);
 
-        System.out.println(preparedStatement);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-        ResultSet resultSet = preparedStatement.executeQuery();
-        if (resultSet.next()) {
-            isLoggedIn = true; // Set login state to true if validation is successful
-            return true;
+            // If a matching record is found, create a User object with the details
+            if (resultSet.next()) {
+                user = new User();
+                user.setUserID(resultSet.getInt("id"));
+                user.setEmail(resultSet.getString("email_id"));
+                user.setPassword(resultSet.getString("password"));
+            }
         }
-        return false;
+        return user;
     }
 
     // Getter for login state
-    public static boolean isLoggedIn() {
+    public boolean isLoggedIn() {
         return isLoggedIn;
     }
+
 
     // Method to reset the login state (for logout)
     public static void setLoggedIn(boolean loggedIn) {
@@ -52,11 +59,14 @@ public class UserDAO {
             }
         }
     }
+    public void addUser(){
+
+    }
 
     // Method to retrieve a User by userID from the database
     public User getUserByID(int userID) {
         User user = null;
-        String sql = "SELECT * FROM user WHERE userID = ?";
+        String sql = "SELECT * FROM registration WHERE id = ?";
         ConnectDb connectDb = new ConnectDb();
         try (Connection conn = connectDb.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -64,16 +74,11 @@ public class UserDAO {
             pstmt.setInt(1, userID);  // Set userID parameter
 
             ResultSet rs = pstmt.executeQuery();
-
-            // Process the result set
             if (rs.next()) {
-                // Map the result set to a User object
                 user = new User();
-                user.setUserID(rs.getInt("userID"));
-                user.setEmail(rs.getString("email"));
-                user.setRole(rs.getString("role"));
-                user.setType(rs.getString("type"));
-                user.setRentalID(rs.getString("RentalID"));  // Assuming RentalID is in the table
+                user.setUserID(rs.getInt("id"));
+                user.setEmail(rs.getString("email_id"));
+                user.setRole("ok");
             }
 
         } catch (SQLException e) {
@@ -82,4 +87,5 @@ public class UserDAO {
 
         return user;
     }
+
 }

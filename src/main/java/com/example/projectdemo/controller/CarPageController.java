@@ -1,6 +1,6 @@
 package com.example.projectdemo.controller;
 
-import com.example.projectdemo.model.Car;
+import com.example.projectdemo.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -41,24 +42,26 @@ public class CarPageController {
     private Pane mainPane;
     @FXML
     public ImageView logo;
-    Car car;
+    private Car car;
     private LocalDate returnDate;
     private LocalDate startDate;
+    private UserDAO user;
 
     @FXML
     public void initialize() {
-        // Load the car logo image
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
 
         mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
-    public void setCarDetails(Image carImage, Car selectedCar, LocalDate startDate, LocalDate returnDate) {
+    public void setCarDetails(Image carImage, Car selectedCar, LocalDate startDate, LocalDate returnDate) throws SQLException {
         this.returnDate = returnDate;
         this.startDate = startDate;
         this.car = selectedCar;
         carPic.setImage(carImage);
+        CarDAO dao = new CarDAO("car");
+        dao.setAvailability(selectedCar.getId());
         modelText.setText(selectedCar.getMake() + " " + selectedCar.getModel());
         carDetailsText.setText("Year: " + selectedCar.getYear() + " \nKilometers driven: " + selectedCar.getKm_driven() +
                 "\nLocation: " + car.getLocation());
@@ -81,9 +84,14 @@ public class CarPageController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Payment1.fxml"));
         Parent paymentLayout = fxmlLoader.load();
         Stage paymentStage = new Stage();
+        PaymentController paymentController = new PaymentController();
         Scene scene = new Scene(paymentLayout, 300, 600);
         paymentStage.setScene(scene);
         paymentStage.setTitle("Payment Page");
         paymentStage.show();
+
+        RentalDAO rentalDAO = new RentalDAO();
+        rentalDAO.addRental("11", SessionManager.getStartDate().toString(), SessionManager.getEndDate().toString(),
+                "C1","1",8);
     }
 }

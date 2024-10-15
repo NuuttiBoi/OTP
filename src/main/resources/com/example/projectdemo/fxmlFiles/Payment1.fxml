@@ -12,14 +12,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.PaymentController">
+<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.PaymentController">
    <children>
       <Text layoutX="115.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" wrappingWidth="76.22314453125">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
       </Text>
-      <Button fx:id="paymentbutton" layoutX="110.0" layoutY="476.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" onAction="#handlePayment" text="Pay" />
+      <Button id="paymentButton" fx:id="paymentButton" layoutX="110.0" layoutY="476.0" mnemonicParsing="false" onAction="#handlePayment" prefHeight="32.0" prefWidth="81.0" text="Pay" />
       <Pane layoutX="12.0" layoutY="164.0" prefHeight="318.0" prefWidth="294.0">
          <children>
             <TextField fx:id="cardName" layoutX="57.0" layoutY="44.0" />

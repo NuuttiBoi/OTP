@@ -11,7 +11,6 @@ public class RegistrationDAO {
 
 
     public void insertRecord(String fullName, String emailId, String password) throws SQLException {
-
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
         ConnectDb connectDb = new ConnectDb();

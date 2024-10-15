@@ -1,6 +1,8 @@
 
 package com.example.projectdemo.controller;
 
+import com.example.projectdemo.model.SessionManager;
+import com.example.projectdemo.model.User;
 import com.example.projectdemo.model.UserDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -78,14 +80,21 @@ public class LoginController {
         String password = passwordField.getText();
 
         UserDAO userDao = new UserDAO();
-        boolean flag = userDao.validate(emailId, password);
+        User user = userDao.validate(emailId, password);
+        // Example login process
 
-        if (!flag) {
+
+
+        if (user == null) {
             infoBox("Please enter correct Email and Password", null, "Failed");
         } else {
             // Show the success message and wait for user acknowledgment
             infoBox("Login Successful!", null, "Success");
-
+            User loggedInUser = userDao.validate(emailId, password); // Assuming userService handles authentication
+            if (loggedInUser != null) {
+                SessionManager.login(loggedInUser);
+                // Navigate to the main application scene or dashboard
+            }
             // Close the current login stage
             Stage currentStage = (Stage) submitButton.getScene().getWindow();
             currentStage.close();
@@ -96,6 +105,7 @@ public class LoginController {
             Scene scene = new Scene(layout, 300, 600);
             Stage startStage = new Stage();
             startStage.setScene(scene);
+
             startStage.setTitle("Start Page");
             startStage.show();  // Show the start page
         }

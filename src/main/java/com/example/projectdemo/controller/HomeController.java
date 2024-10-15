@@ -3,19 +3,13 @@ package com.example.projectdemo.controller;
 // Kontrolleri aloituissivulle
 // täällä pitäisi valita mistä sijainnista käyttäjä haluaa vuokrata auton
 // + sisäänkirjautuminen / rekisteröinti
-import com.example.projectdemo.model.UserDAO;
-import com.example.projectdemo.model.Car;
-import com.example.projectdemo.model.Location;
-import com.example.projectdemo.model.LocationDAO;
+import com.example.projectdemo.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -27,6 +21,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +35,10 @@ public class HomeController {
     public DatePicker returnDatePicker;
     @FXML
     public ImageView logo;
+    public MenuButton menuButton;
+    public MenuItem menuOption1;
+    @FXML
+    public Text userText;
     @FXML
     private Pane mainPane;
     @FXML
@@ -52,11 +51,9 @@ public class HomeController {
     private List<Location> locations = new ArrayList<>();
     private LocationDAO locationDAO = new LocationDAO("locationDao");
     private List<Car> carList = new ArrayList<Car>();
+    private UserDAO user;
 
     public void initialize() {
-        if (isSignedIn) {
-            signedInText.setText("You are signed in.");
-        }
         locations = locationDAO.getLocationList();
         locationList.setCellFactory(lv -> new javafx.scene.control.ListCell<Location>() {
             @Override
@@ -103,19 +100,28 @@ public class HomeController {
 
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
+
+        userText.setText(SessionManager.getCurrentUser().getEmail());
+
+        System.out.println("hello " + user);
     }
 
     private void openScene1(Location selectedLocation, LocalDate returnDate) throws IOException {
+        Stage currentStage = (Stage) mainPane.getScene().getWindow();
+        currentStage.close();
         Stage scene1 = new Stage();
         scene1.setTitle("scene1");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Scene1.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
         Controller controller = fxmlLoader.getController();  // Make sure to import your controller class
         controller.initialize(selectedLocation.getId(), startDate, returnDate);
-
         Scene scene = new Scene(layout, 300, 600);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         scene1.setScene(scene);
+
+        Rental rental = new Rental();
+        rental.setRentalDate(startDate);
+        rental.setReturnDate(returnDate);
 
         scene1.initModality(Modality.APPLICATION_MODAL);
         scene1.showAndWait();
@@ -145,11 +151,22 @@ public class HomeController {
     public void handleStartDate() {
         startDate = startDatePicker.getValue();
         System.out.println(startDatePicker.getValue());
+        SessionManager.setStartDate(startDate);
     }
 
     public void handleReturnDate() {
         returnDate = returnDatePicker.getValue();
         System.out.println(returnDatePicker.getValue());
+        SessionManager.setEndDate(returnDate);
+    }
+
+    public void handleMyRentals() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/UserRentals.fxml"));
+        Parent layout = fxmlLoader.load();
+        Stage rentalsStage = new Stage();
+        Scene scene = new Scene(layout, 300, 400);
+        rentalsStage.setScene(scene);
+        rentalsStage.show();
     }
 
     public void setSignedIn() {
@@ -170,7 +187,6 @@ public class HomeController {
         return this.startDate;
     }
 
-    // Käyttäjä valitsee täällä sijainnin, jonka perusteella tulisi avata ikkuna,
-    // jossa näkyy kyseisessä sijainnissa saatavilla olevat autot.
-    // pitäisi ehkä tehdä oma table joka yhdistää rentallocationit vehiclesiin
+
+
 }

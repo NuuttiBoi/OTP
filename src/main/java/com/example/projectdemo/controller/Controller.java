@@ -3,6 +3,7 @@ package com.example.projectdemo.controller;
 import com.example.projectdemo.model.Car;
 import com.example.projectdemo.model.CarDAO;
 import com.example.projectdemo.model.ConnectDb;
+import com.example.projectdemo.model.UserDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -49,7 +50,7 @@ public class Controller {
     private ScrollBar scrollbar;
     @FXML
     private HBox pallot;
-
+    private UserDAO user;
 
     public void loginPage() throws IOException {
         FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("login.fxml"));
@@ -74,6 +75,7 @@ public class Controller {
 
 
     public void initialize(String locationID, LocalDate startDate, LocalDate returnDate){
+        this.user = user;
         this.startDate = startDate;
         this.returnDate = returnDate;
         try{
@@ -187,6 +189,9 @@ public class Controller {
 
     // Avaa auton vuokrausikkunan
     private void openNewWindow(Car selectedCar) throws IOException, SQLException {
+        Stage currentStage = (Stage) carList.getScene().getWindow();
+        currentStage.close();
+
         Stage newWindow = new Stage();
         newWindow.setTitle("Car Details");
 

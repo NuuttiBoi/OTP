@@ -1,5 +1,7 @@
 package com.example.projectdemo.controller;
 import com.example.projectdemo.model.Car;
+import com.example.projectdemo.model.RentalDAO;
+import com.example.projectdemo.model.UserDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,6 +24,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -58,12 +61,13 @@ public class PaymentController implements javafx.fxml.Initializable {
     private Button submitButton;
 
     @FXML
-    private Button paymenButton;
+    private Button paymentButton;
 
     private Image carImage;
     private Car selectedCar;
     private LocalDate startDate; //
     private LocalDate returnDate;
+    private UserDAO user;
 
 
     @FXML
@@ -179,9 +183,12 @@ public class PaymentController implements javafx.fxml.Initializable {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/OrderConfirmation.fxml"));
             Parent root = fxmlLoader.load();
-            Stage stage = (Stage) paymenButton.getScene().getWindow(); // Get the current stage
+            Stage stage = (Stage) paymentButton.getScene().getWindow(); // Get the current stage
             stage.setScene(new Scene(root)); // Set the scene to OrderConfirmation.fxml
             stage.show(); // Display the confirmation page
+
+            RentalDAO rentalDAO = new RentalDAO();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -203,16 +210,21 @@ public class PaymentController implements javafx.fxml.Initializable {
             carPageStage.show();  // Show the car page
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
+    public void setUser(UserDAO user){
+        this.user = user;
+    }
 
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
-        alert.setContentText(message);
+        alert.setContentText(user.toString());
         alert.showAndWait();
     }
 }
