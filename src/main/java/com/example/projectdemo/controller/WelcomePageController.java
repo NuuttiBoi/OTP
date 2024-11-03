@@ -24,6 +24,7 @@ public class WelcomePageController {
 
     public Text welcomeText;
     public Text instructionText;
+    private Text buttonText;
 
     @FXML
     private Button signInButton;
@@ -83,6 +84,7 @@ public class WelcomePageController {
         // Update UI text
         welcomeText.setText(bundle.getString("welcomeMessage"));
         instructionText.setText(bundle.getString("instruction"));
+        signInButton.setText(bundle.getString("buttonText"));
     }
 
     private void saveLanguagePreference(String language) {
