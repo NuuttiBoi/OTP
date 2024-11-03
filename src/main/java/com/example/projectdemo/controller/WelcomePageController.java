@@ -74,7 +74,7 @@ public class WelcomePageController {
         }
 
         // Load the resource bundle for the selected language
-        bundle = ResourceBundle.getBundle("com.example.projectdemo.messages", locale);
+        bundle = ResourceBundle.getBundle("messages", locale);
 
         // Update UI text
         welcomeText.setText(bundle.getString("welcomeMessage"));
