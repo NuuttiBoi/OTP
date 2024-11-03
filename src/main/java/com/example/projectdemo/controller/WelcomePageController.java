@@ -1,9 +1,11 @@
 package com.example.projectdemo.controller;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
@@ -14,6 +16,7 @@ import java.io.IOException;
 
 public class WelcomePageController {
 
+    public ComboBox languageSelection;
     @FXML
     private Button signInButton;
 
@@ -25,6 +28,15 @@ public class WelcomePageController {
         // Load the car logo image
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
+
+        // Weekdays
+        String[] languages =
+                { "English", "Finnish", "Japanese",
+                        "Russian"};
+
+        // Create a combo box
+        languageSelection.setItems(FXCollections.observableArrayList(languages));
+
     }
 
     public void onSignInButtonClicked() throws IOException {
