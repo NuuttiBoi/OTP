@@ -1,9 +1,6 @@
 package com.example.projectdemo.controller;
 
-import com.example.projectdemo.model.Car;
-import com.example.projectdemo.model.CarDAO;
-import com.example.projectdemo.model.ConnectDb;
-import com.example.projectdemo.model.UserDAO;
+import com.example.projectdemo.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +11,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -26,6 +24,10 @@ import java.util.*;
 public class Controller {
     public ListView<Car> carList;
     public TextField searchField;
+    public Label carListHeader;
+    public Text brandsText;
+    public Button searchButton;
+    public Button backButton;
     private CarDAO car = new CarDAO("Auto");
     List<Car> list = new ArrayList<>();
     private LocalDate returnDate = null;
@@ -75,9 +77,19 @@ public class Controller {
 
 
     public void initialize(String locationID, LocalDate startDate, LocalDate returnDate){
+        ResourceBundle bundle = LanguageManager.getResourceBundle();
         this.user = user;
         this.startDate = startDate;
         this.returnDate = returnDate;
+
+        carListHeader.setText(bundle.getString("carListHeader"));
+        seeAllLink.setText(bundle.getString("See_All"));
+        backButton.setText(bundle.getString("Back"));
+        searchButton.setText(bundle.getString("Search"));
+        brandsText.setText(bundle.getString("Brands"));
+
+
+
         try{
             //list = car.getList();
             // hakee autot tietystä sijainnista

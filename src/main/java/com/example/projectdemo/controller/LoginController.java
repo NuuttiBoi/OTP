@@ -1,6 +1,7 @@
 
 package com.example.projectdemo.controller;
 
+import com.example.projectdemo.model.LanguageManager;
 import com.example.projectdemo.model.SessionManager;
 import com.example.projectdemo.model.User;
 import com.example.projectdemo.model.UserDAO;
@@ -9,26 +10,29 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.PasswordField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.scene.layout.Pane;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 public class LoginController {
 
+    public Label passwordText;
+    public Text noAccountText;
+    public Label emailText;
+    public Label headerText;
     @FXML
     private TextField emailIdField;
 
@@ -51,11 +55,20 @@ public class LoginController {
 
     @FXML
     public void initialize() {
+        ResourceBundle bundle = LanguageManager.getResourceBundle();
+
         // Load the car logo image
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
 
         mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
+
+        passwordText.setText(bundle.getString("passwordText"));
+        noAccountText.setText(bundle.getString("no_account"));
+        emailText.setText(bundle.getString("emailText"));
+        registerButton.setText(bundle.getString("register"));
+        submitButton.setText(bundle.getString("submit"));
+        headerText.setText(bundle.getString("loginHeader"));
     }
 
     @FXML

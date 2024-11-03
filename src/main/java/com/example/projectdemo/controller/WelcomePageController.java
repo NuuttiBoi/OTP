@@ -1,5 +1,6 @@
 package com.example.projectdemo.controller;
 
+import com.example.projectdemo.model.LanguageManager;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -71,11 +72,14 @@ public class WelcomePageController {
         Locale locale;
         if (language.equals("Finnish")) {
             locale = new Locale("fi","FI");
+            LanguageManager.setLocale(locale);
         } else if (language.equals("Japanese")) {
             locale = new Locale("ja","JP");
+            LanguageManager.setLocale(locale);
         }
         else {
             locale = new Locale("en","US");
+            LanguageManager.setLocale(locale);
         }
 
         // Load the resource bundle for the selected language

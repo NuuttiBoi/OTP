@@ -25,6 +25,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class HomeController {
     public ListView<Location> locationList;
@@ -39,6 +40,10 @@ public class HomeController {
     public MenuItem menuOption1;
     @FXML
     public Text userText;
+    public Text startDateText;
+    public Text endDateText;
+    public Text locationInstructionText;
+    public Text dateInstructionText;
     @FXML
     private Pane mainPane;
     @FXML
@@ -54,6 +59,15 @@ public class HomeController {
     private UserDAO user;
 
     public void initialize() {
+        ResourceBundle bundle = LanguageManager.getResourceBundle();
+
+        System.out.println(bundle);
+
+        startDateText.setText(bundle.getString("startDate"));
+        endDateText.setText(bundle.getString("endDate"));
+        locationInstructionText.setText(bundle.getString("locationInstruction"));
+        dateInstructionText.setText(bundle.getString("dateInstruction"));
+
         locations = locationDAO.getLocationList();
         locationList.setCellFactory(lv -> new javafx.scene.control.ListCell<Location>() {
             @Override
@@ -80,7 +94,6 @@ public class HomeController {
 //                    return; // Exit the method if not signed in
 //                }
 
-                // The rest of your existing code...
                 if (startDate == null || returnDate == null) {
                     alert.setContentText("Please select the dates.");
                     alert.showAndWait();

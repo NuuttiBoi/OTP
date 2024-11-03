@@ -12,20 +12,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.LoginController">
+<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.LoginController">
    <children>
-       <Label layoutX="125.0" layoutY="111.0" text="Sign In">
+       <Label id="headerText" fx:id="headerText" layoutX="125.0" layoutY="111.0" text="Sign In">
            <font>
                <Font name="Arial" size="24" />
            </font>
        </Label>
-       <Label layoutX="22.0" layoutY="196.0" text="Email ID : " />
+       <Label id="emailText" fx:id="emailText" layoutX="22.0" layoutY="196.0" text="Email ID : " />
        <TextField fx:id="emailIdField" layoutX="108.0" layoutY="185.0" prefHeight="40" />
-       <Button fx:id="submitButton" defaultButton="true" layoutX="100.0" layoutY="330.0" onAction="#login" prefHeight="40" prefWidth="100" text="Submit" />
+       <Button id="submitButton" fx:id="submitButton" defaultButton="true" layoutX="100.0" layoutY="330.0" onAction="#login" prefHeight="40" prefWidth="100" text="Submit" />
        <PasswordField fx:id="passwordField" layoutX="108.0" layoutY="244.0" prefHeight="40" />
-       <Label layoutX="17.0" layoutY="255.0" text="Password : " />
-       <Button fx:id="registerButton" defaultButton="true" layoutX="100.0" layoutY="482.0" onAction="#handleRegisterButtonClick" prefHeight="40" prefWidth="100" text="Register " />
-      <Text layoutX="32.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? Register now!" />
+       <Label id="passwordText" fx:id="passwordText" layoutX="17.0" layoutY="255.0" text="Password : " />
+       <Button id="registerButton" fx:id="registerButton" defaultButton="true" layoutX="100.0" layoutY="482.0" onAction="#handleRegisterButtonClick" prefHeight="40" prefWidth="100" text="Register " />
+      <Text id="noAccountText" fx:id="noAccountText" layoutX="32.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account? Register now!" />
       <Pane id="topPane" fx:id="mainPane" opacity="0.74" prefHeight="60.0" prefWidth="319.0">
          <children>
             <Text id="signedInText" layoutX="94.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="43.0" />

@@ -12,16 +12,16 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" minHeight="600" prefHeight="550.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.Controller">
+<VBox alignment="CENTER" minHeight="600" prefHeight="550.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.Controller">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
-   <Label text="Search For Cars To Rent" />
+   <Label id="carListHeader" fx:id="carListHeader" text="Search For Cars To Rent" />
    <TextField fx:id="searchField" prefHeight="90.0" prefWidth="326.0" promptText="Type search" />
    <HBox alignment="CENTER" prefHeight="12.0" prefWidth="300.0">
       <children>
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Brands" />
-         <Hyperlink fx:id="seeAllLink" text="See All">
+         <Text id="brandsText" fx:id="brandsText" strokeType="OUTSIDE" strokeWidth="0.0" text="Brands" />
+         <Hyperlink id="seeAllText" fx:id="seeAllLink" text="See All">
             <HBox.margin>
                <Insets left="150.0" />
             </HBox.margin>
@@ -46,7 +46,7 @@
 
    <ListView id="carList" fx:id="carList" prefHeight="257.0" prefWidth="300.0" />
    <Label fx:id="welcomeText" />
-   <Button onAction="#onSearchButtonClick" text="Search" />
-   <Button id="backButton" onAction="#onBackButtonClick" text="Back" />
+   <Button id="searchButton" fx:id="searchButton" onAction="#onSearchButtonClick" text="Search" />
+   <Button id="backButton" fx:id="backButton" onAction="#onBackButtonClick" text="Back" />
    <HBox prefHeight="100.0" prefWidth="200.0" />
 </VBox>

@@ -7,7 +7,7 @@ public class LanguageManager {
     private static ResourceBundle resourceBundle;
 
     public static void setLocale(Locale locale) {
-        resourceBundle = ResourceBundle.getBundle("com.example.projectdemo.messages", locale);
+        resourceBundle = ResourceBundle.getBundle("messages", locale);
     }
 
     public static ResourceBundle getResourceBundle() {

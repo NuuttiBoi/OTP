@@ -13,15 +13,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox minHeight="600.0" prefHeight="500.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.HomeController">
+<VBox minHeight="600.0" prefHeight="500.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.HomeController">
    <children>
       <AnchorPane minHeight="600.0" prefHeight="600.0" prefWidth="290.0">
          <children>
-            <Text layoutX="87.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select Location.." />
+            <Text fx:id="locationInstructionText" id="locationInstructionText" layoutX="87.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select Location.." />
             <ListView id="locationList" fx:id="locationList" layoutX="43.0" layoutY="291.0" prefHeight="253.0" prefWidth="215.0" />
             <Pane layoutX="63.0" layoutY="33.0" minHeight="90.0" prefHeight="90.0" prefWidth="176.0">
                <children>
-                  <Text layoutX="31.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select Dates.." />
+                  <Text fx:id="dateInstructionText" id="dateInstructionText" layoutX="31.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select Dates.." />
                </children>
             </Pane>
             <Pane id="topPane" fx:id="mainPane" opacity="0.74" prefHeight="60.0" prefWidth="319.0">
@@ -42,8 +42,8 @@
             </Pane>
             <DatePicker id="startDate" fx:id="startDatePicker" layoutX="31.0" layoutY="162.0" onAction="#handleStartDate" prefHeight="0.0" prefWidth="113.0" />
             <DatePicker id="endDate" fx:id="returnDatePicker" layoutX="162.0" layoutY="162.0" onAction="#handleReturnDate" prefHeight="0.0" prefWidth="107.0" />
-            <Text layoutX="72.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" />
-            <Text layoutX="208.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End" />
+            <Text fx:id="startDateText" id="startDateText" layoutX="72.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" />
+            <Text fx:id="endDateText" id="endDateText" layoutX="208.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End" />
             <Text fill="#dad1d1" layoutX="116.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WhipRent" wrappingWidth="60.0">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
