@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ResourceBundle;
 
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
@@ -32,6 +33,7 @@ public class CarPageController {
     public ListView carLocationList;
     @FXML
     public Text priceText;
+    public Button rentCarButton;
     @FXML
     ImageView carPic;
     @FXML
@@ -46,9 +48,12 @@ public class CarPageController {
     private LocalDate returnDate;
     private LocalDate startDate;
     private UserDAO user;
+    ResourceBundle bundle = LanguageManager.getResourceBundle();
+
 
     @FXML
     public void initialize() {
+
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
 
@@ -63,7 +68,7 @@ public class CarPageController {
         CarDAO dao = new CarDAO("car");
         dao.setAvailability(selectedCar.getId());
         modelText.setText(selectedCar.getMake() + " " + selectedCar.getModel());
-        carDetailsText.setText("Year: " + selectedCar.getYear() + " \nKilometers driven: " + selectedCar.getKm_driven() +
+        carDetailsText.setText(bundle.getString("Year") + selectedCar.getYear() + " \n " + bundle.getString("driven")  + selectedCar.getKm_driven() +
                 "\nLocation: " + car.getLocation());
 
         long differenceInDays = ChronoUnit.DAYS.between(startDate, returnDate);
@@ -71,7 +76,7 @@ public class CarPageController {
         double totalPrice = selectedCar.getPrice() * totalDifference;
         System.out.println("Difference in days: " + totalDifference);
 
-        priceText.setText("Price for " + totalDifference + " days:\n" + totalPrice + " €");
+        priceText.setText(bundle.getString("rental_price") + totalDifference + bundle.getString("rentalDays") +"\n" + totalPrice + " €");
     }
 
     public void onClick(){

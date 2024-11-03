@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="282.0" stylesheets="../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.CarPageController">
+<AnchorPane prefHeight="600.0" prefWidth="282.0" stylesheets="../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.CarPageController">
    <children>
 
       <!-- Article styled box for car details -->
@@ -19,19 +19,19 @@
             <VBox alignment="CENTER" layoutY="48.0" prefHeight="341.0" prefWidth="196.0" spacing="10.0">
                <children>
                   <ImageView fx:id="carPic" fitHeight="248.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true" />
-                  <Text fx:id="modelText" strokeType="OUTSIDE" strokeWidth="0.0" text="  Car Model" wrappingWidth="235.0">
+                  <Text id="modelText" fx:id="modelText" strokeType="OUTSIDE" strokeWidth="0.0" text="  Car Model" wrappingWidth="235.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text fx:id="carDetailsText" strokeType="OUTSIDE" strokeWidth="0.0" text="    Car Details" wrappingWidth="235.0" />
-                  <Text fx:id="priceText" strokeType="OUTSIDE" strokeWidth="0.0" text="            Price" wrappingWidth="231.0" />
+                  <Text id="detailsText" fx:id="carDetailsText" strokeType="OUTSIDE" strokeWidth="0.0" text="    Car Details" wrappingWidth="235.0" />
+                  <Text id="priceText" fx:id="priceText" strokeType="OUTSIDE" strokeWidth="0.0" text="            Price" wrappingWidth="231.0" />
                </children>
             </VBox>
          </children>
       </AnchorPane>
 
-      <Button fx:id="rentCarButton" layoutX="103.0" layoutY="538.0" mnemonicParsing="false" onAction="#handleRentCarClick" text="Rent Car" />
+      <Button id="rentCarButton" fx:id="rentCarButton" layoutX="103.0" layoutY="538.0" mnemonicParsing="false" onAction="#handleRentCarClick" text="Rent Car" />
       <Pane id="topPane" fx:id="mainPane" opacity="0.74" prefHeight="60.0" prefWidth="350.0">
          <children>
             <Text id="signedInText" layoutX="94.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="43.0" />
@@ -40,7 +40,7 @@
                   <Rectangle2D />
                </viewport>
             </ImageView>
-            <Button fx:id="backButton" layoutX="217.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClick" text="Back" />
+            <Button id="backButton" fx:id="backButton" layoutX="217.0" layoutY="14.0" mnemonicParsing="false" onAction="#onClick" text="Back" />
             <Text fill="#dad1d1" layoutX="116.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WhipRent" wrappingWidth="60.0">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
