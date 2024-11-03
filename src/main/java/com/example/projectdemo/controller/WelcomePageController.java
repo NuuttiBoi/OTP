@@ -19,6 +19,7 @@ import java.util.ResourceBundle;
 
 public class WelcomePageController {
 
+    @FXML
     public ComboBox languageSelection;
 
     public Text welcomeText;
@@ -41,8 +42,7 @@ public class WelcomePageController {
 
         // Weekdays
         String[] languages =
-                { "English", "Finnish", "Japanese",
-                        "Russian"};
+                { "English", "Finnish", "Japanese"};
 
         // Create a combo box
         languageSelection.setItems(FXCollections.observableArrayList(languages));
@@ -62,15 +62,19 @@ public class WelcomePageController {
             String selectedLanguage = (String) languageSelection.getValue();
             switchLanguage(selectedLanguage);
             saveLanguagePreference(selectedLanguage); // Save selected language
+            System.out.println("Language selected: " + selectedLanguage);
         });
 
     }
     private void switchLanguage(String language) {
         Locale locale;
         if (language.equals("Finnish")) {
-            locale = new Locale("fi");
-        } else {
-            locale = new Locale("en");
+            locale = new Locale("fi","FI");
+        } else if (language.equals("Japanese")) {
+            locale = new Locale("ja","JP");
+        }
+        else {
+            locale = new Locale("en","US");
         }
 
         // Load the resource bundle for the selected language
@@ -79,7 +83,6 @@ public class WelcomePageController {
         // Update UI text
         welcomeText.setText(bundle.getString("welcomeMessage"));
         instructionText.setText(bundle.getString("instruction"));
-        // Update any other text elements in the UI as needed
     }
 
     private void saveLanguagePreference(String language) {
