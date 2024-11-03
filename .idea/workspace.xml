@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="nyt pystyy käyttää sovellusta docker imagesta">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="language selection started">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/WelcomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/WelcomePageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Welcome.fxml" afterDir="false" />
@@ -267,7 +266,7 @@
       <workItem from="1730227005539" duration="584000" />
       <workItem from="1730229648851" duration="1396000" />
       <workItem from="1730381332271" duration="1685000" />
-      <workItem from="1730632147220" duration="4074000" />
+      <workItem from="1730632147220" duration="4672000" />
     </task>
     <task id="LOCAL−00001" summary="init">
       <option name="closed" value="true" />
@@ -453,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728333290974</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL−00026" summary="language selection started">
+      <option name="closed" value="true" />
+      <created>1730640119270</created>
+      <option name="number" value="LOCAL−00026" />
+      <option name="presentableId" value="LOCAL−00026" />
+      <updated>1730640119270</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,6 +500,7 @@
     <MESSAGE value="Payment page almost done." />
     <MESSAGE value="Ei pääse katsomaan autoja jos ei ole kirjautunut sisään." />
     <MESSAGE value="Maksukortti tiedot korjattu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Maksukortti tiedot korjattu." />
+    <MESSAGE value="language selection started" />
+    <option name="LAST_COMMIT_MESSAGE" value="language selection started" />
   </component>
 </project>

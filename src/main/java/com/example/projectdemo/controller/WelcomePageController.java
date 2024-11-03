@@ -9,19 +9,29 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 
 public class WelcomePageController {
 
     public ComboBox languageSelection;
+
+    public Text welcomeText;
+    public Text instructionText;
+
     @FXML
     private Button signInButton;
 
     @FXML
     public ImageView logo;
+
+    private ResourceBundle bundle;
+
 
     @FXML
     public void initialize() {
@@ -37,6 +47,57 @@ public class WelcomePageController {
         // Create a combo box
         languageSelection.setItems(FXCollections.observableArrayList(languages));
 
+        // Load default language (or previously saved language)
+        String savedLanguage = loadLanguagePreference(); // Load saved preference from a file or config
+        if (savedLanguage != null) {
+            languageSelection.setValue(savedLanguage);
+            switchLanguage(savedLanguage);
+        } else {
+            languageSelection.setValue("English"); // Default language
+            switchLanguage("English");
+        }
+
+        // Handle language selection change
+        languageSelection.setOnAction(event -> {
+            String selectedLanguage = (String) languageSelection.getValue();
+            switchLanguage(selectedLanguage);
+            saveLanguagePreference(selectedLanguage); // Save selected language
+        });
+
+    }
+    private void switchLanguage(String language) {
+        Locale locale;
+        if (language.equals("Finnish")) {
+            locale = new Locale("fi");
+        } else {
+            locale = new Locale("en");
+        }
+
+        // Load the resource bundle for the selected language
+        bundle = ResourceBundle.getBundle("com.example.projectdemo.messages", locale);
+
+        // Update UI text
+        welcomeText.setText(bundle.getString("welcomeMessage"));
+        instructionText.setText(bundle.getString("instruction"));
+        // Update any other text elements in the UI as needed
+    }
+
+    private void saveLanguagePreference(String language) {
+        // Save language preference to a file or configuration
+        try (java.io.FileWriter writer = new java.io.FileWriter("languagePreference.txt")) {
+            writer.write(language);
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String loadLanguagePreference() {
+        // Load language preference from a file or configuration
+        try (java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("languagePreference.txt"))) {
+            return reader.readLine();
+        } catch (java.io.IOException e) {
+            return null; // Return null if preference file doesn't exist
+        }
     }
 
     public void onSignInButtonClicked() throws IOException {

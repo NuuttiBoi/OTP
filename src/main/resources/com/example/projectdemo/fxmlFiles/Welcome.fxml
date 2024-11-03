@@ -20,17 +20,17 @@
          <children>
             <TextFlow layoutX="36.0" layoutY="37.0" prefHeight="86.0" prefWidth="200.0" textAlignment="CENTER">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please log in to explore our available cars and find the perfect ride for your next adventure!" wrappingWidth="201.5634765625" />
+                  <Text fx:id="instructionText" id="instructionText" strokeType="OUTSIDE" strokeWidth="0.0" text="Please log in to explore our available cars and find the perfect ride for your next adventure!" wrappingWidth="201.5634765625" />
                </children>
             </TextFlow>
             <Button id="signInButton" fx:id="signInButton" layoutX="80.0" layoutY="192.0" mnemonicParsing="false" onAction="#onSignInButtonClicked" prefHeight="26.0" prefWidth="91.0" text="Sign In" />
          </children>
       </AnchorPane>
-      <Text layoutX="26.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Whip Rent">
+      <Text id="welcomeText" fx:id="welcomeText" layoutX="26.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Whip Rent">
          <font>
             <Font name="Avenir Light" size="24.0" />
          </font>
       </Text>
-      <ComboBox fx:id="languageSelection" id="languageSelection" layoutX="286.0" layoutY="36.0" prefHeight="25.0" prefWidth="120.0" />
+      <ComboBox id="languageSelection" fx:id="languageSelection" layoutX="286.0" layoutY="36.0" prefHeight="25.0" prefWidth="120.0" />
    </children>
 </AnchorPane>
