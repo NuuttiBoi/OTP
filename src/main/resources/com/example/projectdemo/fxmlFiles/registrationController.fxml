@@ -12,20 +12,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.RegistrationController">
+<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.RegistrationController">
    <children>
-       <Label layoutX="66.0" layoutY="83.0" text="Registration Form">
+       <Label id="registrationHeader" fx:id="registrationHeader" layoutX="66.0" layoutY="83.0" text="Registration Form">
            <font>
                <Font name="Arial" size="24.0" />
            </font>
        </Label>
        <TextField fx:id="fullNameField" layoutX="120.0" layoutY="154.0" prefHeight="40" />
-       <Label layoutX="26.0" layoutY="242.0" text="Email ID : " />
-       <Label layoutX="21.0" layoutY="317.0" text="Password : " />
+       <Label id="emailText" fx:id="emailText" layoutX="26.0" layoutY="242.0" text="Email ID : " />
+       <Label id="passwordText" fx:id="passwordText" layoutX="21.0" layoutY="317.0" text="Password : " />
        <TextField fx:id="emailIdField" layoutX="120.0" layoutY="230.0" prefHeight="40" />
-       <Label layoutX="21.0" layoutY="165.0" text="Full Name : " />
+       <Label id="nameText" fx:id="nameText" layoutX="21.0" layoutY="165.0" text="Full Name : " />
        <PasswordField fx:id="passwordField" layoutX="120.0" layoutY="297.0" prefHeight="40" />
-       <Button fx:id="submitButton" defaultButton="true" layoutX="100.0" layoutY="431.0" onAction="#register" prefHeight="40" prefWidth="100" text="Submit" />
+       <Button id="submitButton" fx:id="submitButton" defaultButton="true" layoutX="100.0" layoutY="431.0" onAction="#register" prefHeight="40" prefWidth="100" text="Submit" />
       <Pane id="topPane" fx:id="mainPane" opacity="0.74" prefHeight="60.0" prefWidth="322.0">
          <children>
             <Text id="signedInText" layoutX="94.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="43.0" />

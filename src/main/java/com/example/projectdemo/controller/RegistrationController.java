@@ -1,11 +1,9 @@
 package com.example.projectdemo.controller;
 
+import com.example.projectdemo.model.LanguageManager;
 import com.example.projectdemo.model.RegistrationDAO;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Window;
 import java.sql.SQLException;
@@ -22,11 +20,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 public class RegistrationController {
 
     @FXML
     public ImageView logo;
+    public Label registrationHeader;
+    public Label emailText;
+    public Label passwordText;
+    public Label nameText;
 
     @FXML
     private TextField fullNameField;
@@ -42,9 +45,16 @@ public class RegistrationController {
 
     @FXML
     private Pane mainPane;
+    ResourceBundle bundle = LanguageManager.getResourceBundle();
 
     @FXML
     public void initialize() {
+        registrationHeader.setText(bundle.getString("register"));
+        nameText.setText(bundle.getString("nameText"));
+        emailText.setText(bundle.getString("emailText"));
+        submitButton.setText(bundle.getString("submit"));
+        passwordText.setText(bundle.getString("passwordText"));
+
         // Load the car logo image
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);

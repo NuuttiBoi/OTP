@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.PaymentController">
+<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.PaymentController">
    <children>
-      <Text layoutX="115.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" wrappingWidth="76.22314453125">
+      <Text id="paymentHeader" fx:id="paymentHeader" layoutX="115.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment" wrappingWidth="76.22314453125">
          <font>
             <Font name="System Bold Italic" size="19.0" />
          </font>
@@ -27,11 +27,11 @@
             <TextField fx:id="cvvField" layoutX="109.0" layoutY="251.0" prefHeight="26.0" prefWidth="44.0" />
             <Spinner fx:id="monthSpinner" accessibleText="2" layoutX="35.0" layoutY="184.0" prefHeight="26.0" prefWidth="89.0" />
             <Spinner fx:id="yearSpinner" accessibleText="1" layoutX="142.0" layoutY="184.0" prefHeight="26.0" prefWidth="89.0" />
-            <Text layoutX="95.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calhoder name" />
-            <Text layoutX="100.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number" />
+            <Text id="cardName" fx:id="cardNameText" layoutX="95.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calhoder name" />
+            <Text id="cardNumber" fx:id="cardNumberText" layoutX="100.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number" />
             <Text layoutX="131.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/" wrappingWidth="10.630859375" />
-            <Text layoutX="95.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiration Date" />
-            <Text layoutX="118.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVV" />
+            <Text id="expDateText" fx:id="expDateText" layoutX="95.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiration Date" />
+            <Text id="cardCvv" fx:id="cardCvv" layoutX="118.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVV" />
          </children>
       </Pane>
       <Pane id="topPane" fx:id="mainPane" opacity="0.74" prefHeight="60.0" prefWidth="319.0">
@@ -42,7 +42,7 @@
                   <Rectangle2D />
                </viewport>
             </ImageView>
-            <Hyperlink fx:id="backToCarPageLink" layoutX="214.0" layoutY="21.0" onAction="#handleBackToCarPage" text="Back to Car" />
+            <Hyperlink id="backToCarText" fx:id="backToCarPageLink" layoutX="214.0" layoutY="21.0" onAction="#handleBackToCarPage" text="Back to Car" />
          </children>
          <opaqueInsets>
             <Insets />

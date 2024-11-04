@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="carlist localization">
+    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="carpage localization">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LanguageOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/flags/finland.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/flags/japan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/flags/usa.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/WelcomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/WelcomePageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/CarPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/CarPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Payment1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Payment1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Start.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Welcome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/registrationController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/registrationController.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_en_US.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/messages_fi_FI.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_fi_FI.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/messages_ja_JP.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_ja_JP.properties" afterDir="false" />
@@ -94,7 +107,7 @@
     "git-widget-placeholder": "nuutti",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Program Files/SceneBuilder/SceneBuilder.exe",
+    "last_opened_file_path": "C:/Users/nuutt/IdeaProjects/OTP_demo/src/main/resources/com/example/projectdemo/flags",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -113,6 +126,7 @@
       <recent name="com.example.projectdemo.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nuutt\IdeaProjects\OTP_demo\src\main\resources\com\example\projectdemo\flags" />
       <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\resources\com\example\projectdemo" />
       <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\java\com\example\projectdemo\controller" />
     </key>
@@ -269,7 +283,9 @@
       <workItem from="1730227005539" duration="584000" />
       <workItem from="1730229648851" duration="1396000" />
       <workItem from="1730381332271" duration="1685000" />
-      <workItem from="1730632147220" duration="11329000" />
+      <workItem from="1730632147220" duration="11653000" />
+      <workItem from="1730651296039" duration="2235000" />
+      <workItem from="1730708504678" duration="8380000" />
     </task>
     <task id="LOCAL−00001" summary="init">
       <option name="closed" value="true" />
@@ -497,7 +513,14 @@
       <option name="presentableId" value="LOCAL−00031" />
       <updated>1730646455918</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL−00032" summary="carpage localization">
+      <option name="closed" value="true" />
+      <created>1730647386557</created>
+      <option name="number" value="LOCAL−00032" />
+      <option name="presentableId" value="LOCAL−00032" />
+      <updated>1730647386557</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updates" />
     <MESSAGE value="aloitettua aloitusnäyttöä, kommentteja" />
     <MESSAGE value="Some refactors" />
     <MESSAGE value="search filter" />
@@ -540,7 +562,8 @@
     <MESSAGE value="language selection started" />
     <MESSAGE value="language manager, where selected language is stored to" />
     <MESSAGE value="carlist localization" />
-    <option name="LAST_COMMIT_MESSAGE" value="carlist localization" />
+    <MESSAGE value="carpage localization" />
+    <option name="LAST_COMMIT_MESSAGE" value="carpage localization" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

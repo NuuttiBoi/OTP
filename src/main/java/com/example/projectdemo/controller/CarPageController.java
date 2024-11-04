@@ -54,10 +54,12 @@ public class CarPageController {
     @FXML
     public void initialize() {
 
+        backButton.setText(bundle.getString("backButton"));
+        rentCarButton.setText(bundle.getString("rentCarButton"));
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
 
-        mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
+        //mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
     public void setCarDetails(Image carImage, Car selectedCar, LocalDate startDate, LocalDate returnDate) throws SQLException {

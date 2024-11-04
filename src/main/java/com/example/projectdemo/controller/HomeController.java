@@ -39,7 +39,6 @@ public class HomeController {
     public MenuButton menuButton;
     public MenuItem menuOption1;
     @FXML
-    public Text userText;
     public Text startDateText;
     public Text endDateText;
     public Text locationInstructionText;
@@ -95,10 +94,10 @@ public class HomeController {
 //                }
 
                 if (startDate == null || returnDate == null) {
-                    alert.setContentText("Please select the dates.");
+                    alert.setContentText(bundle.getString("dateInstruction"));
                     alert.showAndWait();
                 } else if (returnDate.isBefore(startDate)) {
-                    alert.setContentText("Return date can't be before start date.");
+                    alert.setContentText(bundle.getString("startBeforeEndError"));
                     alert.showAndWait();
                 } else {
                     try {
@@ -113,8 +112,6 @@ public class HomeController {
 
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
-
-        userText.setText(SessionManager.getCurrentUser().getEmail());
 
         System.out.println("hello " + user);
     }

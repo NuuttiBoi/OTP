@@ -1,5 +1,6 @@
 package com.example.projectdemo.controller;
 import com.example.projectdemo.model.Car;
+import com.example.projectdemo.model.LanguageManager;
 import com.example.projectdemo.model.RentalDAO;
 import com.example.projectdemo.model.UserDAO;
 import javafx.collections.FXCollections;
@@ -21,6 +22,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
@@ -33,6 +35,11 @@ import java.time.LocalDate;
 
 public class PaymentController implements javafx.fxml.Initializable {
 
+    public Text paymentHeader;
+    public Text cardNameText;
+    public Text cardNumberText;
+    public Text expDateText;
+    public Text cardCvv;
     @FXML
     private Pane mainPane;
 
@@ -72,6 +79,15 @@ public class PaymentController implements javafx.fxml.Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+        ResourceBundle bundle = LanguageManager.getResourceBundle();
+
+        cardNameText.setText(bundle.getString("cardName"));
+        cardNumberText.setText(bundle.getString("cardNumber"));
+        cardCvv.setText(bundle.getString("cardCvv"));
+        paymentHeader.setText(bundle.getString("paymentHeader"));
+        paymentButton.setText(bundle.getString("paymentButton"));
+        backToCarPageLink.setText(bundle.getString("backToCarPageLink"));
+
         // Set up the month spinner to display values from 1 to 12
         SpinnerValueFactory<Integer> monthFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 12);
         monthSpinner.setValueFactory(monthFactory);

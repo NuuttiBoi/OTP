@@ -52,10 +52,11 @@ public class LoginController {
     private Pane mainPane;
 
     private HomeController homeController = new HomeController();
+    ResourceBundle bundle = LanguageManager.getResourceBundle();
+
 
     @FXML
     public void initialize() {
-        ResourceBundle bundle = LanguageManager.getResourceBundle();
 
         // Load the car logo image
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
@@ -79,13 +80,12 @@ public class LoginController {
         System.out.println(passwordField.getText());
 
         if (emailIdField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Please enter your email id");
+            showAlert(Alert.AlertType.ERROR, owner, "Form Error!", bundle.getString("alertErrorEmail"));
             return;
         }
         if (passwordField.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Please enter a password");
+                    bundle.getString("alertErrorPassword"));
             return;
         }
 
@@ -99,10 +99,10 @@ public class LoginController {
 
 
         if (user == null) {
-            infoBox("Please enter correct Email and Password", null, "Failed");
+            infoBox(bundle.getString("emptyError"), null, "Failed");
         } else {
             // Show the success message and wait for user acknowledgment
-            infoBox("Login Successful!", null, "Success");
+            infoBox(bundle.getString("success"), null, "");
             User loggedInUser = userDao.validate(emailId, password); // Assuming userService handles authentication
             if (loggedInUser != null) {
                 SessionManager.login(loggedInUser);

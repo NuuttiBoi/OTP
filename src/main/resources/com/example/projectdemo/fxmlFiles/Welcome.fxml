@@ -26,11 +26,11 @@
             <Button id="signInButton" fx:id="signInButton" layoutX="80.0" layoutY="192.0" mnemonicParsing="false" onAction="#onSignInButtonClicked" prefHeight="26.0" prefWidth="91.0" text="Sign In" />
          </children>
       </AnchorPane>
-      <Text id="welcomeText" fx:id="welcomeText" layoutX="26.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Whip Rent">
+      <Text id="welcomeText" fx:id="welcomeText" layoutX="27.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Whip Rent">
          <font>
             <Font name="Avenir Light" size="24.0" />
          </font>
       </Text>
-      <ComboBox id="languageSelection" fx:id="languageSelection" layoutX="286.0" layoutY="36.0" prefHeight="25.0" prefWidth="120.0" />
+      <ComboBox id="languageSelection" fx:id="languageSelection" layoutX="150.0" layoutY="8.0" prefHeight="25.0" prefWidth="120.0" />
    </children>
 </AnchorPane>
