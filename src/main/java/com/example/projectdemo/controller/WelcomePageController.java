@@ -7,17 +7,22 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.control.Button;
-import java.io.IOException;
-import java.io.InputStream;
+import javafx.util.Callback;
+
+import java.io.*;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
+import static javafx.scene.paint.Color.RED;
 
 
 public class WelcomePageController {
@@ -48,19 +53,14 @@ public class WelcomePageController {
 
     @FXML
     public void initialize() throws IOException {
-        // Load the car logo image
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
 
 
-        // Create images for each language option
-        Image English = new Image("file:java.png");
-        Image Finnish = new Image("file:python.png");
-        Image Japanese = new Image("file:javascript.png");
-
         Image english = loadImage("/com/example/projectdemo/flags/usa.png");
         Image japanese = loadImage("/com/example/projectdemo/flags/japan.png");
         Image finnish = loadImage("/com/example/projectdemo/flags/finland.png");
+        Image russian = loadImage("/com/example/projectdemo/flags/russia.png");
 
 
         ImageView englishImageView = new ImageView(english);
@@ -74,26 +74,30 @@ public class WelcomePageController {
         ImageView finnishImageView = new ImageView(finnish);
         finnishImageView.setFitHeight(20);
         finnishImageView.setFitWidth(20);
-        LanguageOption englishOption = new LanguageOption("English", englishImageView);
-        LanguageOption finnishOption = new LanguageOption("Finnish", finnishImageView);
-        LanguageOption japaneseOption = new LanguageOption("Japanese", japaneseImageView);
 
-        // Weekdays
-        String[] languages =
-                { "English", "Finnish", "Japanese"};
-        //languageSelection.setItems(FXCollections.observableArrayList(languages));
+        ImageView russianImageView = new ImageView(russian);
+        russianImageView.setFitHeight(20);
+        russianImageView.setFitWidth(20);
+
+        LanguageOption englishOption = new LanguageOption("English", englishImageView, english);
+        LanguageOption finnishOption = new LanguageOption("Finnish", finnishImageView, finnish);
+        LanguageOption japaneseOption = new LanguageOption("Japanese", japaneseImageView, japanese);
+        LanguageOption russianOption = new LanguageOption("Russian", russianImageView, russian);
 
 
         // Create a combo box
-        languageSelection.setItems(FXCollections.observableArrayList(englishOption,finnishOption,japaneseOption));
+        //languageSelection.setItems(FXCollections.observableArrayList(englishOption,finnishOption,japaneseOption, russianOption));
 
+        languageSelection.getItems().addAll(englishOption,finnishOption,japaneseOption,russianOption);
+
+        /*
         // Set the cell factory for displaying items
-        languageSelection.setCellFactory(comboBox -> new javafx.scene.control.ListCell<LanguageOption>() {
+        languageSelection.setCellFactory(comboBox -> new ListCell<LanguageOption>() {
             @Override
             protected void updateItem(LanguageOption option, boolean empty) {
                 super.updateItem(option, empty);
                 if (empty || option == null) {
-                    setGraphic(null);
+                    //setGraphic(null);
                     setText(null);
                 } else {
                     setGraphic(option.getImageView()); // Set graphic for list items
@@ -102,13 +106,48 @@ public class WelcomePageController {
             }
         });
 
+         */
+
+
+        languageSelection.setCellFactory(new Callback<ListView<LanguageOption>, ListCell<LanguageOption>>() {
+            @Override
+            public ListCell<LanguageOption> call(ListView<LanguageOption> languageOptionListView) {
+                return new ListCell<LanguageOption>(){
+                    Label flag = new Label();
+                    Label name = new Label();
+                    private final ImageView view;
+                    private final HBox cell;
+                    {
+                        setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+                        cell = new HBox();
+                        view = new ImageView();
+                        cell.getChildren().add(view);
+                        cell.getChildren().add(name);
+                    }
+                    @Override
+                    protected void updateItem(LanguageOption languageOption, boolean empty) {
+                        super.updateItem(languageOption, empty);
+                        if(languageOption == null || empty){
+                            setGraphic(null);
+                        } else {
+                            name.setText(languageOption.getLanguage());
+                            view.setImage(languageOption.getImage());
+                            view.setFitWidth(40);
+                            view.setFitHeight(40);
+                            setGraphic(cell);
+                        }
+                    }
+                };
+            }
+        });
+
         // Set the button cell for displaying the selected item
-        languageSelection.setButtonCell(new javafx.scene.control.ListCell<LanguageOption>() {
+        languageSelection.setButtonCell(new ListCell<LanguageOption>() {
             @Override
             protected void updateItem(LanguageOption option, boolean empty) {
                 super.updateItem(option, empty);
-                if (empty || option == null) {
-                    setGraphic(null);
+                if (option == null) {
+                    //setGraphic(null);
                     setText(null);
                 } else {
                     setGraphic(option.getImageView()); // Set graphic for the selected item
@@ -172,8 +211,10 @@ public class WelcomePageController {
         } else if (language.equals("Japanese")) {
             locale = new Locale("ja","JP");
             LanguageManager.setLocale(locale);
-        }
-        else {
+        } else if (language.equals("Russian")) {
+            locale = new Locale("ru", "RU");
+            LanguageManager.setLocale(locale);
+        } else {
             locale = new Locale("en","US");
             LanguageManager.setLocale(locale);
         }
@@ -189,18 +230,18 @@ public class WelcomePageController {
 
     private void saveLanguagePreference(String language) {
         // Save language preference to a file or configuration
-        try (java.io.FileWriter writer = new java.io.FileWriter("languagePreference.txt")) {
+        try (FileWriter writer = new FileWriter("languagePreference.txt")) {
             writer.write(language);
-        } catch (java.io.IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private String loadLanguagePreference() {
         // Load language preference from a file or configuration
-        try (java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("languagePreference.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("languagePreference.txt"))) {
             return reader.readLine();
-        } catch (java.io.IOException e) {
+        } catch (IOException e) {
             return null; // Return null if preference file doesn't exist
         }
     }

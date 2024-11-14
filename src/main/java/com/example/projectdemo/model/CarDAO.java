@@ -138,6 +138,31 @@ public class CarDAO  {
         statement.close();
         conn.close();
     }
+    public Car getCarById(String carId) throws SQLException {
+        Car car = null;
+        String query = "SELECT FROM vehicles WHERE CarID=?";
+        ConnectDb connectDb = new ConnectDb();
+        Connection conn = connectDb.connect();
+
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+        preparedStatement.setString(1, carId);
+        ResultSet rs = preparedStatement.executeQuery();
+        while (rs.next()) {
+            car = new Car(
+                    rs.getString("CarID"),
+                    rs.getString("Make"),
+                    rs.getString("Model"),
+                    rs.getInt("Year"),
+                    rs.getString("LicensePlate"),
+                    rs.getBoolean("Availability"),
+                    rs.getDouble("Price"),
+                    rs.getString("LocationID"),
+                    rs.getInt("km_driven")
+            );
+
+        }
+        return car;
+    }
 
 
 }

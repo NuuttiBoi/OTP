@@ -5,25 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="carpage localization">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LanguageOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/flags/finland.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/flags/japan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/flags/usa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/flags/russia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_ru_RU.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/CarPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/WelcomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/WelcomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/CarPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/CarPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Payment1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Payment1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Start.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/Welcome.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/registrationController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/registrationController.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_en_US.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_fi_FI.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_fi_FI.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_ja_JP.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_ja_JP.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LanguageOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LanguageOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Rental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/UserRentals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/UserRentals.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +98,7 @@
     "git-widget-placeholder": "nuutti",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nuutt/IdeaProjects/OTP_demo/src/main/resources/com/example/projectdemo/flags",
+    "last_opened_file_path": "C:/Users/nuutt/IdeaProjects/ProjectDemo/src/main/resources/com/example/projectdemo/flags",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -126,6 +117,7 @@
       <recent name="com.example.projectdemo.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\resources\com\example\projectdemo\flags" />
       <recent name="C:\Users\nuutt\IdeaProjects\OTP_demo\src\main\resources\com\example\projectdemo\flags" />
       <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\resources\com\example\projectdemo" />
       <recent name="C:\Users\nuutt\IdeaProjects\ProjectDemo\src\main\java\com\example\projectdemo\controller" />
@@ -229,20 +221,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Gui" />
-        <item itemvalue="JUnit.LocationDAOTest" />
-        <item itemvalue="JUnit.CarTest" />
-        <item itemvalue="JUnit.ControllerTest" />
-        <item itemvalue="JUnit.CarPageControllerTest.testHandleRentCarClick_NotSignedIn" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -286,6 +266,13 @@
       <workItem from="1730632147220" duration="11653000" />
       <workItem from="1730651296039" duration="2235000" />
       <workItem from="1730708504678" duration="8380000" />
+      <workItem from="1730816104963" duration="61000" />
+      <workItem from="1730882851640" duration="16000" />
+      <workItem from="1730985902931" duration="1140000" />
+      <workItem from="1731012662922" duration="52000" />
+      <workItem from="1731065536443" duration="2503000" />
+      <workItem from="1731582936905" duration="1475000" />
+      <workItem from="1731584654940" duration="5241000" />
     </task>
     <task id="LOCAL−00001" summary="init">
       <option name="closed" value="true" />
