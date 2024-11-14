@@ -1,5 +1,6 @@
 package com.example.projectdemo.model;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -8,15 +9,18 @@ public class Rental {
     LocalDate rentalDate;
     LocalDate returnDate;
     int registration_id;
+    Car car;
+    CarDAO carDAO = new CarDAO("car");
     boolean status;
     public Rental(){}
-    public Rental(String rentalID, LocalDate rentalDate, LocalDate returnDate, String carID, String locationID, int registration_id) {
+    public Rental(String rentalID, LocalDate rentalDate, LocalDate returnDate, String carID, String locationID, int registration_id) throws SQLException {
         this.rentalID = rentalID;
         this.rentalDate = rentalDate;
         this.returnDate = returnDate;
         this.carID = carID;
         this.locationID = locationID;
         this.registration_id = registration_id;
+        this.car = carDAO.getCarById(carID);
     }
 
     public void setRentalID(String rentalID){
@@ -32,7 +36,7 @@ public class Rental {
     @Override
     public String toString(){
         return
-            "RentalID: " + rentalID + " , Start Date: " + rentalDate + ", Return Date: " + returnDate;
+            "RentalID: " + rentalID + "Car: " + car.getMake() + " , Start Date: " + rentalDate + ", Return Date: " + returnDate;
     }
 
 }
