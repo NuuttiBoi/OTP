@@ -51,8 +51,7 @@ public class LoginController {
     @FXML
     private Pane mainPane;
 
-    private HomeController homeController = new HomeController();
-    ResourceBundle bundle = LanguageManager.getResourceBundle();
+    private static ResourceBundle bundle = LanguageManager.getResourceBundle();
 
 
     @FXML
@@ -115,7 +114,7 @@ public class LoginController {
             // Load the Start.fxml page
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Start.fxml"));
             Parent layout = fxmlLoader.load();  // Load the FXML layout
-            Scene scene = new Scene(layout, 300, 600);
+            Scene scene = new Scene(layout);
             Stage startStage = new Stage();
             startStage.setScene(scene);
 
@@ -127,6 +126,12 @@ public class LoginController {
 
     public static void infoBox(String infoMessage, String headerText, String title) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
+        Button okButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
+        Button cancelButton = (Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL);
+
+        okButton.setText(bundle.getString("okButton"));
+        cancelButton.setVisible(false);
+
         alert.setContentText(infoMessage);
         alert.setTitle(title);
         alert.setHeaderText(headerText);

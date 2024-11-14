@@ -1,16 +1,19 @@
 package com.example.projectdemo.model;
 
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Location {
-    private String name, address, id;
+    private String name, address, id, image;
     List<Car> carList = new ArrayList<>();
 
-    public Location(String id, String name, String address, List<Car> carList){
+    public Location(String id, String name, String address, List<Car> carList, String image){
         this.id = id;
         this.name = name;
         this.address = address;
+        this.image = image;
         this.carList = carList;
     }
 

@@ -48,7 +48,6 @@ public class HomeController {
     @FXML
     public ImageView tokyo;
     @FXML
-    public Text signedInText;
     private LocalDate startDate;
     private LocalDate returnDate;
     private boolean isSignedIn = false;
@@ -68,14 +67,17 @@ public class HomeController {
         dateInstructionText.setText(bundle.getString("dateInstruction"));
 
         locations = locationDAO.getLocationList();
+        ImageView imageView = new ImageView();
         locationList.setCellFactory(lv -> new javafx.scene.control.ListCell<Location>() {
             @Override
             protected void updateItem(Location location, boolean empty) {
                 super.updateItem(location, empty);
                 if (empty || location == null) {
                     setText(null);
+                    setGraphic(null);
                 } else {
                     setText(location.getName());
+
                 }
             }
         });
@@ -179,11 +181,7 @@ public class HomeController {
         rentalsStage.show();
     }
 
-    public void setSignedIn() {
-        isSignedIn = true;
-        signInButton.setVisible(false);
-        signedInText.setText("You are signed in."); // Update the text to reflect the sign-in status
-    }
+
 
     public boolean isSignedIn() {
         return isSignedIn;

@@ -89,8 +89,6 @@ public class Controller {
         this.user = user;
         this.startDate = startDate;
         this.returnDate = returnDate;
-
-        carListHeader.setText(bundle.getString("carListHeader"));
         seeAllLink.setText(bundle.getString("See_All"));
         backButton.setText(bundle.getString("Back"));
         searchButton.setText(bundle.getString("Search"));
