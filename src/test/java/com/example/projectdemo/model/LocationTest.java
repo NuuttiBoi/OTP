@@ -16,7 +16,7 @@ class LocationTest {
         // Initialize the Location object before each test
         Car car1 = new Car("1", "Toyota", "Corolla", 2020, "ABC123", true, 25000.0, "Location1", 15000);
         Car car2 = new Car("2", "Honda", "Civic", 2021, "XYZ789", true, 30000.0, "Location2", 5000);
-        location = new Location("1", "Main Office", "123 Main St", Arrays.asList(car1, car2));
+        //location = new Location("1", "Main Office", "123 Main St", Arrays.asList(car1, car2));
     }
 
     @Test

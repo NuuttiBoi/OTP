@@ -59,9 +59,7 @@ public class UserDAO {
             }
         }
     }
-    public void addUser(){
 
-    }
 
     // Method to retrieve a User by userID from the database
     public User getUserByID(int userID) {

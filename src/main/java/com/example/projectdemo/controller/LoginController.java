@@ -63,7 +63,7 @@ public class LoginController {
 
         mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
 
-        passwordText.setText(bundle.getString("passwordText"));
+        passwordText.setText(bundle.getString("passwordText"));  // this is too long in Russian language, doesn't fit the ui
         noAccountText.setText(bundle.getString("no_account"));
         emailText.setText(bundle.getString("emailText"));
         registerButton.setText(bundle.getString("register"));
@@ -105,7 +105,6 @@ public class LoginController {
             User loggedInUser = userDao.validate(emailId, password); // Assuming userService handles authentication
             if (loggedInUser != null) {
                 SessionManager.login(loggedInUser);
-                // Navigate to the main application scene or dashboard
             }
             // Close the current login stage
             Stage currentStage = (Stage) submitButton.getScene().getWindow();
