@@ -10,11 +10,12 @@ public class Car {
     private int year, km_driven;
     private boolean isAvailable;
     private double price;
-    String location;
+    private String location;
     private LocalDateTime currentDate = LocalDateTime.now();
     private LocalDate rentalEndDate;
     private CarDAO car = new CarDAO("yhteys");
 
+    public Car(){}
     public Car(String id, String make, String model, int year, String licensePlate, boolean isAvailable, double price,
                String location, int km_driven) {
         this.id = id;
@@ -58,6 +59,9 @@ public class Car {
     public double getPrice() { return price; }
     public boolean getIsAvailable(){return isAvailable; }
     public String getLocation(){return location; }
+    public void setMake(String make){
+        this.make = make;
+    }
 
     @Override
     public String toString() {

@@ -9,7 +9,7 @@ public class Rental {
     LocalDate rentalDate;
     LocalDate returnDate;
     int registration_id;
-    Car car;
+    private Car car;
     CarDAO carDAO = new CarDAO("car");
     boolean status;
     public Rental(){}
@@ -32,6 +32,7 @@ public class Rental {
     public void setReturnDate(LocalDate returnDate){
         this.returnDate = returnDate;
     }
+    public void setCar(Car car){this.car = car;}
 
     @Override
     public String toString(){
