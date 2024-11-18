@@ -262,11 +262,11 @@ public class Controller {
 
 
         controller.setCarDetails(image, selectedCar, startDate, returnDate);
-        Scene scene = new Scene(layout, 300, 600);
+        Scene scene = new Scene(layout);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         newWindow.setScene(scene);
-        newWindow.initModality(Modality.APPLICATION_MODAL);
-        newWindow.showAndWait();  // Show the window and wait for it to be closed
+        //newWindow.initModality(Modality.APPLICATION_MODAL);
+        newWindow.show();  // Show the window and wait for it to be closed
     }
 
 

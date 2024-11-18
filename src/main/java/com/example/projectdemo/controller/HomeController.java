@@ -20,9 +20,12 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
+
+import javax.print.attribute.standard.DateTimeAtCreation;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -43,6 +46,7 @@ public class HomeController {
     public Text endDateText;
     public Text locationInstructionText;
     public Text dateInstructionText;
+    public Text headerText;
     @FXML
     private Pane mainPane;
     @FXML
@@ -58,13 +62,16 @@ public class HomeController {
 
     public void initialize() {
         ResourceBundle bundle = LanguageManager.getResourceBundle();
-
         System.out.println(bundle);
-
         startDateText.setText(bundle.getString("startDate"));
         endDateText.setText(bundle.getString("endDate"));
         locationInstructionText.setText(bundle.getString("locationInstruction"));
         dateInstructionText.setText(bundle.getString("dateInstruction"));
+        menuButton.setText(bundle.getString("menuButton"));
+        menuOption1.setText(bundle.getString("menuOption"));
+
+        startDatePicker.setShowWeekNumbers(false);
+        returnDatePicker.setShowWeekNumbers(false);
 
         locations = locationDAO.getLocationList();
         ImageView imageView = new ImageView();
@@ -98,9 +105,11 @@ public class HomeController {
                 if (startDate == null || returnDate == null) {
                     alert.setContentText(bundle.getString("dateInstruction"));
                     alert.showAndWait();
-                } else if (returnDate.isBefore(startDate)) {
+                    // Check if the selected dates are valid
+                } else if (returnDate.isBefore(startDate) || startDate.isBefore(ChronoLocalDate.from(java.time.ZonedDateTime.now()))) {
                     alert.setContentText(bundle.getString("startBeforeEndError"));
                     alert.showAndWait();
+                    System.out.println(ChronoLocalDate.from(java.time.ZonedDateTime.now()));
                 } else {
                     try {
                         openScene1(selectedLocation, returnDate);
@@ -161,6 +170,8 @@ public class HomeController {
     }
 
     public void handleStartDate() {
+        Scene scene = headerText.getScene();
+        scene.getStylesheets().add("/com/example/projectdemo/style.css");
         startDate = startDatePicker.getValue();
         System.out.println(startDatePicker.getValue());
         SessionManager.setStartDate(startDate);
@@ -176,7 +187,7 @@ public class HomeController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/UserRentals.fxml"));
         Parent layout = fxmlLoader.load();
         Stage rentalsStage = new Stage();
-        Scene scene = new Scene(layout, 300, 400);
+        Scene scene = new Scene(layout, 600, 400);
         rentalsStage.setScene(scene);
         rentalsStage.show();
     }

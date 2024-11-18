@@ -1,5 +1,6 @@
 package com.example.projectdemo.controller;
 
+import com.example.projectdemo.model.LanguageManager;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
@@ -13,28 +14,33 @@ import javafx.scene.control.Button;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 public class ConfirmationPageController {
 
+    public Text confirmText;
+    public Button homeButton;
     @FXML
     private ImageView logo;
 
     @FXML
     private Pane mainPane;
 
-    @FXML
-    private Button backToStart;
 
     @FXML
     public void initialize() {
+        ResourceBundle bundle = LanguageManager.getResourceBundle();
+        confirmText.setText(bundle.getString("confirmText"));
+        homeButton.setText(bundle.getString("homeButton"));
         // Load the car logo image
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
-        logo.setImage(carLogo);
+        //logo.setImage(carLogo);
 
         // Set the background color of the main pane to blue
-        mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
+        //mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
     @FXML
@@ -45,7 +51,7 @@ public class ConfirmationPageController {
             Parent root = fxmlLoader.load();
 
             // Get the current stage
-            Stage currentStage = (Stage) backToStart.getScene().getWindow();
+            Stage currentStage = (Stage) homeButton.getScene().getWindow();
 
             // Set the new scene
             currentStage.setScene(new Scene(root));

@@ -14,17 +14,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.HomeController">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.HomeController">
    <center>
       <VBox minHeight="600.0" minWidth="-Infinity" prefHeight="668.0" prefWidth="477.0">
          <children>
-            <MenuButton fx:id="menuButton" mnemonicParsing="false" text="MenuButton">
-              <items>
-                <MenuItem fx:id="menuOption1" mnemonicParsing="false" onAction="#handleMyRentals" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </MenuButton>
+
             <AnchorPane minHeight="600.0" prefHeight="600.0" prefWidth="477.0">
                <children>
                   <Text id="locationInstructionText" fx:id="locationInstructionText" layoutX="55.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select Location.." />
@@ -39,11 +33,16 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <Text fill="#dad1d1" layoutX="23.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WhipRent" wrappingWidth="137.0">
+                              <Text fx:id="headerText" fill="#dad1d1" layoutX="100.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WhipRent" wrappingWidth="137.0">
                                  <font>
                                     <Font name="System Bold Italic" size="13.0" />
                                  </font>
                               </Text>
+                              <MenuButton id="menuButton" fx:id="menuButton" layoutX="349.0" layoutY="9.0" mnemonicParsing="false">
+                                 <items>
+                                    <MenuItem fx:id="menuOption1" mnemonicParsing="false" onAction="#handleMyRentals" />
+                                 </items>
+                              </MenuButton>
                            </children>
                            <opaqueInsets>
                               <Insets />

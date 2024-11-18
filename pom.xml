@@ -67,7 +67,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>5.4.0</version> <!-- You can change the version to the latest one -->
+            <version>5.5.0</version> <!-- You can change the version to the latest one -->
             <scope>test</scope>
         </dependency>
         <dependency>

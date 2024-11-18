@@ -21,6 +21,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 
@@ -68,7 +69,7 @@ public class CarPageController {
         this.car = selectedCar;
         carPic.setImage(carImage);
         CarDAO dao = new CarDAO("car");
-        dao.setAvailability(selectedCar.getId());
+        //dao.setAvailability(selectedCar.getId());
         modelText.setText(selectedCar.getMake() + " " + selectedCar.getModel());
         carDetailsText.setText(bundle.getString("Year") + selectedCar.getYear() + " \n " + bundle.getString("driven")  + selectedCar.getKm_driven() +
                 "\nLocation: " + car.getLocation());
@@ -88,17 +89,26 @@ public class CarPageController {
 
     @FXML
     void handleRentCarClick() throws IOException {
+        PaymentController paymentController = new PaymentController();
+        //paymentController.initialize();
+        Stage stage = (Stage) carPic.getScene().getWindow();
+        //stage.close();
+        //paymentController.setPreviousScene(stage);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Payment1.fxml"));
         Parent paymentLayout = fxmlLoader.load();
         Stage paymentStage = new Stage();
-        PaymentController paymentController = new PaymentController();
-        Scene scene = new Scene(paymentLayout, 300, 600);
+        Scene scene = new Scene(paymentLayout);
         paymentStage.setScene(scene);
         paymentStage.setTitle("Payment Page");
-        paymentStage.show();
+        //paymentStage.initModality(Modality.APPLICATION_MODAL);
+        paymentStage.showAndWait();
+        paymentStage.getScene().getRoot().requestLayout();
 
+        /*
         RentalDAO rentalDAO = new RentalDAO();
         rentalDAO.addRental("11", SessionManager.getStartDate().toString(), SessionManager.getEndDate().toString(),
                 "C1","1",8);
+
+         */
     }
 }
