@@ -72,7 +72,7 @@ public class RegistrationController {
         System.out.println(emailIdField.getText());
         System.out.println(passwordField.getText());
 
-        if (fullNameField.getText().isEmpty()) {
+        if (fullNameField.getText().isEmpty() || (fullNameField.getText().matches(".*\\d.*"))) {
             showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
                     "Please enter your name");
             return;

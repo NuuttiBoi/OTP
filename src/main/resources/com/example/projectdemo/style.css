@@ -258,3 +258,20 @@
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
 }
+
+#logo{
+    -fx-border-insets: 100px;
+}
+#headerText{
+    -fx-alignment: center;
+    -fx-start-margin: 500px;
+    -fx-padding: 100px;
+}
+
+
+/*datpicker*/
+
+.date-picker{
+    -fx-background-color: red;
+    -fx-background-radius: 0;
+}

@@ -47,6 +47,14 @@ public class Controller {
     @FXML
     private Circle viidesPallo;
     @FXML
+    private Circle kuudesPallo;
+    @FXML
+    private Circle seittämäsPallo;
+    @FXML
+    private Circle kaheksasPallo;
+    @FXML
+    private Circle yheksäsPallo;
+    @FXML
     private Hyperlink seeAllLink;
     @FXML
     private ScrollBar scrollbar;
@@ -81,8 +89,6 @@ public class Controller {
         this.user = user;
         this.startDate = startDate;
         this.returnDate = returnDate;
-
-        carListHeader.setText(bundle.getString("carListHeader"));
         seeAllLink.setText(bundle.getString("See_All"));
         backButton.setText(bundle.getString("Back"));
         searchButton.setText(bundle.getString("Search"));
@@ -112,6 +118,10 @@ public class Controller {
             Image fordLogo = loadImage("/com/example/projectdemo/carLogos/ford_logo.png");
             Image hondaLogo = loadImage("/com/example/projectdemo/carLogos/honda_logo.png");
             Image vwLogo = loadImage("/com/example/projectdemo/carLogos/vw_logo.png");
+            Image mercedesLogo = loadImage("/com/example/projectdemo/carLogos/mercedes_logo.JPG");
+            Image bmwLogo = loadImage("/com/example/projectdemo/carLogos/bmw_logo.JPG");
+            Image audiLogo = loadImage("/com/example/projectdemo/carLogos/audi_logo.png");
+            Image volvoLogo = loadImage("/com/example/projectdemo/carLogos/volvo_logo.JPG");
 
 
             // Fill the circles with the respective car logos
@@ -120,6 +130,10 @@ public class Controller {
             kolmasPallo.setFill(new ImagePattern(nissanLogo));
             neljasPallo.setFill(new ImagePattern(fordLogo));
             viidesPallo.setFill(new ImagePattern(hondaLogo));
+            kuudesPallo.setFill(new ImagePattern(mercedesLogo));
+            seittämäsPallo.setFill(new ImagePattern(bmwLogo));
+            kaheksasPallo.setFill(new ImagePattern(audiLogo));
+            yheksäsPallo.setFill(new ImagePattern(volvoLogo));
 
 
 
@@ -178,6 +192,22 @@ public class Controller {
         viidesPallo.setOnMouseClicked(event -> {
             filterCarsByModel("Honda");
         });
+
+        kuudesPallo.setOnMouseClicked(event -> {
+            filterCarsByModel("Mercedes-Benz");
+        });
+
+        seittämäsPallo.setOnMouseClicked(event -> {
+            filterCarsByModel("BMW");
+        });
+
+        kaheksasPallo.setOnMouseClicked(event -> {
+            filterCarsByModel("Audi");
+        });
+
+        yheksäsPallo.setOnMouseClicked(event -> {
+            filterCarsByModel("Volvo");
+        });
     }
 
 
@@ -232,11 +262,11 @@ public class Controller {
 
 
         controller.setCarDetails(image, selectedCar, startDate, returnDate);
-        Scene scene = new Scene(layout, 300, 600);
+        Scene scene = new Scene(layout);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         newWindow.setScene(scene);
-        newWindow.initModality(Modality.APPLICATION_MODAL);
-        newWindow.showAndWait();  // Show the window and wait for it to be closed
+        //newWindow.initModality(Modality.APPLICATION_MODAL);
+        newWindow.show();  // Show the window and wait for it to be closed
     }
 
 

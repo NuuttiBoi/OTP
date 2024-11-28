@@ -9,10 +9,10 @@ public class User {
     private String rentalID, password;
 
 
-    public User(int userID, String email, String type) {
+    public User(int userID, String email, String password) {
         this.userID = userID;
         this.email = email;
-        this.type = type;
+        this.password = password;
     }
 
     public User() {
@@ -47,8 +47,8 @@ public class User {
         this.role = role;
     }
 
-    public String getType() {
-        return type;
+    public String getPassword() {
+        return password;
     }
 
     public void setType(String type) {

@@ -47,7 +47,8 @@ public class LocationDAO {
             while (rs.next()){
                 Location location = new Location(rs.getString("LocationID"),
                         rs.getString("Location"),
-                        rs.getString("Address"), carList);
+                        rs.getString("Address"), carList,
+                        rs.getString("image"));
                 locationList.add(location);
             }
         } catch (SQLException e) {

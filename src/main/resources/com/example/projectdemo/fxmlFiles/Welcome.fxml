@@ -5,11 +5,12 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="600.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.WelcomePageController">
+<AnchorPane prefHeight="600.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.WelcomePageController">
    <children>
       <ImageView id="logo" fx:id="logo" fitHeight="200.0" fitWidth="248.0" layoutX="66.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
          <viewport>
@@ -23,7 +24,11 @@
                   <Text id="instructionText" fx:id="instructionText" strokeType="OUTSIDE" strokeWidth="0.0" text="Please log in to explore our available cars and find the perfect ride for your next adventure!" wrappingWidth="201.5634765625" />
                </children>
             </TextFlow>
-            <Button id="signInButton" fx:id="signInButton" layoutX="80.0" layoutY="192.0" mnemonicParsing="false" onAction="#onSignInButtonClicked" prefHeight="26.0" prefWidth="91.0" text="Sign In" />
+            <HBox layoutX="80.0" layoutY="192.0">
+               <children>
+                  <Button id="signInButton" fx:id="signInButton" mnemonicParsing="false" onAction="#onSignInButtonClicked" text="Sign In" />
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
       <Text id="welcomeText" fx:id="welcomeText" layoutX="27.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Whip Rent">
@@ -31,6 +36,6 @@
             <Font name="Avenir Light" size="24.0" />
          </font>
       </Text>
-      <ComboBox id="languageSelection" fx:id="languageSelection" layoutX="150.0" layoutY="8.0" prefHeight="25.0" prefWidth="120.0" />
+      <ComboBox id="languageSelection" fx:id="languageSelection" layoutX="150.0" layoutY="8.0" />
    </children>
 </AnchorPane>

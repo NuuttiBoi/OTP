@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.LoginController">
+<AnchorPane prefHeight="550.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.LoginController">
    <children>
        <Label id="headerText" fx:id="headerText" layoutX="125.0" layoutY="111.0" text="Sign In">
            <font>
@@ -42,7 +42,7 @@
             <Insets left="20.0" right="21.0" top="2.0" />
          </padding>
       </Pane>
-      <Text fill="#dad1d1" layoutX="116.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WhipRent" wrappingWidth="60.0">
+      <Text fill="#dad1d1" layoutX="116.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WhipRent" wrappingWidth="75.20000000000005">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>

@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" minHeight="600" prefHeight="550.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.Controller">
+<VBox alignment="CENTER" minHeight="600" prefHeight="600.0" prefWidth="482.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectdemo.controller.Controller">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -33,13 +33,17 @@
    </HBox>
 
    <ScrollPane fx:id="scrollPane" prefHeight="230.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
-      <HBox fx:id="pallot" prefHeight="51.0" prefWidth="242.0" spacing="10.0">
+      <HBox fx:id="pallot" prefHeight="51.0" prefWidth="442.0" spacing="10.0">
          <children>
-            <Circle fx:id="ekaPallo" radius="20.0" stroke="#949292" strokeType="INSIDE" />
+            <Circle fx:id="ekaPallo" fill="#fcfafa" radius="20.0" stroke="#949292" strokeType="INSIDE" />
             <Circle fx:id="tokaPallo" fill="#f1f6f826" radius="20.0" stroke="#949292" strokeType="INSIDE" />
             <Circle fx:id="kolmasPallo" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="neljasPallo" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
             <Circle fx:id="viidesPallo" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="kuudesPallo" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="seittämäsPallo" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
+            <Circle fx:id="kaheksasPallo" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
+            <Circle fx:id="yheksäsPallo" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
          </children>
       </HBox>
    </ScrollPane>

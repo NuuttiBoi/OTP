@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -33,13 +34,14 @@ import javafx.scene.layout.*;
 import java.time.LocalDate;
 
 
-public class PaymentController implements javafx.fxml.Initializable {
+public class PaymentController  {
 
     public Text paymentHeader;
     public Text cardNameText;
     public Text cardNumberText;
     public Text expDateText;
     public Text cardCvv;
+    public AnchorPane rootPane;
     @FXML
     private Pane mainPane;
 
@@ -75,11 +77,13 @@ public class PaymentController implements javafx.fxml.Initializable {
     private LocalDate startDate; //
     private LocalDate returnDate;
     private UserDAO user;
+    private Stage previousScene;
 
 
     @FXML
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize() {
         ResourceBundle bundle = LanguageManager.getResourceBundle();
+        //rootPane.requestLayout(); // Force layout pass
 
         cardNameText.setText(bundle.getString("cardName"));
         cardNumberText.setText(bundle.getString("cardNumber"));
@@ -211,28 +215,22 @@ public class PaymentController implements javafx.fxml.Initializable {
     }
 
     @FXML
-    public void handleBackToCarPage(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/CarPage.fxml"));
-            Parent layout = fxmlLoader.load();  // Load the FXML layout
-
-            // Get the controller for CarPage and set the car details
-            CarPageController carPageController = fxmlLoader.getController();
-            carPageController.setCarDetails(carImage, selectedCar, startDate, returnDate); // Pass selected car and its details
-
-            Stage carPageStage = (Stage) mainPane.getScene().getWindow();
-            carPageStage.setScene(new Scene(layout));
-            carPageStage.setTitle("Car Page");
-            carPageStage.show();  // Show the car page
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public void handleBackToCarPage(ActionEvent event) throws IOException{
+        Stage currentStage = (Stage) paymentButton.getScene().getWindow();
+        currentStage.close();
     }
 
     public void setUser(UserDAO user){
         this.user = user;
+    }
+
+    public void setSelectedCar(Car selectedCar){
+        this.selectedCar = selectedCar;
+    }
+
+    public void setPreviousScene(Stage previousScene){
+        this.previousScene = previousScene;
+        System.out.println(previousScene);
     }
 
 
@@ -240,7 +238,7 @@ public class PaymentController implements javafx.fxml.Initializable {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
-        alert.setContentText(user.toString());
+        //alert.setContentText(user.toString());
         alert.showAndWait();
     }
 }
