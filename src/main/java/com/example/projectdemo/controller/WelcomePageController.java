@@ -85,9 +85,6 @@ public class WelcomePageController {
         LanguageOption russianOption = new LanguageOption("Russian", russianImageView, russian);
 
 
-        // Create a combo box
-        //languageSelection.setItems(FXCollections.observableArrayList(englishOption,finnishOption,japaneseOption, russianOption));
-
         languageSelection.getItems().addAll(englishOption,finnishOption,japaneseOption,russianOption);
 
         /*

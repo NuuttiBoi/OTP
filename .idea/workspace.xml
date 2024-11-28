@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="carpage localization">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/flags/russia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_ru_RU.properties" afterDir="false" />
+    <list default="true" id="300353ba-3ffd-4ccd-bfac-3d2604c6d913" name="Changes" comment="russian language added, fixed language selection combobox">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/WelcomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/controller/WelcomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/CarDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LanguageOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/LanguageOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projectdemo/model/Rental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/UserRentals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/projectdemo/fxmlFiles/UserRentals.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,46 +67,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CarDAO.executor": "Run",
-    "Application.Gui.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.TestConnection.executor": "Run",
-    "Application.dao.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "JUnit.CarPageControllerTest.executor": "Run",
-    "JUnit.CarPageControllerTest.testHandleRentCarClick_NotSignedIn.executor": "Run",
-    "JUnit.CarTest.executor": "Run",
-    "JUnit.ControllerTest.executor": "Run",
-    "JUnit.LocationDAOTest.executor": "Run",
-    "Maven.ProjectDemo [clean].executor": "Run",
-    "Maven.ProjectDemo [install].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "nuutti",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nuutt/IdeaProjects/ProjectDemo/src/main/resources/com/example/projectdemo/flags",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CarDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Gui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestConnection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.dao.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.CarPageControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarPageControllerTest.testHandleRentCarClick_NotSignedIn.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LocationDAOTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ProjectDemo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ProjectDemo [install].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;nuutti&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nuutt/IdeaProjects/ProjectDemo/src/main/resources/com/example/projectdemo/flags&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.projectdemo.service" />
@@ -224,6 +219,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -272,7 +274,24 @@
       <workItem from="1731012662922" duration="52000" />
       <workItem from="1731065536443" duration="2503000" />
       <workItem from="1731582936905" duration="1475000" />
-      <workItem from="1731584654940" duration="5241000" />
+      <workItem from="1731584654940" duration="6153000" />
+      <workItem from="1731827345818" duration="756000" />
+      <workItem from="1732195901310" duration="1324000" />
+      <workItem from="1732197245964" duration="562000" />
+      <workItem from="1732199174413" duration="969000" />
+      <workItem from="1732366604315" duration="981000" />
+      <workItem from="1732539752535" duration="221000" />
+      <workItem from="1732539989953" duration="379000" />
+      <workItem from="1732540384691" duration="91000" />
+      <workItem from="1732622988734" duration="14000" />
+      <workItem from="1732623331156" duration="42000" />
+      <workItem from="1732623455187" duration="645000" />
+      <workItem from="1732626285537" duration="43000" />
+      <workItem from="1732626693619" duration="1228000" />
+      <workItem from="1732628548687" duration="195000" />
+      <workItem from="1732639291043" duration="425000" />
+      <workItem from="1732641069803" duration="679000" />
+      <workItem from="1732692862123" duration="63000" />
     </task>
     <task id="LOCAL−00001" summary="init">
       <option name="closed" value="true" />
@@ -507,7 +526,14 @@
       <option name="presentableId" value="LOCAL−00032" />
       <updated>1730647386557</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL−00033" summary="russian language added, fixed language selection combobox">
+      <option name="closed" value="true" />
+      <created>1731589964778</created>
+      <option name="number" value="LOCAL−00033" />
+      <option name="presentableId" value="LOCAL−00033" />
+      <updated>1731589964778</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +551,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="aloitettua aloitusnäyttöä, kommentteja" />
     <MESSAGE value="Some refactors" />
     <MESSAGE value="search filter" />
     <MESSAGE value="location, locationdao classes added" />
@@ -550,7 +575,8 @@
     <MESSAGE value="language manager, where selected language is stored to" />
     <MESSAGE value="carlist localization" />
     <MESSAGE value="carpage localization" />
-    <option name="LAST_COMMIT_MESSAGE" value="carpage localization" />
+    <MESSAGE value="russian language added, fixed language selection combobox" />
+    <option name="LAST_COMMIT_MESSAGE" value="russian language added, fixed language selection combobox" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

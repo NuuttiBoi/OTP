@@ -126,10 +126,14 @@ public class LoginController {
 
 
     public static void infoBox(String infoMessage, String headerText, String title) {
+
         Alert alert = new Alert(AlertType.CONFIRMATION);
+        Button button = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
+        button.setText("joo");
         alert.setContentText(infoMessage);
         alert.setTitle(title);
         alert.setHeaderText(headerText);
+
         alert.showAndWait();
     }
 
