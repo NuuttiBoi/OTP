@@ -101,7 +101,7 @@ public class RegistrationController {
 
         // Close the current login stage
         Stage currentStage = (Stage) submitButton.getScene().getWindow();
-        currentStage.close();
+        //currentStage.close();
 
         // Load the Start.fxml page
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Start.fxml"));

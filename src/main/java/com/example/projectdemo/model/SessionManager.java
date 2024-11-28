@@ -6,6 +6,7 @@ public class SessionManager {
     private static User currentUser;
     private static LocalDate startDate;
     private static LocalDate endDate;
+    private static Location location;
 
     public static void login(User user) {
         currentUser = user;
@@ -25,6 +26,7 @@ public class SessionManager {
     public static void setEndDate(LocalDate endDate){
         SessionManager.endDate = endDate;
     }
+    public static void setLocation(Location location){SessionManager.location = location;}
 
     public static LocalDate getStartDate(){
         return startDate;
@@ -32,4 +34,5 @@ public class SessionManager {
     public static LocalDate getEndDate(){
         return endDate;
     }
+    public static Location getLocation(){return location;}
 }

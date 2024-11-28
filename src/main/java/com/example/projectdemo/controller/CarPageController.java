@@ -89,13 +89,14 @@ public class CarPageController {
 
     @FXML
     void handleRentCarClick() throws IOException {
-        PaymentController paymentController = new PaymentController();
         //paymentController.initialize();
         Stage stage = (Stage) carPic.getScene().getWindow();
         //stage.close();
         //paymentController.setPreviousScene(stage);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Payment1.fxml"));
         Parent paymentLayout = fxmlLoader.load();
+        PaymentController paymentController = fxmlLoader.getController();
+        paymentController.setSelectedCar(car);
         Stage paymentStage = new Stage();
         Scene scene = new Scene(paymentLayout);
         paymentStage.setScene(scene);

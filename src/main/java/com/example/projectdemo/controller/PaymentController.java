@@ -1,8 +1,5 @@
 package com.example.projectdemo.controller;
-import com.example.projectdemo.model.Car;
-import com.example.projectdemo.model.LanguageManager;
-import com.example.projectdemo.model.RentalDAO;
-import com.example.projectdemo.model.UserDAO;
+import com.example.projectdemo.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -208,6 +205,8 @@ public class PaymentController  {
             stage.show(); // Display the confirmation page
 
             RentalDAO rentalDAO = new RentalDAO();
+            rentalDAO.addRental("2",String.valueOf(SessionManager.getStartDate()),String.valueOf(SessionManager.getEndDate()),
+                    selectedCar.getId(), SessionManager.getLocation().getId(),SessionManager.getCurrentUser().getUserID());
 
         } catch (IOException e) {
             e.printStackTrace();

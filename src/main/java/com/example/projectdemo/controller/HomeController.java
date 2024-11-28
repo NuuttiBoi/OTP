@@ -113,6 +113,7 @@ public class HomeController {
                 } else {
                     try {
                         openScene1(selectedLocation, returnDate);
+                        SessionManager.setLocation(selectedLocation);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

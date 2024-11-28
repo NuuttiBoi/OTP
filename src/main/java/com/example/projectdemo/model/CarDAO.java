@@ -140,7 +140,7 @@ public class CarDAO  {
     }
     public Car getCarById(String carId) throws SQLException {
         Car car = null;
-        String query = "SELECT FROM vehicles WHERE CarID=?";
+        String query = "SELECT * FROM vehicles WHERE CarID=?";
         ConnectDb connectDb = new ConnectDb();
         Connection conn = connectDb.connect();
 
