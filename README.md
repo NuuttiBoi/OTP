@@ -5,6 +5,7 @@
 - Nuutti Turunen
 - Nahal Asif
 - Nimo Hanna Farah
+- Umut Uygur
 
 ## Idea
 
