@@ -1,5 +1,7 @@
 ## <img width="59" alt="Screenshot 2024-10-07 at 19 37 13" src="https://github.com/user-attachments/assets/c328a489-fee1-44dc-bc29-e08edfd8b203">Whip Rent
 
+## UML Models
+[Models](https://github.com/NuuttiBoi/OTP/tree/nuutti/uml-models)
 
 ## Team Members
 - Nuutti Turunen
