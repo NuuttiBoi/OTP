@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controller for the my rentals page.
+ */
 public class RentalsController {
     public Text myRentalsHeader;
     @FXML

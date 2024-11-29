@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Class for accessing users in the database.
+ */
 public class UserDAO {
     private static final String SELECT_QUERY = "SELECT * FROM registration WHERE email_id = ? and password = ?";
     private static boolean isLoggedIn = false; // Track login state

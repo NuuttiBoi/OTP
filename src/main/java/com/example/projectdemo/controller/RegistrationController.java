@@ -22,13 +22,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
+/**
+ * Controller for the registration page.
+ */
 public class RegistrationController {
 
     @FXML
     public ImageView logo;
+    @FXML
     public Label registrationHeader;
+    @FXML
     public Label emailText;
+    @FXML
     public Label passwordText;
+    @FXML
     public Label nameText;
 
     @FXML
@@ -100,7 +107,6 @@ public class RegistrationController {
                 "Welcome " + fullNameField.getText());
 
         // Close the current login stage
-        Stage currentStage = (Stage) submitButton.getScene().getWindow();
         //currentStage.close();
 
         // Load the Start.fxml page

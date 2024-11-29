@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Class for creating a db connection.
+ */
 public class ConnectDb {
     String url = "jdbc:mysql://mysql.metropolia.fi:3306/nuuttitu?useSSL=false";
     String user = "nuuttitu";

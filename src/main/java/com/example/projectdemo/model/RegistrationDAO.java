@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Class for accessing registrations in the database.
+ */
 public class RegistrationDAO {
     // Replace below database url, username and password with your actual database credentials
     private static final String INSERT_QUERY = "INSERT INTO registration (full_name, email_id, password) VALUES (?, ?, ?)";

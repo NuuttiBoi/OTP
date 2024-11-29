@@ -19,9 +19,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
+/**
+ * Controller for the confirmation of a rental.
+ */
 public class ConfirmationPageController {
 
+    @FXML
     public Text confirmText;
+    @FXML
     public Button homeButton;
     @FXML
     private ImageView logo;
@@ -36,7 +41,7 @@ public class ConfirmationPageController {
         confirmText.setText(bundle.getString("confirmText"));
         homeButton.setText(bundle.getString("homeButton"));
         // Load the car logo image
-        Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
+        //Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         //logo.setImage(carLogo);
 
         // Set the background color of the main pane to blue

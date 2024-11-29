@@ -19,19 +19,26 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 import static javafx.scene.paint.Color.RED;
 
+/**
+ * Controller for the first scene.
+ */
 
 public class WelcomePageController {
 
     @FXML
     public ComboBox<LanguageOption> languageSelection;
 
+    @FXML
     public Text welcomeText;
+    @FXML
     public Text instructionText;
+    @FXML
     private Text buttonText;
 
     @FXML
@@ -225,18 +232,18 @@ public class WelcomePageController {
         signInButton.setText(bundle.getString("buttonText"));
     }
 
+
     private void saveLanguagePreference(String language) {
-        // Save language preference to a file or configuration
-        try (FileWriter writer = new FileWriter("languagePreference.txt")) {
+        // Save language preference to a file or configuration with UTF-8 encoding
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("languagePreference.txt"), "UTF-8"))) {
             writer.write(language);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
     private String loadLanguagePreference() {
-        // Load language preference from a file or configuration
-        try (BufferedReader reader = new BufferedReader(new FileReader("languagePreference.txt"))) {
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream("languagePreference.txt"), StandardCharsets.UTF_8))) {
             return reader.readLine();
         } catch (IOException e) {
             return null; // Return null if preference file doesn't exist

@@ -4,14 +4,16 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * Class for creating a rental.
+ */
 public class Rental {
-    String rentalID, customerID, carID, locationID;
+    String rentalID, carID, locationID;
     LocalDate rentalDate;
     LocalDate returnDate;
     int registration_id;
     private Car car;
-    CarDAO carDAO = new CarDAO("car");
-    boolean status;
+    CarDAO carDAO = new CarDAO();
     public Rental(){}
     public Rental(String rentalID, LocalDate rentalDate, LocalDate returnDate, String carID, String locationID, int registration_id) throws SQLException {
         this.rentalID = rentalID;

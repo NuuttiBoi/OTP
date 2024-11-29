@@ -4,6 +4,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for accessing the locations in the database.
+ */
 public class LocationDAO {
     private String name;
     private List<Location> locationList = new ArrayList<>();

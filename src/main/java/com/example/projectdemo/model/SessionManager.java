@@ -2,6 +2,9 @@ package com.example.projectdemo.model;
 
 import java.time.LocalDate;
 
+/**
+ * Class for the controllers to get current user and other info.
+ */
 public class SessionManager {
     private static User currentUser;
     private static LocalDate startDate;

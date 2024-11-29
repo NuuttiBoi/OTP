@@ -30,14 +30,22 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import java.time.LocalDate;
 
-
+/**
+ * Controller for the payment page.
+ */
 public class PaymentController  {
 
+    @FXML
     public Text paymentHeader;
+    @FXML
     public Text cardNameText;
+    @FXML
     public Text cardNumberText;
+    @FXML
     public Text expDateText;
+    @FXML
     public Text cardCvv;
+    @FXML
     public AnchorPane rootPane;
     @FXML
     private Pane mainPane;
@@ -69,12 +77,7 @@ public class PaymentController  {
     @FXML
     private Button paymentButton;
 
-    private Image carImage;
     private Car selectedCar;
-    private LocalDate startDate; //
-    private LocalDate returnDate;
-    private UserDAO user;
-    private Stage previousScene;
 
 
     @FXML
@@ -219,19 +222,11 @@ public class PaymentController  {
         currentStage.close();
     }
 
-    public void setUser(UserDAO user){
-        this.user = user;
-    }
+
 
     public void setSelectedCar(Car selectedCar){
         this.selectedCar = selectedCar;
     }
-
-    public void setPreviousScene(Stage previousScene){
-        this.previousScene = previousScene;
-        System.out.println(previousScene);
-    }
-
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

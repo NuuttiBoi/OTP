@@ -27,11 +27,18 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/**
+ * Controller for the login page.
+ */
 public class LoginController {
 
+    @FXML
     public Label passwordText;
+    @FXML
     public Text noAccountText;
+    @FXML
     public Label emailText;
+    @FXML
     public Label headerText;
     @FXML
     private TextField emailIdField;

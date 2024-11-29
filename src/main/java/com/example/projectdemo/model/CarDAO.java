@@ -13,17 +13,14 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * Class for accessing cars in the database.
  * @author Nuutti Turunen
  */
 
 public class CarDAO  {
 
     private static List<Car> carList = new ArrayList<>();
-    private String name, model;
-    private int year;
-
-    public CarDAO(String name){
-        this.name = name;
+    public CarDAO(){
     }
     public static void main(String[] args) {
     }

@@ -6,6 +6,9 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Class for different language options.
+ */
 public class LanguageOption {
     private final String language;
     private final ImageView imageView;

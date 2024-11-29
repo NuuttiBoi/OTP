@@ -3,6 +3,9 @@ package com.example.projectdemo.model;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * Class for setting a language.
+ */
 public class LanguageManager {
     private static ResourceBundle resourceBundle;
 

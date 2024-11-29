@@ -25,15 +25,21 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 
+/**
+ * Controller for the car details page.
+ */
+
 public class CarPageController {
 
     @FXML
     public Text modelText;
     @FXML
     public Text carDetailsText;
+    @FXML
     public ListView carLocationList;
     @FXML
     public Text priceText;
+    @FXML
     public Button rentCarButton;
     @FXML
     ImageView carPic;
@@ -48,7 +54,6 @@ public class CarPageController {
     private Car car;
     private LocalDate returnDate;
     private LocalDate startDate;
-    private UserDAO user;
     ResourceBundle bundle = LanguageManager.getResourceBundle();
 
 
@@ -68,8 +73,6 @@ public class CarPageController {
         this.startDate = startDate;
         this.car = selectedCar;
         carPic.setImage(carImage);
-        CarDAO dao = new CarDAO("car");
-        //dao.setAvailability(selectedCar.getId());
         modelText.setText(selectedCar.getMake() + " " + selectedCar.getModel());
         carDetailsText.setText(bundle.getString("Year") + selectedCar.getYear() + " \n " + bundle.getString("driven")  + selectedCar.getKm_driven() +
                 "\nLocation: " + car.getLocation());
@@ -89,10 +92,6 @@ public class CarPageController {
 
     @FXML
     void handleRentCarClick() throws IOException {
-        //paymentController.initialize();
-        Stage stage = (Stage) carPic.getScene().getWindow();
-        //stage.close();
-        //paymentController.setPreviousScene(stage);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Payment1.fxml"));
         Parent paymentLayout = fxmlLoader.load();
         PaymentController paymentController = fxmlLoader.getController();

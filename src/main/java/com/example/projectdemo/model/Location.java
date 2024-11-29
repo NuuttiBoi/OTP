@@ -5,6 +5,9 @@ import javafx.scene.image.Image;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for creating a location.
+ */
 public class Location {
     private String name, address, id, image;
     List<Car> carList = new ArrayList<>();

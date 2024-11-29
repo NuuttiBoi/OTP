@@ -5,6 +5,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+/**
+ * Class for creating a car.
+ */
 public class Car {
     private String id, make, model, licensePlate;
     private int year, km_driven;
@@ -13,7 +16,7 @@ public class Car {
     private String location;
     private LocalDateTime currentDate = LocalDateTime.now();
     private LocalDate rentalEndDate;
-    private CarDAO car = new CarDAO("yhteys");
+    private CarDAO car = new CarDAO();
 
     public Car(){}
     public Car(String id, String make, String model, int year, String licensePlate, boolean isAvailable, double price,

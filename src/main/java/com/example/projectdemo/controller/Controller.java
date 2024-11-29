@@ -21,14 +21,23 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.*;
 
+/**
+ * Controller for the carlist page.
+ */
 public class Controller {
+    @FXML
     public ListView<Car> carList;
+    @FXML
     public TextField searchField;
+    @FXML
     public Label carListHeader;
+    @FXML
     public Text brandsText;
+    @FXML
     public Button searchButton;
+    @FXML
     public Button backButton;
-    private CarDAO car = new CarDAO("Auto");
+    private CarDAO car = new CarDAO();
     List<Car> list = new ArrayList<>();
     private LocalDate returnDate = null;
     private LocalDate startDate = null;
@@ -60,7 +69,6 @@ public class Controller {
     private ScrollBar scrollbar;
     @FXML
     private HBox pallot;
-    private UserDAO user;
 
     public void loginPage() throws IOException {
         FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("login.fxml"));
@@ -86,7 +94,6 @@ public class Controller {
 
     public void initialize(String locationID, LocalDate startDate, LocalDate returnDate){
         ResourceBundle bundle = LanguageManager.getResourceBundle();
-        this.user = user;
         this.startDate = startDate;
         this.returnDate = returnDate;
         seeAllLink.setText(bundle.getString("See_All"));

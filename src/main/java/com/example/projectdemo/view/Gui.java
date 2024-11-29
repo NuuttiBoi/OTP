@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.scene.image.Image;
 
+/**
+ * Main class that runs the application.
+ */
 public class Gui extends Application{
 
     @Override

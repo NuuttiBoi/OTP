@@ -1,5 +1,8 @@
 package com.example.projectdemo.model;
 
+/**
+ * Class for creating a user.
+ */
 public class User {
 
     private int userID;

@@ -8,6 +8,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for accessing rentals in the database.
+ */
 public class RentalDAO {
     private List<Rental> rentals = new ArrayList<>();
     public void addRental(String rentalID, String rentalDate, String returnDate, String carID, String locationID, int registration_id) {

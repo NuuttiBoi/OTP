@@ -1,8 +1,6 @@
 package com.example.projectdemo.controller;
 
-// Kontrolleri aloituissivulle
-// täällä pitäisi valita mistä sijainnista käyttäjä haluaa vuokrata auton
-// + sisäänkirjautuminen / rekisteröinti
+
 import com.example.projectdemo.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +27,11 @@ import java.time.chrono.ChronoLocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+/**
+ * Kontrolleri aloituissivulle.
+ * täällä pitäisi valita mistä sijainnista käyttäjä haluaa vuokrata auton
+ * + sisäänkirjautuminen / rekisteröinti.
+ */
 
 public class HomeController {
     public ListView<Location> locationList;
@@ -74,7 +77,6 @@ public class HomeController {
         returnDatePicker.setShowWeekNumbers(false);
 
         locations = locationDAO.getLocationList();
-        ImageView imageView = new ImageView();
         locationList.setCellFactory(lv -> new javafx.scene.control.ListCell<Location>() {
             @Override
             protected void updateItem(Location location, boolean empty) {
@@ -140,10 +142,6 @@ public class HomeController {
         Scene scene = new Scene(layout, 300, 600);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         scene1.setScene(scene);
-
-        Rental rental = new Rental();
-        rental.setRentalDate(startDate);
-        rental.setReturnDate(returnDate);
 
         scene1.initModality(Modality.APPLICATION_MODAL);
         scene1.showAndWait();
