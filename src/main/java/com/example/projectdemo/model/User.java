@@ -12,6 +12,9 @@ public class User {
     private String rentalID, password;
 
 
+    /**
+     * Constructor for the user.
+     */
     public User(int userID, String email, String password) {
         this.userID = userID;
         this.email = email;

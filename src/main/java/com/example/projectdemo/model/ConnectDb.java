@@ -14,6 +14,9 @@ public class ConnectDb {
 
     Connection conn;
 
+    /**
+     * Connects to the database.
+     */
     public Connection connect() {
         try {
             conn = DriverManager.getConnection(url, user, password);
@@ -24,6 +27,10 @@ public class ConnectDb {
         }
         return conn;
     }
+
+    /**
+     * Closes the connection.
+     */
     public void closeConnection() throws SQLException {
         conn.close();
     }

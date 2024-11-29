@@ -7,12 +7,15 @@ import java.util.List;
 /**
  * Class for accessing the locations in the database.
  */
-public class LocationDAO {
+public class LocationDao {
     private String name;
     private List<Location> locationList = new ArrayList<>();
     private List<Car> carList = new ArrayList<>();
 
-    public LocationDAO(String name) {
+    /**
+     * Constructor for the locationdao.
+     */
+    public LocationDao(String name) {
         this.name = name;
     }
 

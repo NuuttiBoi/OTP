@@ -1,18 +1,20 @@
 package com.example.projectdemo.model;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
  * Class for accessing registrations in the database.
  */
-public class RegistrationDAO {
+public class RegistrationDao {
     // Replace below database url, username and password with your actual database credentials
     private static final String INSERT_QUERY = "INSERT INTO registration (full_name, email_id, password) VALUES (?, ?, ?)";
 
 
+    /**
+     * Adds a new user to the database.
+     */
     public void insertRecord(String fullName, String emailId, String password) throws SQLException {
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
@@ -29,7 +31,9 @@ public class RegistrationDAO {
         preparedStatement.executeUpdate();
     }
 
-
+    /**
+     * Method for printing exceptions.
+     */
     public static void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
             if (e instanceof SQLException) {

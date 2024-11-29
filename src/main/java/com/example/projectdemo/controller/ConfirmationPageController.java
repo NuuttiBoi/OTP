@@ -35,6 +35,9 @@ public class ConfirmationPageController {
     private Pane mainPane;
 
 
+    /**
+     * Initializes the controller.
+     */
     @FXML
     public void initialize() {
         ResourceBundle bundle = LanguageManager.getResourceBundle();
@@ -48,6 +51,9 @@ public class ConfirmationPageController {
         //mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
+    /**
+     * Takes the user back to the home page.
+     */
     @FXML
     public void handleBackToStart() {
         try {

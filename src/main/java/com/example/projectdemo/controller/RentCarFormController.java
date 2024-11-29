@@ -18,6 +18,9 @@ public class RentCarFormController {
     @FXML
     private TextField addressField;
 
+    /**
+     * Handles clicking the rent car button.
+     */
     public void handleSubmit() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Rental confirmed");

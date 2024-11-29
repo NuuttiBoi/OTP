@@ -11,8 +11,12 @@ import java.util.List;
 /**
  * Class for accessing rentals in the database.
  */
-public class RentalDAO {
+public class RentalDao {
     private List<Rental> rentals = new ArrayList<>();
+
+    /**
+     * Adds a new rental to the database.
+     */
     public void addRental(String rentalID, String rentalDate, String returnDate, String carID, String locationID, int registration_id) {
         String sql = "INSERT INTO rentals (RentalID, RentalDate, ReturnDate, CarID, LocationID, registration_id) VALUES (?, ?, ?, ?, ?, ?)";
         ConnectDb connectDb = new ConnectDb();
@@ -37,12 +41,15 @@ public class RentalDAO {
         }
     }
 
-    public List<Rental> getRentals(int registration_id) throws SQLException {
+    /**
+     * Fetches the users rentals from the database.
+     */
+    public List<Rental> getRentals(int registrationId) throws SQLException {
         String sql = "SELECT * FROM `rentals` WHERE registration_id=?";
         ConnectDb connectDb = new ConnectDb();
         try(Connection conn = connectDb.connect();
             PreparedStatement psstmt = conn.prepareStatement(sql)){
-            psstmt.setInt(1, registration_id);
+            psstmt.setInt(1, registrationId);
             ResultSet rs = psstmt.executeQuery();
             while (rs.next()){
                 Rental rental = new Rental(
@@ -56,26 +63,10 @@ public class RentalDAO {
                 rentals.add(rental);
             }
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
                 System.out.println(e.getMessage());
         }
         return rentals;
-    }
-
-    public static void printSQLException(SQLException ex) {
-        for (Throwable e: ex) {
-            if (e instanceof SQLException) {
-                e.printStackTrace(System.err);
-                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
-                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
-                System.err.println("Message: " + e.getMessage());
-                Throwable t = ex.getCause();
-                while (t != null) {
-                    System.out.println("Cause: " + t);
-                    t = t.getCause();
-                }
-            }
-        }
     }
 
 }

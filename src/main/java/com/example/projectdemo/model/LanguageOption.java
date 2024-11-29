@@ -14,6 +14,9 @@ public class LanguageOption {
     private final ImageView imageView;
     private final Image image;
 
+    /**
+     * Constructor for the language option.
+     */
     public LanguageOption(String language, ImageView imageView, Image image) throws IOException {
         this.language = language;
         this.imageView = imageView;
@@ -27,7 +30,10 @@ public class LanguageOption {
     public ImageView getImageView() {
         return imageView;
     }
-    public Image getImage(){return image;}
+
+    public Image getImage() {
+        return image;
+    }
 
     @Override
     public String toString() {

@@ -4,7 +4,7 @@ package com.example.projectdemo.controller;
 import com.example.projectdemo.model.LanguageManager;
 import com.example.projectdemo.model.SessionManager;
 import com.example.projectdemo.model.User;
-import com.example.projectdemo.model.UserDAO;
+import com.example.projectdemo.model.UserDao;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -57,11 +57,12 @@ public class LoginController {
 
     @FXML
     private Pane mainPane;
-
-    private HomeController homeController = new HomeController();
     ResourceBundle bundle = LanguageManager.getResourceBundle();
 
 
+    /**
+     * Initializes the controller.
+     */
     @FXML
     public void initialize() {
 
@@ -79,6 +80,9 @@ public class LoginController {
         headerText.setText(bundle.getString("loginHeader"));
     }
 
+    /**
+     * Handles user login.
+     */
     @FXML
     public void login(ActionEvent event) throws SQLException, IOException {
         Window owner = submitButton.getScene().getWindow();
@@ -99,7 +103,7 @@ public class LoginController {
         String emailId = emailIdField.getText();
         String password = passwordField.getText();
 
-        UserDAO userDao = new UserDAO();
+        UserDao userDao = new UserDao();
         User user = userDao.validate(emailId, password);
         // Example login process
 
@@ -122,7 +126,7 @@ public class LoginController {
             // Load the Start.fxml page
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Start.fxml"));
             Parent layout = fxmlLoader.load();  // Load the FXML layout
-            Scene scene = new Scene(layout, 300, 600);
+            Scene scene = new Scene(layout);
             Stage startStage = new Stage();
             startStage.setScene(scene);
 
@@ -136,7 +140,7 @@ public class LoginController {
 
         Alert alert = new Alert(AlertType.CONFIRMATION);
         Button button = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
-        button.setText("joo");
+        button.setText("Ok");
         alert.setContentText(infoMessage);
         alert.setTitle(title);
         alert.setHeaderText(headerText);

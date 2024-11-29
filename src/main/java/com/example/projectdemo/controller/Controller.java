@@ -12,7 +12,6 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -37,7 +36,7 @@ public class Controller {
     public Button searchButton;
     @FXML
     public Button backButton;
-    private CarDAO car = new CarDAO();
+    private CarDao car = new CarDao();
     List<Car> list = new ArrayList<>();
     private LocalDate returnDate = null;
     private LocalDate startDate = null;
@@ -70,18 +69,6 @@ public class Controller {
     @FXML
     private HBox pallot;
 
-    public void loginPage() throws IOException {
-        FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("login.fxml"));
-
-        Stage stage = new Stage();
-        stage.setScene(new Scene(loginLoader.load()));
-        // Set the title for the second scene
-        stage.setTitle("Scene 2");
-
-        stage.show();
-    }
-
-
     private Image loadImage(String filename) throws IOException {
         try (InputStream is = getClass().getResourceAsStream(filename)) {
             if (is == null) {
@@ -103,7 +90,7 @@ public class Controller {
 
 
 
-        try{
+        try {
             //list = car.getList();
             // hakee autot tietystä sijainnista
             list = car.getCarsByLocation(locationID);

@@ -3,24 +3,34 @@ package com.example.projectdemo.model;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * Class for creating a car.
  */
 public class Car {
-    private String id, make, model, licensePlate;
-    private int year, km_driven;
+    private String id;
+    private String make;
+    private String model;
+    private String licensePlate;
+    private int year;
+    private int kmDriven;
     private boolean isAvailable;
     private double price;
     private String location;
     private LocalDateTime currentDate = LocalDateTime.now();
     private LocalDate rentalEndDate;
-    private CarDAO car = new CarDAO();
+    private CarDao carDao = new CarDao();
 
+    /**
+     * Default constructor.
+     */
     public Car(){}
+
+    /**
+     * Parameterized constructor.
+     */
     public Car(String id, String make, String model, int year, String licensePlate, boolean isAvailable, double price,
-               String location, int km_driven) {
+               String location, int kmDriven) {
         this.id = id;
         this.make = make;
         this.model = model;
@@ -29,40 +39,74 @@ public class Car {
         this.isAvailable = isAvailable;
         this.price = price;
         this.location = location;
-        this.km_driven = km_driven;
+        this.kmDriven = kmDriven;
     }
 
-    public void setAvailable(boolean selection){
+    /**
+     * Set the car to be available to rent.
+     */
+    public void setAvailable(boolean selection) {
         isAvailable = selection;
     }
+
+    /**
+     * Set the car to be unavailable.
+     */
     public void setRented(LocalDate date) throws SQLException {
         this.rentalEndDate = date;
         if (currentDate.isBefore(date.atStartOfDay())){
             isAvailable = false;
-            car.setAvailability(id);
+            carDao.setAvailability(id);
         }
     }
+
     public void checkAvailability() throws SQLException {
         // Automatically make the car available if the rental period has ended
         if (rentalEndDate != null && LocalDateTime.now().isAfter(rentalEndDate.atStartOfDay())) {
             isAvailable = true; // Mark as available
             rentalEndDate = null; // Clear the rental end date
-            car.setAvailabilityYes(id); // Update the availability in the database
+            carDao.setAvailabilityYes(id); // Update the availability in the database
         }
     }
 
 
-    public String getMake() { return make; }
-    public String getModel() { return model; }
-    public int getYear() { return year; }
-    public String getId() { return id; }
-    public int getKm_driven(){return km_driven;}
-    public String getLicensePlate() { return licensePlate; }
-    public boolean isAvailable() { return isAvailable; }
-    public double getPrice() { return price; }
-    public boolean getIsAvailable(){return isAvailable; }
-    public String getLocation(){return location; }
-    public void setMake(String make){
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public int getKmDriven() {
+        return kmDriven;
+    }
+
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setMake(String make) {
         this.make = make;
     }
 

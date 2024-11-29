@@ -3,7 +3,6 @@ package com.example.projectdemo.controller;
 import com.example.projectdemo.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -16,12 +15,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ResourceBundle;
 
 import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 
@@ -57,6 +51,9 @@ public class CarPageController {
     ResourceBundle bundle = LanguageManager.getResourceBundle();
 
 
+    /**
+     * Initializes the controller.
+     */
     @FXML
     public void initialize() {
 
@@ -74,7 +71,7 @@ public class CarPageController {
         this.car = selectedCar;
         carPic.setImage(carImage);
         modelText.setText(selectedCar.getMake() + " " + selectedCar.getModel());
-        carDetailsText.setText(bundle.getString("Year") + selectedCar.getYear() + " \n " + bundle.getString("driven")  + selectedCar.getKm_driven() +
+        carDetailsText.setText(bundle.getString("Year") + selectedCar.getYear() + " \n " + bundle.getString("driven")  + selectedCar.getKmDriven() +
                 "\nLocation: " + car.getLocation());
 
         long differenceInDays = ChronoUnit.DAYS.between(startDate, returnDate);

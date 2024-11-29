@@ -1,18 +1,8 @@
 package com.example.projectdemo.model;
 
 import org.junit.jupiter.api.Test;
-import com.example.projectdemo.model.Car;
-import com.example.projectdemo.model.CarDAO;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
@@ -33,7 +23,7 @@ class CarTest {
         assertTrue(car.isAvailable());
         assertEquals(25000.0, car.getPrice());
         assertEquals("1", car.getId());
-        assertEquals(15000, car.getKm_driven());
+        assertEquals(15000, car.getKmDriven());
     }
 
     @Test

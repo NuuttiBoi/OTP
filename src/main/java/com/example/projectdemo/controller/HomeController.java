@@ -19,9 +19,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 
-import javax.print.attribute.standard.DateTimeAtCreation;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
 import java.util.ArrayList;
@@ -59,10 +57,13 @@ public class HomeController {
     private LocalDate returnDate;
     private boolean isSignedIn = false;
     private List<Location> locations = new ArrayList<>();
-    private LocationDAO locationDAO = new LocationDAO("locationDao");
+    private LocationDao locationDao = new LocationDao("locationDao");
     private List<Car> carList = new ArrayList<Car>();
-    private UserDAO user;
+    private UserDao user;
 
+    /**
+     * Initializes the controller.
+     */
     public void initialize() {
         ResourceBundle bundle = LanguageManager.getResourceBundle();
         System.out.println(bundle);
@@ -76,7 +77,7 @@ public class HomeController {
         startDatePicker.setShowWeekNumbers(false);
         returnDatePicker.setShowWeekNumbers(false);
 
-        locations = locationDAO.getLocationList();
+        locations = locationDao.getLocationList();
         locationList.setCellFactory(lv -> new javafx.scene.control.ListCell<Location>() {
             @Override
             protected void updateItem(Location location, boolean empty) {
@@ -147,6 +148,9 @@ public class HomeController {
         scene1.showAndWait();
     }
 
+    /**
+     * Handles the click of sign in button.
+     */
     public void onSignInButtonClicked() throws IOException {
         // Get the current stage (the one with the home page)
         Stage currentStage = (Stage) signInButton.getScene().getWindow();
@@ -168,6 +172,9 @@ public class HomeController {
         loginStage.show();
     }
 
+    /**
+     * Fetches the selected startdate.
+     */
     public void handleStartDate() {
         Scene scene = headerText.getScene();
         scene.getStylesheets().add("/com/example/projectdemo/style.css");
@@ -176,6 +183,9 @@ public class HomeController {
         SessionManager.setStartDate(startDate);
     }
 
+    /**
+     * Fetches the selected return date.
+     */
     public void handleReturnDate() {
         returnDate = returnDatePicker.getValue();
         System.out.println(returnDatePicker.getValue());

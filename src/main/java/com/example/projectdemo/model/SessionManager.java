@@ -11,6 +11,9 @@ public class SessionManager {
     private static LocalDate endDate;
     private static Location location;
 
+    /**
+     * Adds the current user.
+     */
     public static void login(User user) {
         currentUser = user;
     }
@@ -23,19 +26,23 @@ public class SessionManager {
         return currentUser;
     }
 
-    public static void setStartDate(LocalDate startDate){
+    public static void setStartDate(LocalDate startDate) {
         SessionManager.startDate = startDate;
     }
-    public static void setEndDate(LocalDate endDate){
+    public static void setEndDate(LocalDate endDate) {
         SessionManager.endDate = endDate;
     }
-    public static void setLocation(Location location){SessionManager.location = location;}
+    public static void setLocation(Location location) {
+        SessionManager.location = location;
+    }
 
-    public static LocalDate getStartDate(){
+    public static LocalDate getStartDate() {
         return startDate;
     }
-    public static LocalDate getEndDate(){
+    public static LocalDate getEndDate() {
         return endDate;
     }
-    public static Location getLocation(){return location;}
+    public static Location getLocation() {
+        return location;
+    }
 }

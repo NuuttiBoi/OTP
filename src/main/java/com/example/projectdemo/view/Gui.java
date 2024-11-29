@@ -11,7 +11,7 @@ import javafx.scene.image.Image;
 /**
  * Main class that runs the application.
  */
-public class Gui extends Application{
+public class Gui extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -24,6 +24,9 @@ public class Gui extends Application{
         stage.show();
     }
 
+    /**
+     * Launches the application.
+     */
     public static void main(String[] args) {
         launch();
     }

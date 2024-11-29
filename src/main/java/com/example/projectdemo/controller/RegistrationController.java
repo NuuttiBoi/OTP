@@ -1,7 +1,7 @@
 package com.example.projectdemo.controller;
 
 import com.example.projectdemo.model.LanguageManager;
-import com.example.projectdemo.model.RegistrationDAO;
+import com.example.projectdemo.model.RegistrationDao;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -54,6 +54,9 @@ public class RegistrationController {
     private Pane mainPane;
     ResourceBundle bundle = LanguageManager.getResourceBundle();
 
+    /**
+     * Initializes the controller.
+     */
     @FXML
     public void initialize() {
         registrationHeader.setText(bundle.getString("register"));
@@ -70,6 +73,9 @@ public class RegistrationController {
         mainPane.setBackground(new Background(new BackgroundFill(Color.web("#21283d"), CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
+    /**
+     * Handles user registration.
+     */
     @FXML
     public void register(ActionEvent event) throws SQLException, IOException {
 
@@ -100,7 +106,7 @@ public class RegistrationController {
         String emailId = emailIdField.getText();
         String password = passwordField.getText();
 
-        RegistrationDAO jdbcDao = new RegistrationDAO();
+        RegistrationDao jdbcDao = new RegistrationDao();
         jdbcDao.insertRecord(fullName, emailId, password);
 
         showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",

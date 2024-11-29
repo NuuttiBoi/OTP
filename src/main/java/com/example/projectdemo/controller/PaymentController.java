@@ -5,7 +5,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -23,12 +22,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import java.time.LocalDate;
 
 /**
  * Controller for the payment page.
@@ -207,7 +203,7 @@ public class PaymentController  {
             stage.setScene(new Scene(root)); // Set the scene to OrderConfirmation.fxml
             stage.show(); // Display the confirmation page
 
-            RentalDAO rentalDAO = new RentalDAO();
+            RentalDao rentalDAO = new RentalDao();
             rentalDAO.addRental("2",String.valueOf(SessionManager.getStartDate()),String.valueOf(SessionManager.getEndDate()),
                     selectedCar.getId(), SessionManager.getLocation().getId(),SessionManager.getCurrentUser().getUserID());
 

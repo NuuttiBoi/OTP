@@ -3,7 +3,6 @@ package com.example.projectdemo.controller;
 import com.example.projectdemo.model.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.text.Text;
 
 import java.sql.SQLException;
@@ -20,13 +19,16 @@ public class RentalsController {
     private ListView rentalList;
     private List<Rental> rentals = new ArrayList<>();
 
+    /**
+     * Initializes the controller.
+     */
     public void initialize() throws SQLException {
         ResourceBundle bundle = LanguageManager.getResourceBundle();
         myRentalsHeader.setText(bundle.getString("rentalsHeader"));
         User user1 = SessionManager.getCurrentUser();
         System.out.println(user1.toString());
         System.out.println(user1.getUserID());
-        RentalDAO rentalDAO = new RentalDAO();
+        RentalDao rentalDAO = new RentalDao();
         rentals = rentalDAO.getRentals(user1.getUserID());
 
         rentalList.getItems().addAll(rentals);

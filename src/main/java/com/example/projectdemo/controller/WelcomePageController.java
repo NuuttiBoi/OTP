@@ -58,6 +58,9 @@ public class WelcomePageController {
         }
     }
 
+    /**
+     * Initializes the controller.
+     */
     @FXML
     public void initialize() throws IOException {
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
