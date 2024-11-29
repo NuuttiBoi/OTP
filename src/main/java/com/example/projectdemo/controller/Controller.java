@@ -9,10 +9,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import javafx.scene.shape.Circle;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Circle;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -22,6 +22,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.*;
 
+@SuppressWarnings("checkstyle:Indentation")
 public class Controller {
     public ListView<Car> carList;
     public TextField searchField;
@@ -81,6 +82,7 @@ public class Controller {
     }
 
 
+    @SuppressWarnings("checkstyle:WhitespaceAround")
     public void initialize(String locationID, LocalDate startDate, LocalDate returnDate){
         this.startDate = startDate;
         this.returnDate = returnDate;
