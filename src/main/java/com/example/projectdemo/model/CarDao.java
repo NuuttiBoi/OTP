@@ -37,21 +37,7 @@ public class CarDao {
             Statement stmt = conn.createStatement();
             String query = "SELECT * FROM vehicles";
             ResultSet rs = stmt.executeQuery(query);
-
-            while (rs.next()) {
-                Car car = new Car(
-                        rs.getString(carId),
-                        rs.getString("Make"),
-                        rs.getString("Model"),
-                        rs.getInt("Year"),
-                        rs.getString("LicensePlate"), // Add this if you modify the Car class
-                        rs.getInt("Availability") == 1, // Assuming you change to boolean
-                        rs.getDouble("Price"), // Assuming you add this to the Car class
-                        rs.getString("LocationID"),
-                        rs.getInt("km_driven")
-                );
-                carList.add(car);
-            }
+            carList = fetchCars(rs);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -71,33 +57,19 @@ public class CarDao {
 
         try {
              PreparedStatement stmt = conn.prepareStatement(query);
-
             // asettaa locationID:n queryy toiseksi parametriksi
             stmt.setString(1, locationID);
-
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                Car car = new Car(
-                        rs.getString(carId),
-                        rs.getString("Make"),
-                        rs.getString("Model"),
-                        rs.getInt("Year"),
-                        rs.getString("LicensePlate"),
-                        rs.getBoolean("Availability"),
-                        rs.getDouble("Price"),
-                        rs.getString("LocationID"),
-                        rs.getInt("km_driven")
-                );
-                // Auto näytetään vain jos se on saatavilla
-                boolean isAvailable = rs.getBoolean("Availability");
-                if(isAvailable){
+            List<Car> foundCars = fetchCars(rs);
+            for(Car car : foundCars){
+                if(car.isAvailable()){
                     carsByLocation.add(car);
                 }
             }
+            System.out.println("cars in the location :" + carsByLocation);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return carsByLocation;
     }
     public void setAvailability(String carId) throws SQLException {
@@ -144,21 +116,27 @@ public class CarDao {
         PreparedStatement preparedStatement = conn.prepareStatement(query);
         preparedStatement.setString(1, carId);
         ResultSet rs = preparedStatement.executeQuery();
-        while (rs.next()) {
-            car = new Car(
-                    rs.getString(carId),
-                    rs.getString("Make"),
-                    rs.getString("Model"),
-                    rs.getInt("Year"),
-                    rs.getString("LicensePlate"),
-                    rs.getBoolean("Availability"),
-                    rs.getDouble("Price"),
-                    rs.getString("LocationID"),
-                    rs.getInt("km_driven")
-            );
-
-        }
+        car = fetchCars(rs).get(0);
         return car;
+    }
+
+    public List<Car> fetchCars(ResultSet resultSet) throws SQLException {
+        List<Car> cars = new ArrayList<>();
+        while (resultSet.next()) {
+            Car car = new Car(
+                    resultSet.getString(carId),
+                    resultSet.getString("Make"),
+                    resultSet.getString("Model"),
+                    resultSet.getInt("Year"),
+                    resultSet.getString("LicensePlate"),
+                    resultSet.getBoolean("Availability"),
+                    resultSet.getDouble("Price"),
+                    resultSet.getString("LocationID"),
+                    resultSet.getInt("km_driven")
+            );
+            cars.add(car);
+        }
+        return cars;
     }
 
 
