@@ -18,12 +18,15 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
+import javafx.util.StringConverter;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 /**
  * Kontrolleri aloituissivulle.
@@ -60,18 +63,47 @@ public class HomeController {
     private LocationDao locationDao = new LocationDao("locationDao");
     private List<Car> carList = new ArrayList<Car>();
     private UserDao user;
+    private ResourceBundle bundle;
 
     /**
      * Initializes the controller.
      */
     public void initialize() {
-        ResourceBundle bundle = LanguageManager.getResourceBundle();
+        bundle = LanguageManager.getResourceBundle();
         startDateText.setText(bundle.getString("startDate"));
         endDateText.setText(bundle.getString("endDate"));
         locationInstructionText.setText(bundle.getString("locationInstruction"));
         dateInstructionText.setText(bundle.getString("dateInstruction"));
         menuButton.setText(bundle.getString("menuButton"));
         menuOption1.setText(bundle.getString("menuOption"));
+
+        // This sets the datepicker to adapt to the language that the user has selected
+        Locale.setDefault(bundle.getLocale());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, d.MM.uuuu",bundle.getLocale());
+        startDatePicker.setValue(LocalDate.now());
+        startDatePicker.setConverter(new StringConverter<LocalDate>() {
+            @Override
+            public String toString(LocalDate object) {
+                return object.format(formatter);
+            }
+
+            @Override
+            public LocalDate fromString(String string) {
+                return LocalDate.parse(string, formatter);
+            }
+        });
+        returnDatePicker.setValue(LocalDate.now());
+        returnDatePicker.setConverter(new StringConverter<LocalDate>() {
+            @Override
+            public String toString(LocalDate object) {
+                return object.format(formatter);
+            }
+
+            @Override
+            public LocalDate fromString(String string) {
+                return LocalDate.parse(string, formatter);
+            }
+        });
 
         startDatePicker.setShowWeekNumbers(false);
         returnDatePicker.setShowWeekNumbers(false);
