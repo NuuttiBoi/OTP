@@ -197,10 +197,10 @@ public class PaymentController  {
 
         // If all validations pass, proceed to payment confirmation
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/OrderConfirmation.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/OrderConfirmationPage.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) paymentButton.getScene().getWindow(); // Get the current stage
-            stage.setScene(new Scene(root)); // Set the scene to OrderConfirmation.fxml
+            stage.setScene(new Scene(root)); // Set the scene to OrderConfirmationPage.fxml
             stage.show(); // Display the confirmation page
 
             RentalDao rentalDAO = new RentalDao();

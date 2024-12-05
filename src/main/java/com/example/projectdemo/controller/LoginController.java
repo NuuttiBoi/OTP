@@ -123,8 +123,8 @@ public class LoginController {
             Stage currentStage = (Stage) submitButton.getScene().getWindow();
             currentStage.close();
 
-            // Load the Start.fxml page
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Start.fxml"));
+            // Load the StartPage.fxml page
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/StartPage.fxml"));
             Parent layout = fxmlLoader.load();  // Load the FXML layout
             Scene scene = new Scene(layout);
             Stage startStage = new Stage();
@@ -165,7 +165,7 @@ public class LoginController {
         currentStage.close();
 
         // Load the registration page
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/registrationController.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/RegistrationPage.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
         Scene scene = new Scene(layout, 300, 600);
         Stage register = new Stage();

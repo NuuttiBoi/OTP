@@ -2,12 +2,6 @@ package com.example.projectdemo.controller;
 
 import com.example.projectdemo.model.LanguageManager;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Color;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.Button;
@@ -57,8 +51,8 @@ public class ConfirmationPageController {
     @FXML
     public void handleBackToStart() {
         try {
-            // Load the Start.fxml file
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Start.fxml"));
+            // Load the StartPage.fxml file
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/StartPage.fxml"));
             Parent root = fxmlLoader.load();
 
             // Get the current stage

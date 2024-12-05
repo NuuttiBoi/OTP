@@ -115,8 +115,8 @@ public class RegistrationController {
         // Close the current login stage
         //currentStage.close();
 
-        // Load the Start.fxml page
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Start.fxml"));
+        // Load the StartPage.fxml page
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/StartPage.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
         Scene scene = new Scene(layout, 300, 600);
         Stage startStage = new Stage();

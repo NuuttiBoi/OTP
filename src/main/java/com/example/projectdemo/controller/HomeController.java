@@ -56,7 +56,6 @@ public class HomeController {
     @FXML
     private LocalDate startDate;
     private LocalDate returnDate;
-    private boolean isSignedIn = false;
     private List<Location> locations = new ArrayList<>();
     private LocationDao locationDao = new LocationDao("locationDao");
     private ResourceBundle bundle;
@@ -156,10 +155,10 @@ public class HomeController {
         currentStage.close();
         Stage scene1 = new Stage();
         scene1.setTitle("scene1");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Scene1.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/CarListPage.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
-        Controller controller = fxmlLoader.getController();  // Make sure to import your controller class
-        controller.initialize(selectedLocation.getId(), startDate, returnDate);
+        CarListPageController carListPageController = fxmlLoader.getController();  // Make sure to import your controller class
+        carListPageController.initialize(selectedLocation.getId(), startDate, returnDate);
         Scene scene = new Scene(layout, 300, 600);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
         scene1.setScene(scene);
@@ -190,7 +189,7 @@ public class HomeController {
      * Opens the scene where user can view their current rentals.
      */
     public void handleMyRentals() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/UserRentals.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/UserRentalsPage.fxml"));
         Parent layout = fxmlLoader.load();
         Stage rentalsStage = new Stage();
         Scene scene = new Scene(layout, 600, 400);

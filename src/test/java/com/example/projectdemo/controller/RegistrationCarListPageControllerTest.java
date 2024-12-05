@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
 
-class RegistrationControllerTest {
+class RegistrationCarListPageControllerTest {
 
 
     @Test

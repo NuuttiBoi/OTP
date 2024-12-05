@@ -89,7 +89,7 @@ public class CarPageController {
 
     @FXML
     void handleRentCarClick() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Payment1.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/PaymentPage.fxml"));
         Parent paymentLayout = fxmlLoader.load();
         PaymentController paymentController = fxmlLoader.getController();
         paymentController.setSelectedCar(car);

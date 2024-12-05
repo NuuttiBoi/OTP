@@ -20,7 +20,7 @@ class WelcomePageLoadTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/Welcome.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/WelcomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 330, 600);
         stage.setTitle("Car Rental");
         stage.setScene(scene);

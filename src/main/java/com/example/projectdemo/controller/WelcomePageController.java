@@ -2,7 +2,6 @@ package com.example.projectdemo.controller;
 
 import com.example.projectdemo.model.LanguageManager;
 import com.example.projectdemo.model.LanguageOption;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,8 +11,6 @@ import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -22,8 +19,6 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
-import static javafx.scene.paint.Color.RED;
 
 /**
  * Controller for the first scene.
@@ -261,7 +256,7 @@ public class WelcomePageController {
         currentStage.close();
 
         // Load the login page
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/LoginController.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/LoginPage.fxml"));
         Parent layout = fxmlLoader.load();  // Load the FXML layout
 
         // Create a new stage for the login page

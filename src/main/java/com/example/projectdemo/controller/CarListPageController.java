@@ -23,7 +23,7 @@ import java.util.*;
 /**
  * Controller for the carlist page.
  */
-public class Controller {
+public class CarListPageController {
     @FXML
     public ListView<Car> carList;
     @FXML
