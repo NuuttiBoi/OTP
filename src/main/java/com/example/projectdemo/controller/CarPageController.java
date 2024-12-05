@@ -100,6 +100,7 @@ public class CarPageController {
         Scene scene = new Scene(paymentLayout);
         paymentStage.setScene(scene);
         paymentStage.setTitle("Payment Page");
+        paymentStage.getIcons().add(new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm()));
         //paymentStage.initModality(Modality.APPLICATION_MODAL);
         paymentStage.showAndWait();
         paymentStage.getScene().getRoot().requestLayout();

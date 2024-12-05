@@ -52,6 +52,7 @@ public class RegistrationController {
 
     @FXML
     private Pane mainPane;
+
     ResourceBundle bundle = LanguageManager.getResourceBundle();
 
     /**

@@ -266,6 +266,7 @@ public class WelcomePageController {
         Scene scene = new Scene(layout, 300, 600);
         loginStage.setScene(scene);
         loginStage.setTitle("Login Page");
+        loginStage.getIcons().add(new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm()));
 
         // Show the login page
         loginStage.show();

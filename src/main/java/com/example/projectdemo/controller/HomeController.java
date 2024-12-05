@@ -161,6 +161,7 @@ public class HomeController {
         carListPageController.initialize(selectedLocation.getId(), startDate, returnDate);
         Scene scene = new Scene(layout, 300, 600);
         scene.getStylesheets().add(getClass().getResource("/com/example/projectdemo/style.css").toExternalForm());
+        scene1.getIcons().add(new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm()));
         scene1.setScene(scene);
 
         scene1.initModality(Modality.APPLICATION_MODAL);

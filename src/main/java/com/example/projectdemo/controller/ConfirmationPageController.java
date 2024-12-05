@@ -2,6 +2,7 @@ package com.example.projectdemo.controller;
 
 import com.example.projectdemo.model.LanguageManager;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.Button;
@@ -22,9 +23,6 @@ public class ConfirmationPageController {
     public Text confirmText;
     @FXML
     public Button homeButton;
-    @FXML
-    private ImageView logo;
-
     @FXML
     private Pane mainPane;
 

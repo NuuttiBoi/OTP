@@ -200,6 +200,7 @@ public class PaymentController  {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/OrderConfirmationPage.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) paymentButton.getScene().getWindow(); // Get the current stage
+            stage.getIcons().add(new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm()));
             stage.setScene(new Scene(root)); // Set the scene to OrderConfirmationPage.fxml
             stage.show(); // Display the confirmation page
 

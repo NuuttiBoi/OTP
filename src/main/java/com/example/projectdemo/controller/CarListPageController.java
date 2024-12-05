@@ -89,8 +89,6 @@ public class CarListPageController {
         searchButton.setText(bundle.getString("Search"));
         brandsText.setText(bundle.getString("Brands"));
 
-
-
         try {
             //list = car.getList();
             // hakee autot tietystä sijainnista
@@ -213,7 +211,7 @@ public class CarListPageController {
 
         Stage newWindow = new Stage();
         newWindow.setTitle("Car Details");
-
+        newWindow.getIcons().add(new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm()));
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/CarPage.fxml"));
 
         Parent layout = fxmlLoader.load();
