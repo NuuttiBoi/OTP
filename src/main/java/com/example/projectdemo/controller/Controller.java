@@ -93,7 +93,7 @@ public class Controller {
         try {
             //list = car.getList();
             // hakee autot tietystä sijainnista
-            list = car.getCarsByLocation(locationID);
+            list = car.getCarsByLocation(locationID, bundle);
             carList.getItems().clear();
             carList.getItems().addAll(list);
             System.out.println(carList);
@@ -241,7 +241,7 @@ public class Controller {
         ConnectDb connectDb = new ConnectDb();
         Connection conn = connectDb.connect();
 
-        String query = "SELECT image FROM vehicles WHERE CarID = ?";
+        String query = "SELECT image FROM vehicle_translations WHERE car_id = ?";
 
         try{
             PreparedStatement statement = conn.prepareStatement(query);

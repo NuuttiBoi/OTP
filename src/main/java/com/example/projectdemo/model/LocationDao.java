@@ -56,7 +56,7 @@ public class LocationDao {
             statement.setString(1,locale_name);
             ResultSet rs = statement.executeQuery();
             while (rs.next()){
-                Location location = new Location(rs.getString("location_id"),
+                Location location = new Location(rs.getString("LocationID"),
                         rs.getString("name"),
                         rs.getString("name"), carList,
                         rs.getString("image"));

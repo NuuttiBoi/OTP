@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 /**
@@ -35,7 +37,7 @@ public class CarDao {
         Connection conn = connectDb.connect();
         try  {
             Statement stmt = conn.createStatement();
-            String query = "SELECT * FROM vehicles";
+            String query = "SELECT * FROM vehicle_translations";
             ResultSet rs = stmt.executeQuery(query);
             carList = fetchCars(rs);
         } catch (SQLException e) {
@@ -48,17 +50,19 @@ public class CarDao {
     /**
      * Autot haetaan käyttäjän valitseman sijainnin perusteella.
      */
-    public List<Car> getCarsByLocation(String locationID) {
+    public List<Car> getCarsByLocation(String locationID, ResourceBundle bundle) {
+        String languageCode = String.valueOf(bundle.getLocale());
         List<Car> carsByLocation = new ArrayList<>();
-        String query = "SELECT * FROM vehicles WHERE LocationID = ?";
+        String query = "SELECT * FROM vehicle_translations WHERE LocationID = ? AND language_code = ?";
 
         ConnectDb connectDb = new ConnectDb();
         Connection conn = connectDb.connect();
 
         try {
-             PreparedStatement stmt = conn.prepareStatement(query);
+            PreparedStatement stmt = conn.prepareStatement(query);
             // asettaa locationID:n queryy toiseksi parametriksi
             stmt.setString(1, locationID);
+            stmt.setString(2, languageCode);
             ResultSet rs = stmt.executeQuery();
             List<Car> foundCars = fetchCars(rs);
             for(Car car : foundCars){
@@ -124,15 +128,15 @@ public class CarDao {
         List<Car> cars = new ArrayList<>();
         while (resultSet.next()) {
             Car car = new Car(
-                    resultSet.getString(carId),
+                    resultSet.getString("car_id"),
                     resultSet.getString("Make"),
                     resultSet.getString("Model"),
                     resultSet.getInt("Year"),
-                    resultSet.getString("LicensePlate"),
-                    resultSet.getBoolean("Availability"),
+                    "ABC-123",
+                    true,
                     resultSet.getDouble("Price"),
                     resultSet.getString("LocationID"),
-                    resultSet.getInt("km_driven")
+                    resultSet.getInt("distance_driven")
             );
             cars.add(car);
         }
