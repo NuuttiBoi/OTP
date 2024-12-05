@@ -54,15 +54,11 @@ public class HomeController {
     @FXML
     private Pane mainPane;
     @FXML
-    public ImageView tokyo;
-    @FXML
     private LocalDate startDate;
     private LocalDate returnDate;
     private boolean isSignedIn = false;
     private List<Location> locations = new ArrayList<>();
     private LocationDao locationDao = new LocationDao("locationDao");
-    private List<Car> carList = new ArrayList<Car>();
-    private UserDao user;
     private ResourceBundle bundle;
 
     /**
@@ -81,6 +77,7 @@ public class HomeController {
         Locale.setDefault(bundle.getLocale());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, d.MM.uuuu",bundle.getLocale());
         startDatePicker.setValue(LocalDate.now());
+        handleStartDate();
         startDatePicker.setConverter(new StringConverter<LocalDate>() {
             @Override
             public String toString(LocalDate object) {
@@ -93,6 +90,7 @@ public class HomeController {
             }
         });
         returnDatePicker.setValue(LocalDate.now());
+        handleReturnDate();
         returnDatePicker.setConverter(new StringConverter<LocalDate>() {
             @Override
             public String toString(LocalDate object) {
@@ -129,12 +127,6 @@ public class HomeController {
         locationList.setOnMouseClicked(event -> {
             Location selectedLocation = locationList.getSelectionModel().getSelectedItem();
             if (selectedLocation != null) {
-//                if (!UserDAO.isLoggedIn()) { // Check if the user is signed in
-//                    alert.setContentText("Please log in to continue.");
-//                    alert.showAndWait();
-//                    return; // Exit the method if not signed in
-//                }
-
                 if (startDate == null || returnDate == null) {
                     alert.setContentText(bundle.getString("dateInstruction"));
                     alert.showAndWait();
@@ -157,8 +149,6 @@ public class HomeController {
 
         Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
         logo.setImage(carLogo);
-
-        System.out.println("hello " + user);
     }
 
     private void openScene1(Location selectedLocation, LocalDate returnDate) throws IOException {
@@ -179,35 +169,9 @@ public class HomeController {
     }
 
     /**
-     * Handles the click of sign in button.
-     */
-    public void onSignInButtonClicked() throws IOException {
-        // Get the current stage (the one with the home page)
-        Stage currentStage = (Stage) signInButton.getScene().getWindow();
-
-        // Close the current stage
-        currentStage.close();
-
-        // Load the login page
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/LoginController.fxml"));
-        Parent layout = fxmlLoader.load();  // Load the FXML layout
-
-        // Create a new stage for the login page
-        Stage loginStage = new Stage();
-        Scene scene = new Scene(layout, 300, 600);
-        loginStage.setScene(scene);
-        loginStage.setTitle("Login Page");
-
-        // Show the login page
-        loginStage.show();
-    }
-
-    /**
      * Fetches the selected startdate.
      */
     public void handleStartDate() {
-        Scene scene = headerText.getScene();
-        scene.getStylesheets().add("/com/example/projectdemo/style.css");
         startDate = startDatePicker.getValue();
         System.out.println(startDatePicker.getValue());
         SessionManager.setStartDate(startDate);
@@ -222,6 +186,9 @@ public class HomeController {
         SessionManager.setEndDate(returnDate);
     }
 
+    /**
+     * Opens the scene where user can view their current rentals.
+     */
     public void handleMyRentals() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/UserRentals.fxml"));
         Parent layout = fxmlLoader.load();
@@ -231,20 +198,7 @@ public class HomeController {
         rentalsStage.show();
     }
 
-
-
-    public boolean isSignedIn() {
-        return isSignedIn;
-    }
-
-    public LocalDate getReturnDate() {
-        return this.returnDate;
-    }
-
     public LocalDate getStartDate() {
         return this.startDate;
     }
-
-
-
 }
