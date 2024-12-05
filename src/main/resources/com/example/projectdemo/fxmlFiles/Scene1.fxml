@@ -35,15 +35,15 @@
    <ScrollPane fx:id="scrollPane" prefHeight="230.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
       <HBox fx:id="pallot" prefHeight="51.0" prefWidth="442.0" spacing="10.0">
          <children>
-            <Circle fx:id="firstBall" fill="#fcfafa" radius="20.0" stroke="#949292" strokeType="INSIDE" />
-            <Circle fx:id="secondBall" fill="#f1f6f826" radius="20.0" stroke="#949292" strokeType="INSIDE" />
-            <Circle fx:id="thirdBall" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="fourthBall" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
-            <Circle fx:id="fifthBall" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="sixthBall" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="seventhBall" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
-            <Circle fx:id="eightBall" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
-            <Circle fx:id="ninthBall" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
+            <Circle fx:id="toyotaBall" fill="#fcfafa" radius="20.0" stroke="#949292" strokeType="INSIDE" />
+            <Circle fx:id="volkswagenBall" fill="#f1f6f826" radius="20.0" stroke="#949292" strokeType="INSIDE" />
+            <Circle fx:id="nissanBall" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="fordBall" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
+            <Circle fx:id="hondaBall" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="mercedesBall" fill="#1f93ff05" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="bmwBall" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
+            <Circle fx:id="audiBall" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
+            <Circle fx:id="volvoBall" fill="#98a86505" radius="20.0" stroke="#5e5c5c" strokeType="INSIDE" />
          </children>
       </HBox>
    </ScrollPane>

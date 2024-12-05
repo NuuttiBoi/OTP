@@ -45,23 +45,23 @@ public class Controller {
     @FXML
     private ImageView carPic;
     @FXML
-    private Circle firstBall;
+    private Circle toyotaBall;
     @FXML
-    private Circle secondBall;
+    private Circle volkswagenBall;
     @FXML
-    private Circle thirdBall;
+    private Circle nissanBall;
     @FXML
-    private Circle fourthBall;
+    private Circle fordBall;
     @FXML
-    private Circle fifthBall;
+    private Circle hondaBall;
     @FXML
-    private Circle sixthBall;
+    private Circle mercedesBall;
     @FXML
-    private Circle seventhBall;
+    private Circle bmwBall;
     @FXML
-    private Circle eightBall;
+    private Circle audiBall;
     @FXML
-    private Circle ninthBall;
+    private Circle volvoBall;
     @FXML
     private Hyperlink seeAllLink;
     @FXML
@@ -119,15 +119,15 @@ public class Controller {
 
 
             // Fill the circles with the respective car logos
-            firstBall.setFill(new ImagePattern(toyotaLogo));
-            secondBall.setFill(new ImagePattern(vwLogo));
-            thirdBall.setFill(new ImagePattern(nissanLogo));
-            fourthBall.setFill(new ImagePattern(fordLogo));
-            fifthBall.setFill(new ImagePattern(hondaLogo));
-            sixthBall.setFill(new ImagePattern(mercedesLogo));
-            seventhBall.setFill(new ImagePattern(bmwLogo));
-            eightBall.setFill(new ImagePattern(audiLogo));
-            ninthBall.setFill(new ImagePattern(volvoLogo));
+            toyotaBall.setFill(new ImagePattern(toyotaLogo));
+            volkswagenBall.setFill(new ImagePattern(vwLogo));
+            nissanBall.setFill(new ImagePattern(nissanLogo));
+            fordBall.setFill(new ImagePattern(fordLogo));
+            hondaBall.setFill(new ImagePattern(hondaLogo));
+            mercedesBall.setFill(new ImagePattern(mercedesLogo));
+            bmwBall.setFill(new ImagePattern(bmwLogo));
+            audiBall.setFill(new ImagePattern(audiLogo));
+            volvoBall.setFill(new ImagePattern(volvoLogo));
 
 
 
@@ -167,29 +167,23 @@ public class Controller {
             }
         });
         // Event handling for circle clicks
-        firstBall.setOnMouseClicked(event -> filterCarsByModel("Toyota"));
+        toyotaBall.setOnMouseClicked(event -> filterCarsByModel(bundle.getString("Toyota")));
 
-        secondBall.setOnMouseClicked(event -> filterCarsByModel("Volkswagen"));
+        volkswagenBall.setOnMouseClicked(event -> filterCarsByModel(bundle.getString("Volkswagen")));
 
-        thirdBall.setOnMouseClicked(event -> filterCarsByModel("Nissan"));
+        nissanBall.setOnMouseClicked(event -> filterCarsByModel(bundle.getString("Nissan")));
 
-        fourthBall.setOnMouseClicked(event -> filterCarsByModel("Ford"));
+        fordBall.setOnMouseClicked(event -> filterCarsByModel(bundle.getString("Ford")));
 
-        fifthBall.setOnMouseClicked(event -> filterCarsByModel("Honda"));
+        hondaBall.setOnMouseClicked(event -> filterCarsByModel(bundle.getString("Honda")));
 
-        sixthBall.setOnMouseClicked(event -> filterCarsByModel("Mercedes-Benz"));
+        mercedesBall.setOnMouseClicked(event -> filterCarsByModel(bundle.getString("Mercedes-Benz")));
 
-        seventhBall.setOnMouseClicked(event -> {
-            filterCarsByModel("BMW");
-        });
+        bmwBall.setOnMouseClicked(event -> filterCarsByModel(bundle.getString("BMW")));
 
-        eightBall.setOnMouseClicked(event -> {
-            filterCarsByModel("Audi");
-        });
+        audiBall.setOnMouseClicked(event -> filterCarsByModel(bundle.getString("Audi")));
 
-        ninthBall.setOnMouseClicked(event -> {
-            filterCarsByModel("Volvo");
-        });
+        volvoBall.setOnMouseClicked(event -> filterCarsByModel(bundle.getString("Volvo")));
     }
 
 
