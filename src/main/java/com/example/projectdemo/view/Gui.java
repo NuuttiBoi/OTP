@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 
 /**
  * Main class that runs the application.
+ * @author Nuutti Turunen
  */
 public class Gui extends Application {
 

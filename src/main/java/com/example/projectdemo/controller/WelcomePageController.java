@@ -21,7 +21,9 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
- * Controller for the first scene.
+ * Controller for the "welcome page". This is the first page the user sees when starting the application.
+ * User will select their desired language here and proceed to the login/registraton page.
+ * @author Nuutti Turunen
  */
 
 public class WelcomePageController {

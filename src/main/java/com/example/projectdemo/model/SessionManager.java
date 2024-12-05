@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Class for the controllers to get current user and other info.
+ * @author Nuutti Turunen
  */
 public class SessionManager {
     private static User currentUser;

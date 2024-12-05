@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Class for accessing rentals in the database.
+ * @author Nuutti Turunen
  */
 public class RentalDao {
     private List<Rental> rentals = new ArrayList<>();

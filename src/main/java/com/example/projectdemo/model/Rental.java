@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 /**
  * Class for creating a rental.
+ * @author Nuutti Turunen
  */
 public class Rental {
     String rentalID, carId, locationId;

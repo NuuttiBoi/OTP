@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 /**
  * Class for creating a db connection.
+ * @author Nuutti Turunen
  */
 public class ConnectDb {
     String url = "jdbc:mysql://mysql.metropolia.fi:3306/nuuttitu?useSSL=false";

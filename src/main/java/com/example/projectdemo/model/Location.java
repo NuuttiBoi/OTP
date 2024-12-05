@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Class for creating a location.
+ * @author Nuutti Turunen
  */
 public class Location {
     private String name, address, id, image;

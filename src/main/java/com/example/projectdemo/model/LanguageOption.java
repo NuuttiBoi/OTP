@@ -8,6 +8,7 @@ import java.io.InputStream;
 
 /**
  * Class for different language options.
+ * @author Nuutti Turunen
  */
 public class LanguageOption {
     private final String language;

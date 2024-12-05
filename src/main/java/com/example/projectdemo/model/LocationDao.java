@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 /**
  * Class for accessing the locations in the database.
+ * @author Nuutti Turunen
  */
 public class LocationDao {
     private String name;

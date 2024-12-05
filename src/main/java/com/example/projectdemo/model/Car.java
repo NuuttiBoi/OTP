@@ -5,7 +5,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
- * Class for creating a car.
+ * This model class handles the logic behind cars.
+ * @author Nuutti Turunen
  */
 public class Car {
     private String id;

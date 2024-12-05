@@ -22,6 +22,7 @@ import java.util.*;
 
 /**
  * Controller for the carlist page.
+ * @author Nuutti Turunen
  */
 public class CarListPageController {
     @FXML

@@ -20,7 +20,10 @@ import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 
 /**
- * Controller for the car details page.
+ * Controller for the "car details page". Here the user can see different details for their
+ * selected car, such as how much has been driven with the car and the price for the duration
+ * that they have selected.
+ * @author Nuutti Turunen
  */
 
 public class CarPageController {

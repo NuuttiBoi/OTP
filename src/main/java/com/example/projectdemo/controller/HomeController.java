@@ -29,9 +29,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 /**
- * Kontrolleri aloituissivulle.
- * täällä pitäisi valita mistä sijainnista käyttäjä haluaa vuokrata auton
- * + sisäänkirjautuminen / rekisteröinti.
+ * Controller for the "welcome page". Here the user selects the desired dates and the location
+ * from where they wish to rent a car from.
+ * @author Nuutti Turunen
  */
 
 public class HomeController {

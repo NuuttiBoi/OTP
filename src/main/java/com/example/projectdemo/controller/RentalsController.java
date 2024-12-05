@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Controller for the my rentals page.
+ * Controller for the "rentals page". Here the user can view their current rentals.
+ * @author Nuutti Turunen
  */
 public class RentalsController {
     public Text myRentalsHeader;

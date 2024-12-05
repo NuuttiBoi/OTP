@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 /**
  * Class for setting a language.
+ * @author Nuutti Turunen
  */
 public class LanguageManager {
     private static ResourceBundle resourceBundle;
