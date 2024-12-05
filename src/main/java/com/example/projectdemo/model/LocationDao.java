@@ -3,6 +3,8 @@ package com.example.projectdemo.model;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * Class for accessing the locations in the database.
@@ -44,16 +46,19 @@ public class LocationDao {
         return locationList;
     }
      */
-    public List<Location> getLocationList() {
+    public List<Location> getLocationList(ResourceBundle bundle) {
+        String locale_name = String.valueOf(bundle.getLocale());
+        System.out.println(locale_name);
         ConnectDb connectDb = new ConnectDb();
         try (Connection conn = connectDb.connect();) {
-            Statement stmt = conn.createStatement();
-            String query = "SELECT * FROM locations";
-            ResultSet rs = stmt.executeQuery(query);
+            String query = "SELECT * FROM location_translations WHERE language_code = ?";
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1,locale_name);
+            ResultSet rs = statement.executeQuery();
             while (rs.next()){
-                Location location = new Location(rs.getString("LocationID"),
-                        rs.getString("Location"),
-                        rs.getString("Address"), carList,
+                Location location = new Location(rs.getString("location_id"),
+                        rs.getString("name"),
+                        rs.getString("name"), carList,
                         rs.getString("image"));
                 locationList.add(location);
             }

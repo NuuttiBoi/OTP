@@ -66,7 +66,6 @@ public class HomeController {
      */
     public void initialize() {
         ResourceBundle bundle = LanguageManager.getResourceBundle();
-        System.out.println(bundle);
         startDateText.setText(bundle.getString("startDate"));
         endDateText.setText(bundle.getString("endDate"));
         locationInstructionText.setText(bundle.getString("locationInstruction"));
@@ -76,8 +75,7 @@ public class HomeController {
 
         startDatePicker.setShowWeekNumbers(false);
         returnDatePicker.setShowWeekNumbers(false);
-
-        locations = locationDao.getLocationList();
+        locations = locationDao.getLocationList(bundle);
         locationList.setCellFactory(lv -> new javafx.scene.control.ListCell<Location>() {
             @Override
             protected void updateItem(Location location, boolean empty) {
