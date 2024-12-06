@@ -53,7 +53,7 @@ public class RegistrationController {
     @FXML
     private Pane mainPane;
 
-    ResourceBundle bundle = LanguageManager.getResourceBundle();
+    static ResourceBundle bundle = LanguageManager.getResourceBundle();
 
     /**
      * Initializes the controller.
@@ -82,19 +82,19 @@ public class RegistrationController {
 
         Window owner = submitButton.getScene().getWindow();
         if (fullNameField.getText().isEmpty() || (fullNameField.getText().matches(".*\\d.*"))) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Please enter your name");
+            showAlert(Alert.AlertType.ERROR, owner, bundle.getString("alertErrorTitle"),
+                    bundle.getString("alertErrorName"));
             return;
         }
 
         if (emailIdField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Please enter your email id");
+            showAlert(Alert.AlertType.ERROR, owner, bundle.getString("alertErrorTitle"),
+                    bundle.getString("alertErrorEmail"));
             return;
         }
         if (passwordField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Please enter a password");
+            showAlert(Alert.AlertType.ERROR, owner, bundle.getString("alertErrorTitle"),
+                    bundle.getString("alertErrorPassword"));
             return;
         }
 
@@ -105,8 +105,8 @@ public class RegistrationController {
         RegistrationDao jdbcDao = new RegistrationDao();
         jdbcDao.insertRecord(fullName, emailId, password);
 
-        showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
-                "Welcome " + fullNameField.getText());
+        showAlert(Alert.AlertType.CONFIRMATION, owner, bundle.getString("registrationSuccessful"),
+                bundle.getString("welcomeText") + fullNameField.getText());
 
         // Close the current login stage
         //currentStage.close();
@@ -124,6 +124,10 @@ public class RegistrationController {
 
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
+        alert.getButtonTypes().clear();
+        alert.getButtonTypes().add(ButtonType.OK);
+        Button button = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
+        button.setText(bundle.getString("okButton"));
         ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image(LoginController.class.getResource("/com/example/projectdemo/logo.png").toExternalForm()));
         alert.setTitle(title);
         alert.setHeaderText(null);

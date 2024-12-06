@@ -87,11 +87,11 @@ public class LoginController {
     public void login(ActionEvent event) throws SQLException, IOException {
         Window owner = submitButton.getScene().getWindow();
         if (emailIdField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!", bundle.getString("alertErrorEmail"));
+            showAlert(Alert.AlertType.ERROR, owner, bundle.getString("alertErrorTitle"), bundle.getString("alertErrorEmail"));
             return;
         }
         if (passwordField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+            showAlert(Alert.AlertType.ERROR, owner, bundle.getString("alertErrorTitle"),
                     bundle.getString("alertErrorPassword"));
             return;
         }
@@ -104,7 +104,7 @@ public class LoginController {
         // Example login process
 
         if (user == null) {
-            infoBox(bundle.getString("emptyError"), null, "Failed");
+            infoBox(bundle.getString("emptyError"), null, bundle.getString("alertErrorTitle"));
         } else {
             // Show the success message and wait for user acknowledgment
             infoBox(bundle.getString("success"), null, "");
