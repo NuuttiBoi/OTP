@@ -28,7 +28,18 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>com.example.projectdemo.SuperMain</mainClass>
+          <mainClass>com.example.projectdemo.view.Gui</mainClass>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.example.projectdemo.view.Gui</mainClass>
+            </manifest>
+          </archive>
         </configuration>
       </plugin>
       <plugin>
