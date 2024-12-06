@@ -57,7 +57,7 @@ public class LoginController {
 
     @FXML
     private Pane mainPane;
-    ResourceBundle bundle = LanguageManager.getResourceBundle();
+    static ResourceBundle bundle = LanguageManager.getResourceBundle();
 
 
     /**
@@ -86,10 +86,6 @@ public class LoginController {
     @FXML
     public void login(ActionEvent event) throws SQLException, IOException {
         Window owner = submitButton.getScene().getWindow();
-
-        System.out.println(emailIdField.getText());
-        System.out.println(passwordField.getText());
-
         if (emailIdField.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, owner, "Form Error!", bundle.getString("alertErrorEmail"));
             return;
@@ -106,8 +102,6 @@ public class LoginController {
         UserDao userDao = new UserDao();
         User user = userDao.validate(emailId, password);
         // Example login process
-
-
 
         if (user == null) {
             infoBox(bundle.getString("emptyError"), null, "Failed");
@@ -135,16 +129,18 @@ public class LoginController {
         }
     }
 
-
+    /**
+     * Displays the confirmation of login.
+     */
     public static void infoBox(String infoMessage, String headerText, String title) {
-
         Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.getButtonTypes().clear();
+        alert.getButtonTypes().add(ButtonType.OK);
         Button button = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
-        button.setText("Ok");
+        button.setText(bundle.getString("okButton"));
         alert.setContentText(infoMessage);
         alert.setTitle(title);
         alert.setHeaderText(headerText);
-
         alert.showAndWait();
     }
 
