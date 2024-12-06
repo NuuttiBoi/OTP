@@ -1,7 +1,11 @@
 package com.example.projectdemo.model;
 
+import com.example.projectdemo.controller.WelcomePageController;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,6 +14,9 @@ class CarTest {
 
     @BeforeEach
     public void setUp() {
+        // Set the default ResourceBundle
+        Locale locale = new Locale("en","US");
+        LanguageManager.setLocale(locale);
         // Initialize the Car object before each test
         car = new Car("1", "Toyota", "Corolla", 2020, "ABC123", true, 25000.0, "Location", 15000);
     }

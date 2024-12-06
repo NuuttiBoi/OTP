@@ -188,6 +188,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version> <!-- Latest stable version -->
                 <configuration>
+                    <argLine>--add-opens javafx.graphics/com.sun.javafx.application=ALL-UNNAMED</argLine>
                     <includes>
                         <include>**/Test*.java</include>
                         <include>**/*Test.java</include>

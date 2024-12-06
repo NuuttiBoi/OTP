@@ -3,16 +3,21 @@ package com.example.projectdemo.controller;
 import com.example.projectdemo.model.ConnectDb;
 import com.example.projectdemo.model.RegistrationDao;
 import com.example.projectdemo.model.User;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 
 import java.sql.SQLException;
 
-class RegistrationCarListPageControllerTest {
+public class RegistrationCarListPageControllerTest {
+
+    @Test
+    public void filterCarsByModel(){
+
+    }
 
 
     @Test
-    void login() throws SQLException {
+    public void login() throws SQLException {
         ConnectDb connectDb = new ConnectDb();
         connectDb.connect();
         RegistrationDao registrationDAO = new RegistrationDao();
@@ -20,5 +25,7 @@ class RegistrationCarListPageControllerTest {
         registrationDAO.insertRecord(String.valueOf(user.getUserID()), user.getEmail(), user.getPassword());
 
     }
+
+
 
 }

@@ -15,7 +15,7 @@ public class RegistrationDao {
     /**
      * Adds a new user to the database.
      */
-    public void insertRecord(String fullName, String emailId, String password) throws SQLException {
+    public boolean insertRecord(String fullName, String emailId, String password) throws SQLException {
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
         ConnectDb connectDb = new ConnectDb();
@@ -28,7 +28,12 @@ public class RegistrationDao {
 
         System.out.println(preparedStatement);
         // Step 3: Execute the query or update query
-        preparedStatement.executeUpdate();
+        try {
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException sqlException){
+            return false;
+        }
     }
 
     /**

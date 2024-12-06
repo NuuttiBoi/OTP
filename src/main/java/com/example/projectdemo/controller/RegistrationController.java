@@ -109,7 +109,8 @@ public class RegistrationController {
                 bundle.getString("welcomeText") + fullNameField.getText());
 
         // Close the current login stage
-        //currentStage.close();
+        Stage currentStage = (Stage) submitButton.getScene().getWindow();
+        currentStage.close();
 
         // Load the StartPage.fxml page
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/StartPage.fxml"));

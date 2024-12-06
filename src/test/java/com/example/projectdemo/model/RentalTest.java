@@ -1,16 +1,24 @@
 package com.example.projectdemo.model;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class RentalTest {
+
+    @BeforeEach
+    void setUp(){
+        Locale locale = new Locale("en","US");
+        LanguageManager.setLocale(locale);
+    }
 
 
     @Test

@@ -101,7 +101,6 @@ public class LoginController {
 
         UserDao userDao = new UserDao();
         User user = userDao.validate(emailId, password);
-        // Example login process
 
         if (user == null) {
             infoBox(bundle.getString("emptyError"), null, bundle.getString("alertErrorTitle"));
