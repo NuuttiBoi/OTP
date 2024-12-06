@@ -227,6 +227,7 @@ public class PaymentController  {
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image(LoginController.class.getResource("/com/example/projectdemo/logo.png").toExternalForm()));
         alert.setTitle(title);
         alert.setHeaderText(null);
         //alert.setContentText(user.toString());

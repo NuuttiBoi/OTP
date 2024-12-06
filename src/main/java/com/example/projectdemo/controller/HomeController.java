@@ -127,10 +127,12 @@ public class HomeController {
             Location selectedLocation = locationList.getSelectionModel().getSelectedItem();
             if (selectedLocation != null) {
                 if (startDate == null || returnDate == null) {
+                    ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image(LoginController.class.getResource("/com/example/projectdemo/logo.png").toExternalForm()));
                     alert.setContentText(bundle.getString("dateInstruction"));
                     alert.showAndWait();
                     // Check if the selected dates are valid
                 } else if (returnDate.isBefore(startDate) || startDate.isBefore(ChronoLocalDate.from(java.time.ZonedDateTime.now()))) {
+                    ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image(LoginController.class.getResource("/com/example/projectdemo/logo.png").toExternalForm()));
                     alert.setContentText(bundle.getString("startBeforeEndError"));
                     alert.showAndWait();
                     System.out.println(ChronoLocalDate.from(java.time.ZonedDateTime.now()));

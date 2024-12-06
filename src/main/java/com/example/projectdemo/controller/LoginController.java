@@ -147,6 +147,7 @@ public class LoginController {
 
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
+        ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image(LoginController.class.getResource("/com/example/projectdemo/logo.png").toExternalForm()));
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
