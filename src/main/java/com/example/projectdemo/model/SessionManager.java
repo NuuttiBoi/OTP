@@ -11,6 +11,7 @@ public class SessionManager {
     private static LocalDate startDate;
     private static LocalDate endDate;
     private static Location location;
+    private static String currency;
 
     /**
      * Adds the current user.
@@ -36,6 +37,9 @@ public class SessionManager {
     public static void setLocation(Location location) {
         SessionManager.location = location;
     }
+    public static void setCurrency(String currency) {
+        SessionManager.currency = currency;
+    }
 
     public static LocalDate getStartDate() {
         return startDate;
@@ -45,5 +49,8 @@ public class SessionManager {
     }
     public static Location getLocation() {
         return location;
+    }
+    public static String getCurrency() {
+        return currency;
     }
 }

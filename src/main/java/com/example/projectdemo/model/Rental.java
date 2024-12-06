@@ -1,5 +1,8 @@
 package com.example.projectdemo.model;
 
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -23,7 +26,7 @@ public class Rental {
     /**
      * Parameterized constructor.
      */
-    public Rental(String rentalID, LocalDate rentalDate, LocalDate returnDate, String carID, String locationID, int registration_id) throws SQLException {
+    public Rental(String rentalID, LocalDate rentalDate, LocalDate returnDate, String carID, String locationID, int registration_id) throws SQLException, IOException, ParseException {
         this.rentalID = rentalID;
         this.rentalDate = rentalDate;
         this.returnDate = returnDate;

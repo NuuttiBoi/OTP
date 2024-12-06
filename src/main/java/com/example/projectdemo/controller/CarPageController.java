@@ -54,6 +54,7 @@ public class CarPageController {
     ResourceBundle bundle = LanguageManager.getResourceBundle();
 
 
+
     /**
      * Initializes the controller.
      */
@@ -82,7 +83,7 @@ public class CarPageController {
         double totalPrice = selectedCar.getPrice() * totalDifference;
         System.out.println("Difference in days: " + totalDifference);
 
-        priceText.setText(bundle.getString("rental_price") + totalDifference + bundle.getString("rentalDays") +"\n" + totalPrice + " €");
+        priceText.setText(bundle.getString("rental_price") + totalDifference + bundle.getString("rentalDays") +"\n" + totalPrice + SessionManager.getCurrency());
     }
 
     public void onClick(){

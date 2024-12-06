@@ -7,8 +7,9 @@ module com.example.projectdemo {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires java.desktop;
+  requires json.simple;
 
-    exports com.example.projectdemo.model;
+  exports com.example.projectdemo.model;
     opens com.example.projectdemo.model to javafx.fxml;
     exports com.example.projectdemo.controller;
     opens com.example.projectdemo.controller to javafx.fxml;

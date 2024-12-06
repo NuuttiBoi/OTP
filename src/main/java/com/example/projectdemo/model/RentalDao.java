@@ -1,5 +1,8 @@
 package com.example.projectdemo.model;
 
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,8 +69,12 @@ public class RentalDao {
 
         } catch (SQLException e) {
                 System.out.println(e.getMessage());
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        } catch (ParseException e) {
+          throw new RuntimeException(e);
         }
-        return rentals;
+      return rentals;
     }
 
 }
