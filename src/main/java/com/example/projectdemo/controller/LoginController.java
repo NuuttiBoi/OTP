@@ -138,6 +138,7 @@ public class LoginController {
         alert.getButtonTypes().add(ButtonType.OK);
         Button button = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
         button.setText(bundle.getString("okButton"));
+        ((Stage)alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image(LoginController.class.getResource("/com/example/projectdemo/logo.png").toExternalForm()));
         alert.setContentText(infoMessage);
         alert.setTitle(title);
         alert.setHeaderText(headerText);
