@@ -55,4 +55,23 @@ public class Rental {
             "RentalID: " + rentalID + "Car: " + car.getMake() + " , Start Date: " + rentalDate + ", Return Date: " + returnDate;
     }
 
+  public String getRentalID() {
+        return rentalID;
+  }
+
+    public LocalDate getRentalDate() {
+        return rentalDate;
+    }
+
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public String getCarID() {
+        return carId;
+    }
+
+    public String getLocationID() {
+        return locationId;
+    }
 }

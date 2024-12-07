@@ -11,12 +11,6 @@ import java.sql.SQLException;
 public class RegistrationCarListPageControllerTest {
 
     @Test
-    public void filterCarsByModel(){
-
-    }
-
-
-    @Test
     public void login() throws SQLException {
         ConnectDb connectDb = new ConnectDb();
         connectDb.connect();

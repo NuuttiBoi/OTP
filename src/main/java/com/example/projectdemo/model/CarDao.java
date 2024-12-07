@@ -30,6 +30,7 @@ public class CarDao {
     private String currency;
     private String currencySymbol;
     private String price;
+    private ApiFacade apiFacade;
 
     /**
      * Default constructor.
@@ -195,11 +196,14 @@ public class CarDao {
      * Converts the rental price to the target currency from EUR using the FXRates API
      */
     public String convertPrice(String targetCurrency, String amount) throws IOException, ParseException {
-        ApiFacade facade = new ApiFacade();
+        apiFacade = new ApiFacade();
         String query = "https://api.fxratesapi.com/convert?from=EUR&to=" + targetCurrency + "&date=2024-12-01&amount=" + amount + "&format=json";
-        String conversionResult = facade.getAttributeValueFromJson(query,"result");
+        String conversionResult = apiFacade.getAttributeValueFromJson(query,"result");
         return conversionResult;
     }
 
 
+    public ApiFacade getApiFacade() {
+        return apiFacade;
+    }
 }

@@ -14,10 +14,8 @@ class CarTest {
 
     @BeforeEach
     public void setUp() {
-        // Set the default ResourceBundle
         Locale locale = new Locale("en","US");
         LanguageManager.setLocale(locale);
-        // Initialize the Car object before each test
         car = new Car("1", "Toyota", "Corolla", 2020, "ABC123", true, 25000.0, "Location", 15000);
     }
 

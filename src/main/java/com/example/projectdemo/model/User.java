@@ -80,4 +80,8 @@ public class User {
                 ", rentalID='" + rentalID + '\'' +
                 '}';
     }
+
+    public String getType() {
+        return type;
+    }
 }
