@@ -37,9 +37,9 @@ class WelcomePageLoadTest extends ApplicationTest {
 
     @Test
     void testUserInteraction() {
-        clickOn(languageSelection); // Open language dropdown
-        clickOn("English"); // Select English language
-        clickOn(signInButton); // Click on the sign-in button
+        clickOn(languageSelection);
+        clickOn("English");
+        clickOn(signInButton);
 
         FxAssert.verifyThat(welcomeText, isNotNull());
     }

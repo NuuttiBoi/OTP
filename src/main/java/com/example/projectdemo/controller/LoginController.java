@@ -121,6 +121,7 @@ public class LoginController {
             Parent layout = fxmlLoader.load();  // Load the FXML layout
             Scene scene = new Scene(layout);
             Stage startStage = new Stage();
+            startStage.getIcons().add(new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm()));
             startStage.setScene(scene);
 
             startStage.setTitle("Start Page");

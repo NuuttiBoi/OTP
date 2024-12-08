@@ -21,16 +21,11 @@ public class RentalsController {
     @FXML
     private ListView rentalList;
     private List<Rental> rentals = new ArrayList<>();
-    @FXML
-    public ImageView logo;
 
     /**
      * Initializes the controller.
      */
     public void initialize() throws SQLException {
-        Image carLogo = new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm());
-        logo.setImage(carLogo);
-
         ResourceBundle bundle = LanguageManager.getResourceBundle();
         myRentalsHeader.setText(bundle.getString("rentalsHeader"));
         User user1 = SessionManager.getCurrentUser();

@@ -195,6 +195,7 @@ public class HomeController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/projectdemo/fxmlFiles/UserRentalsPage.fxml"));
         Parent layout = fxmlLoader.load();
         Stage rentalsStage = new Stage();
+        rentalsStage.getIcons().add(new Image(getClass().getResource("/com/example/projectdemo/logo.png").toExternalForm()));
         Scene scene = new Scene(layout, 600, 400);
         rentalsStage.setScene(scene);
         rentalsStage.show();
